@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>众合星野隐私政策</title>
+<style>
+  body { font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Source Han Sans SC", sans-serif; line-height: 1.8; color: #333; max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; font-size: 15px; }
+  h1 { font-size: 22px; text-align: center; }
+  h2 { font-size: 17px; margin-top: 30px; border-left: 4px solid #e8783b; padding-left: 10px; }
+  h3 { font-size: 15px; margin-top: 18px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #d9d9d9; padding: 6px 8px; text-align: left; vertical-align: top; word-break: break-all; }
+  th { background: #f7f8fa; }
+  .date { text-align: center; color: #999; font-size: 13px; }
+  .strong { font-weight: bold; }
+  .sens { font-weight: bold; text-decoration: underline; }
+  a { color: #e8783b; word-break: break-all; }
+  .note { color: #888; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>众合星野隐私政策</h1>
+<p class="date">更新日期：2026年8月25日　生效日期：2026年8月25日</p>
+
+<p>欢迎您使用「众合星野」移动应用程序（以下简称"本应用"）。本应用由<span class="strong">贵州众合星野运营管理有限公司</span>（以下简称"我们"）开发并运营。</p>
+<p>我们深知个人信息对您的重要性，将依据《中华人民共和国网络安全法》《中华人民共和国个人信息保护法》《常见类型移动互联网应用程序必要个人信息范围规定》等法律法规，遵循合法、正当、必要与诚信原则处理您的个人信息。请您在使用本应用前，仔细阅读并充分理解本政策，特别是<span class="strong">加粗、下划线</span>标识的内容。本应用仅面向年满18周岁的用户提供，如您不同意本政策的任何内容，请停止使用本应用。</p>
+
+<h2>启动初始化与SDK运行阶段说明（重要）</h2>
+<p>本应用基于 DCloud（数字天堂）uni-app 5+ App 离线框架构建，框架内置的 <span class="strong">uni-ad 模块</span>（<code>io.dcloud.feature.gg</code>）会在 App 进程首次启动、Activity onCreate 阶段自动初始化，用于维持基座运行时（获取版本策略、内容分发通道、反作弊配置）。该初始化过程中会通过<span class="strong">移动智能终端补充设备标识体系统一调用 SDK（MSA OAID SDK）</span>获取<span class="sens">匿名设备标识符 OAID（原始规范中亦称 CAID）</span>，用途仅限于：（1）基座服务完整性校验；（2）反作弊、反机刷、反异常行为检测；（3）后续广告展示的用户不重复计数。</p>
+<p><span class="strong">该初始化过程与您是否点击"同意并继续"无关</span>，属于 DCloud 基座框架的底层机制，本应用无法在保持功能完整的前提下将其推迟到隐私弹窗之后。若您不希望本应用完成上述启动初始化，请在隐私政策弹窗中选择"暂不同意"或直接关闭应用；应用将在您做出选择前不进入任何业务页面，也不会连接您本人的账号数据。所获取的 OAID 仅在本机及广告/反作弊 SDK 请求中使用，不会写入您的账号档案，亦不用于跨设备追踪。</p>
+<p>除上述基座初始化 SDK 外，其他所有第三方 SDK（Taku、优量汇、百度广告、穿山甲、百度移动统计、火山引擎设备安全等）均严格在您点击"同意并继续"之后才初始化，具体清单见本政策第三节。</p>
+
+<h2>一、我们如何收集和使用您的个人信息</h2>
+
+<h3>（一）您主动提供的信息</h3>
+<p>1. <span class="strong">账号注册与登录</span>：当您注册、登录本应用时，我们会收集您的<span class="sens">手机号码</span>（用于发送验证码、验证身份、完成账号创建）；当您选择使用微信登录时，经您授权，我们会获取您的微信昵称、头像、OpenID等授权信息，用于绑定本应用账号。</p>
+<p>2. <span class="strong">实名认证</span>：当您使用提现功能（每月提现金额超过500元）时，为满足《非银行支付机构网络支付业务管理办法》及反洗钱相关规定，我们需要收集您的<span class="sens">真实姓名</span>和<span class="sens">身份证件号码（身份证）</span>。该等信息仅用于实名认证及支付合规目的。</p>
+<p>3. <span class="strong">客服与反馈</span>：当您联系客服或提交反馈时，我们会收集您主动填写的手机号码、问题描述、截图等信息。</p>
+
+<h3>（二）我们自动收集的信息</h3>
+<p>1. <span class="strong">设备信息</span>：<span class="strong">为识别您的设备并预防恶意程序及反作弊，提高服务安全性、保障运营质量及效率，以及进行广告投放与效果归因</span>，我们会收集您的设备信息，包括：设备型号、操作系统版本、<span class="sens">设备序列号（硬件序列号）</span>、<span class="sens">OAID</span>、<span class="sens">Android ID</span>、<span class="sens">IMSI（国际移动用户识别码）</span>、设备ID、<span class="sens">IMEI（国际移动设备识别码）</span>、<span class="sens">设备MAC地址</span>、SIM卡序列号（ICCID）、<span class="sens">软件安装列表（已安装应用列表）</span>及运行中的进程信息、设备IP地址、网络信息（Wi-Fi状态、网络类型、网络运营商）。</p>
+<p>2. <span class="strong">传感器信息</span>：<span class="strong">为识别您的设备横竖屏状态、保障视频播放体验，以及支持广告交互（如开屏摇一摇防误触、滑动操作）</span>，我们会调用设备的重力传感器、加速度传感器、陀螺仪传感器信息。</p>
+<p>3. <span class="strong">日志信息</span>：当您使用本应用时，我们会自动收集操作日志、崩溃日志，用于故障排查、安全审计与服务优化。</p>
+<p>4. <span class="strong">使用行为信息</span>：您的浏览记录、播放记录、点赞/收藏/分享行为、搜索关键词等，用于内容推荐与功能优化。</p>
+
+<h3>（三）权限调用说明</h3>
+<table>
+<tr><th>权限</th><th>用途</th><th>使用场景</th><th>是否必需</th></tr>
+<tr><td>网络权限</td><td>加载视频、短剧、曲库、小说及广告内容</td><td>使用本应用的全过程</td><td>是</td></tr>
+<tr><td>存储权限（读取/写入外部存储）</td><td>视频缓存、离线下载、保存或上传图片</td><td>用户主动缓存、下载、上传时</td><td>否</td></tr>
+<tr><td>相机权限</td><td>拍摄/上传头像、扫码</td><td>用户主动使用时</td><td>否</td></tr>
+<tr><td>读取电话状态（设备状态）</td><td>获取设备标识符，用于广告投放、反作弊与安全风控</td><td>广告展示、安全风控时（由第三方广告SDK调用）</td><td>否</td></tr>
+<tr><td>账户权限</td><td>账号同步</td><td>登录时</td><td>否</td></tr>
+<tr><td>修改系统设置</td><td>保存亮度等播放设置</td><td>播放器设置时</td><td>否</td></tr>
+<tr><td>闪光灯/震动</td><td>手电筒、通知提醒</td><td>对应功能使用时</td><td>否</td></tr>
+</table>
+<p>您拒绝提供非必要权限，不影响您使用本应用的基本功能。</p>
+
+<h3>（四）用户画像与个性化推荐</h3>
+<p>我们可能基于您的浏览、播放行为进行用户画像，用于个性化内容推荐与广告投放。您可以在本应用「我的 → 设置」中关闭个性化推荐；关闭后，我们将不再将您的使用行为信息用于个性化推荐。</p>
+
+<h3>（五）Cookie 和同类技术</h3>
+<p>本应用不通过浏览器使用 Cookie。为实现登录状态保持、广告投放与频次控制，我们及第三方SDK可能使用本地缓存（如SharedPreferences、本地文件）存储OAID等设备标识符。</p>
+
+<h3>（六）收集规则说明</h3>
+<p>1. 我们仅出于本政策声明的目的收集、使用您的个人信息，不收集与本应用功能无关的信息；</p>
+<p>2. 我们不会因您拒绝提供非必要个人信息而拒绝您使用基本功能；</p>
+<p>3. 若收集、使用信息的目的、方式、范围发生变更，我们将征得您的同意后方按新目的处理。</p>
+
+<h2>二、我们如何共享、转让、公开披露您的个人信息</h2>
+<p><span class="strong">（一）共享</span>：我们仅在本政策声明的目的范围内，与第三节所列第三方SDK共享必要的最小范围个人信息，用于广告投放、统计分析、安全风控等功能；共享的个人信息类型、接收方及目的均在本政策第三节载明。除此之外，我们不会与任何无关第三方共享您的个人信息。</p>
+<p><span class="strong">（二）转让</span>：我们不会将您的个人信息转让给任何公司、组织和个人，但以下情况除外：获得您明确同意；在涉及合并、收购或破产清算时，如涉及个人信息转让，我们会要求新的持有者继续受本政策约束。</p>
+<p><span class="strong">（三）公开披露</span>：我们仅会在以下情况下公开披露您的个人信息：获得您明确同意；基于法律法规、诉讼或行政、司法机关的强制性要求。</p>
+<p><span class="strong">（四）征得授权同意的例外</span>：根据法律法规规定，以下情形中收集、使用、共享、转让、公开披露个人信息无需征得您的同意：与国家安全、国防安全直接相关的；与公共安全、公共卫生、重大公共利益直接相关的；与犯罪侦查、起诉、审判和判决执行等直接相关的；出于维护您或其他个人的生命、财产等重大合法权益但又很难得到本人同意的；您自行向社会公众公开的个人信息；从合法公开披露的信息中收集的个人信息；法律法规规定的其他情形。</p>
+
+<h2>三、第三方SDK清单</h2>
+<p>为向您提供 App 基础运行、广告展示、激励视频、统计分析、安全风控等服务，本应用接入以下第三方 SDK。各 SDK 按其各自隐私政策所述范围处理您的个人信息。<span class="strong">除标记为「基座启动阶段初始化」的两项外，所有 SDK 均在您点击"同意并继续"后才初始化并允许收集信息</span>：</p>
+<table>
+<tr><th>SDK名称 / 包名</th><th>运营主体</th><th>使用目的</th><th>收集的个人信息类型</th><th>初始化时机</th><th>隐私政策</th></tr>
+<tr><td><span class="strong">DCloud uni-ad 模块</span>（io.dcloud.feature.gg，内嵌于 lib.5plus.base）</td><td>数字天堂（北京）网络技术有限公司（DCloud）</td><td>基座运行时策略拉取、内容分发通道、反作弊配置、开屏广告调度</td><td>通过 MSA SDK 获取 OAID；HTTP 请求中的设备型号、系统版本、网络信息</td><td><span class="sens">基座启动阶段初始化</span>（Activity onCreate 阶段自动运行，早于隐私弹窗）</td><td><a href="https://ask.dcloud.net.cn/protocol.html">https://ask.dcloud.net.cn/protocol.html</a></td></tr>
+<tr><td><span class="strong">移动智能终端补充设备标识体系统一调用 SDK（MSA OAID SDK）</span></td><td>移动安全联盟（MSA）</td><td>为设备生成匿名 OAID（部分检测规范称 CAID），用于反作弊、广告去重</td><td><span class="sens">OAID</span>（匿名设备标识符）</td><td><span class="sens">基座启动阶段初始化</span>（由 DCloud uni-ad 模块反射调用 <code>MdidSdkHelper.InitSdk</code>）</td><td><a href="http://www.msa-alliance.cn/">http://www.msa-alliance.cn/</a></td></tr>
+<tr><td>Taku Android SDK（TopOn 聚合广告 SDK）｜com.anythink</td><td>广州塔酷信息科技有限公司</td><td>广告投放、广告效果归因、反作弊</td><td><span class="sens">设备 MAC 地址</span>、设备标识符（OAID、Android ID）、软件安装列表、传感器信息、设备 IP 地址、网络信息</td><td>用户同意后</td><td><a href="https://www.toponad.com/zh-cn/privacy">https://www.toponad.com/zh-cn/privacy</a></td></tr>
+<tr><td>优量汇 Android SDK｜com.qq.e.comm</td><td>深圳市腾讯计算机系统有限公司</td><td>广告投放、广告效果归因、反作弊</td><td><span class="sens">传感器信息（重力、加速度、陀螺仪）</span>、<span class="sens">Android ID</span>、设备标识符（OAID）、设备 MAC 地址、软件安装列表、设备 IP 地址、网络信息</td><td>用户同意后</td><td><a href="https://e.qq.com/dev/help_detail.html?cid=2005&amp;pid=5983">https://e.qq.com/dev/help_detail.html</a></td></tr>
+<tr><td>百度广告 SDK｜com.baidu.mobads</td><td>北京百度网讯科技有限公司</td><td>广告投放、广告效果归因、反作弊</td><td><span class="sens">传感器信息</span>、设备标识符（OAID、Android ID）、设备 IP 地址、网络信息</td><td>用户同意后</td><td><a href="https://union.baidu.com/bqt#/policies">https://union.baidu.com/bqt#/policies</a></td></tr>
+<tr><td>穿山甲广告 SDK｜com.bytedance</td><td>北京巨量引擎网络技术有限公司</td><td>广告投放、广告效果归因、反作弊</td><td>设备标识符（OAID、Android ID）、设备 MAC 地址、软件安装列表、传感器信息、设备 IP 地址、网络信息</td><td>用户同意后</td><td><a href="https://www.pangle.cn/privacy/partner">https://www.pangle.cn/privacy/partner</a></td></tr>
+<tr><td>百度移动统计 SDK｜com.baidu.mobstat</td><td>北京百度网讯科技有限公司</td><td>应用使用情况统计分析、崩溃分析</td><td>设备信息（设备型号、操作系统版本）、设备标识符（OAID、Android ID）、应用使用信息、网络信息</td><td>用户同意后</td><td><a href="https://mtj.baidu.com/web/sdk/index">https://mtj.baidu.com/web/sdk/index</a></td></tr>
+<tr><td>设备安全 SDK（火山引擎）｜com.volcengine</td><td>北京火山引擎科技有限公司</td><td>安全风控、反作弊、设备风险识别</td><td>设备信息、设备标识符、网络信息、传感器信息</td><td>用户同意后</td><td><a href="https://www.volcengine.com/docs/6504/166003">https://www.volcengine.com/docs/6504/166003</a></td></tr>
+<tr><td>音视频处理 MCP SDK（百度智能云媒体处理）｜com.baidu.media</td><td>北京百度网讯科技有限公司</td><td>音视频处理、播放优化</td><td>一般不直接收集个人信息；处理视频内容时可能涉及网络信息</td><td>用户同意后</td><td><a href="https://cloud.baidu.com/doc/MCT/s/0jwvz5dix">https://cloud.baidu.com/doc/MCT/s/0jwvz5dix</a></td></tr>
+<tr><td>阿里云快速 JSON（fastjson）｜com.alibaba.fastjson</td><td>阿里巴巴（中国）有限公司</td><td>数据解析基础功能</td><td>不收集个人信息</td><td>用户同意后</td><td><a href="https://github.com/alibaba/fastjson">https://github.com/alibaba/fastjson</a></td></tr>
+</table>
+<p class="note">注 1：上述各 SDK 收集个人信息的目的、方式、范围均以各 SDK 运营方最新隐私政策为准。本应用不主动收集通讯录、短信、通话记录、精准位置等信息。</p>
+<p class="note">注 2：DCloud uni-ad 模块和 MSA OAID SDK 在应用启动阶段初始化的说明详见本政策开头"启动初始化与 SDK 运行阶段说明"一节。</p>
+
+<h2>四、信息的存储与保护</h2>
+<p>1. <span class="strong">存储地点</span>：您的个人信息将存储于中华人民共和国境内。</p>
+<p>2. <span class="strong">存储期限</span>：我们仅在本政策所述目的所必需的最短期限内保存您的个人信息；账号注销后，我们将在15个工作日内删除或匿名化处理您的个人信息，法律法规另有规定的除外。</p>
+<p>3. <span class="strong">安全措施</span>：我们采用符合行业标准的安全技术和管理措施保护您的个人信息，包括HTTPS加密传输、访问权限控制、日志审计等，防止个人信息遭到未经授权的访问、使用、修改或泄露。</p>
+<p>4. <span class="strong">安全事件</span>：若发生个人信息安全事件，我们将按照法律法规要求及时告知您相关情况，采取补救措施，并依法承担相应责任。</p>
+
+<h2>五、您的权利</h2>
+<p>1. <span class="strong">查询、更正、删除</span>：您可以在本应用「我的 → 设置」中查询、更正您的账号信息；如您要求删除个人信息，可以通过第七条所述方式联系我们。</p>
+<p>2. <span class="strong">撤回同意</span>：您可以在手机系统设置中关闭相应权限以撤回授权；撤回同意不影响撤回前基于同意已进行的个人信息处理。</p>
+<p>3. <span class="strong">注销账号</span>：您可以在本应用「我的 → 设置 → 注销账号」中，阅读并同意《账号注销协议》后提交注销申请；我们将在<span class="strong">15个工作日内</span>完成账号注销，并删除或匿名化处理您的个人信息。</p>
+<p>4. <span class="strong">关闭个性化推荐</span>：您可以在本应用「我的 → 设置」中关闭个性化推荐。</p>
+<p>5. <span class="strong">响应时限</span>：我们将在15个工作日内响应您行使上述权利的请求；法律法规另有规定的除外。</p>
+
+<h2>六、未成年人保护</h2>
+<p>本应用仅面向年满18周岁的成年人提供，我们不会主动收集未成年人的个人信息。若您发现未成年人未经监护人同意使用了本应用并提供了个人信息，请通过第七条所述方式联系我们，我们将尽快核实并删除相关个人信息。针对不满14周岁的儿童，我们制定了《儿童个人信息保护规则》，您可在本应用内查阅。</p>
+
+<h2>七、如何联系我们</h2>
+<p>如您对本政策有任何疑问、意见或建议，或需行使您的个人信息权利，可通过以下方式联系我们：</p>
+<p>1. <span class="strong">运营主体</span>：贵州众合星野运营管理有限公司</p>
+<p>2. <span class="strong">客服微信</span>：本应用「我的 → 联系客服」，扫码添加官方客服微信</p>
+<p>3. <span class="strong">在线反馈</span>：本应用「我的 → 帮助与反馈」，提交您的问题与联系方式</p>
+<p>我们将在15个工作日内予以回复。</p>
+
+<h2>八、本政策的更新</h2>
+<p>我们可能适时更新本隐私政策。发生重大变更时，我们会以弹窗、站内信或其他显著方式通知您；未经您明确同意，我们不会削减您依据本政策所应享有的权利。请您定期查阅本政策以了解最新内容。</p>
+
+<h2>九、附件清单</h2>
+<p>为保障您的知情权，本应用内提供以下清单，您可在「我的 → 设置」中查阅：</p>
+<p>1. <span class="strong">《收集个人信息明示清单》</span>：说明本应用（含第三方SDK）收集的个人信息类型、使用目的、使用场景；</p>
+<p>2. <span class="strong">《与第三方共享个人信息清单》</span>：说明与第三方共享的个人信息类型、使用目的、使用场景和共享方式。</p>
+
+</body>
+</html>

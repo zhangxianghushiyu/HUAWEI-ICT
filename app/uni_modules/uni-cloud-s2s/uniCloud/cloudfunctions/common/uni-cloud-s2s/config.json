@@ -1,0 +1,4 @@
+{
+  "type": "connectCode",
+  "connectCode": "qiyunguo" // 一个较长的字符串即可，不可包含中文，请求方将请求头Unicloud-S2s-Authorization设为`CONNECTCODE + ' ' + 此值`即可通过接收方方校验
+}

@@ -1,0 +1,1368 @@
+﻿
+09-07 15:14:00.627 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:14:00.628 D/wm_log==(11267): WMRewardAd load start
+09-07 15:14:00.628 D/wm_log==(11267): fetch reward ad 
+09-07 15:14:00.628 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:14:00.628 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:14:00.675 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:14:00.758 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:14:00.830 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:14:01.198 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:14:04.216 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:14:04.217 D/wm_log==(11267): WMRewardAd load start
+09-07 15:14:04.217 D/wm_log==(11267): fetch reward ad 
+09-07 15:14:04.217 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:14:04.217 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:14:04.254 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:14:04.483 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:14:04.647 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:14:04.782 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:15:12.133 E/ADVISTA (11267): reward video countdown time:15.0
+09-07 15:15:28.507 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:15:28.507 D/wm_log==(11267): WMRewardAd load start
+09-07 15:15:28.507 D/wm_log==(11267): fetch reward ad 
+09-07 15:15:28.507 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:15:28.507 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:15:28.555 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:15:28.970 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:15:29.103 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:15:29.144 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:15:33.687 E/ADVISTA (11267): reward video countdown time:15.0
+09-07 15:15:53.215 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:15:53.215 D/wm_log==(11267): WMRewardAd load start
+09-07 15:15:53.215 D/wm_log==(11267): fetch reward ad 
+09-07 15:15:53.216 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:15:53.216 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:15:53.321 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:15:53.466 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:15:53.696 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:15:53.768 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:16:03.392 W/Glide   (11267): Load failed for [https://xingyeapp1-1432341846.cos.ap-guangzhou.myqcloud.com/2026-08-27/07a3b711cba748ca844b63ea6e5de87e.exe] with dimensions [1080x21
+24]
+09-07 15:16:04.800 E/ADVISTA (11267): reward video countdown time:15.0
+09-07 15:16:20.978 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:16:20.979 D/wm_log==(11267): WMRewardAd load start
+09-07 15:16:20.979 D/wm_log==(11267): fetch reward ad 
+09-07 15:16:20.979 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:16:20.979 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:16:21.050 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:16:21.241 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:16:21.402 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:16:21.495 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:16:22.134 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:16:22.134 D/wm_log==(11267): WMRewardAd load start
+09-07 15:16:22.134 D/wm_log==(11267): fetch reward ad 
+09-07 15:16:22.134 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:16:22.134 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:16:22.221 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:16:22.352 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:16:22.450 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:16:22.635 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:16:25.902 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:16:25.902 D/wm_log==(11267): WMRewardAd load start
+09-07 15:16:25.903 D/wm_log==(11267): fetch reward ad 
+09-07 15:16:25.903 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:16:25.903 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:16:25.920 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:16:26.173 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:16:26.246 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:16:26.367 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:16:29.461 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:16:29.462 D/wm_log==(11267): WMRewardAd load start
+09-07 15:16:29.462 D/wm_log==(11267): fetch reward ad 
+09-07 15:16:29.462 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:16:29.462 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:16:29.481 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:16:29.684 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:16:29.917 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:16:30.023 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:16:33.035 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:16:33.035 D/wm_log==(11267): WMRewardAd load start
+09-07 15:16:33.035 D/wm_log==(11267): fetch reward ad 
+09-07 15:16:33.035 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:16:33.035 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:16:33.065 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:16:33.131 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:16:33.243 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:16:33.555 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:16:36.580 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:16:36.580 D/wm_log==(11267): WMRewardAd load start
+09-07 15:16:36.581 D/wm_log==(11267): fetch reward ad 
+09-07 15:16:36.581 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:16:36.581 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:16:36.612 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:16:36.809 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:16:36.896 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:16:37.166 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:16:40.183 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:16:40.183 D/wm_log==(11267): WMRewardAd load start
+09-07 15:16:40.183 D/wm_log==(11267): fetch reward ad 
+09-07 15:16:40.183 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:16:40.183 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:16:40.205 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:16:40.455 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:16:40.601 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:16:40.727 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:16:48.338 I/ActivityTaskManager( 1427): Displayed uni.app.UNI8969615/com.fl.saas.s2s.sdk.ad.video.reward.S2SRewardVideoActivity for user 0: +170ms
+09-07 15:16:48.469 V/ImeFocusController(11267): onWindowFocus: DecorView@8cf339d[S2SRewardVideoActivity] softInputMode=STATE_UNSPECIFIED|ADJUST_PAN|IS_FORWARD_NAVIGATION
+09-07 15:16:57.669 W/Glide   (11267): Load failed for [https://xingyeapp1-1432341846.cos.ap-guangzhou.myqcloud.com/2026-08-27/07a3b711cba748ca844b63ea6e5de87e.exe] with dimensions [1080x21
+24]
+09-07 15:17:05.125 V/ImeFocusController(11267): onWindowFocus: DecorView@a53603[S2SRewardVideoActivity] softInputMode=STATE_UNSPECIFIED|ADJUST_PAN|IS_FORWARD_NAVIGATION
+09-07 15:17:07.759 E/BLASTBufferQueue(11267): [VRI[S2SRewardVideoActivity]#88](f:0,a:2) Applying pending transactions on dtor 1
+09-07 15:17:07.835 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:17:07.836 D/wm_log==(11267): WMRewardAd load start
+09-07 15:17:07.836 D/wm_log==(11267): fetch reward ad 
+09-07 15:17:07.836 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:17:07.836 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:17:07.904 E/openDeeplink(11267): count:0;onActivityDestroyedcom.fl.saas.s2s.sdk.ad.video.reward.S2SRewardVideoActivity@9acf803
+09-07 15:17:07.926 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:17:08.126 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:17:08.329 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:17:08.392 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:17:11.752 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:17:11.753 D/wm_log==(11267): WMRewardAd load start
+09-07 15:17:11.753 D/wm_log==(11267): fetch reward ad 
+09-07 15:17:11.753 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:17:11.753 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:17:11.783 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:17:12.054 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:17:12.211 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:17:12.345 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:17:12.727 E/ADVISTA (11267): reward video countdown time:15.0
+09-07 15:18:38.104 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:18:38.104 D/wm_log==(11267): WMRewardAd load start
+09-07 15:18:38.104 D/wm_log==(11267): fetch reward ad 
+09-07 15:18:38.104 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:18:38.104 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:18:38.131 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:18:38.333 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:18:38.598 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:18:38.772 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:18:41.206 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:18:41.206 D/wm_log==(11267): WMRewardAd load start
+09-07 15:18:41.207 D/wm_log==(11267): fetch reward ad 
+09-07 15:18:41.207 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:18:41.207 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:18:41.223 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:18:41.337 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:18:41.496 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:18:41.831 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:18:44.882 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:18:44.882 D/wm_log==(11267): WMRewardAd load start
+09-07 15:18:44.882 D/wm_log==(11267): fetch reward ad 
+09-07 15:18:44.882 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:18:44.882 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:18:44.917 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:18:45.206 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:18:45.277 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:18:45.344 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:18:47.683 W/Glide   (11267): Load failed for [https://hyt-polymer.oss-cn-beijing.aliyuncs.com/2026-05-15/f052e033259d4f6997c572dee8692ef7.png] with dimensions [1080x2124]
+09-07 15:18:48.683 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:18:48.683 D/wm_log==(11267): WMRewardAd load start
+09-07 15:18:48.683 D/wm_log==(11267): fetch reward ad 
+09-07 15:18:48.683 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:18:48.683 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:18:48.703 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:18:48.959 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:18:49.121 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:18:49.156 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:18:52.285 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:18:52.285 D/wm_log==(11267): WMRewardAd load start
+09-07 15:18:52.285 D/wm_log==(11267): fetch reward ad 
+09-07 15:18:52.285 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:18:52.285 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:18:52.304 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:18:52.396 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:18:52.521 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:18:52.773 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:18:57.988 E/ADVISTA (11267): reward video countdown time:15.0
+09-07 15:19:40.494 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:19:40.494 D/wm_log==(11267): WMRewardAd load start
+09-07 15:19:40.494 D/wm_log==(11267): fetch reward ad 
+09-07 15:19:40.494 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:19:40.494 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:19:40.574 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:19:40.748 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:19:40.972 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:19:41.007 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:19:42.553 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:19:42.553 D/wm_log==(11267): WMRewardAd load start
+09-07 15:19:42.553 D/wm_log==(11267): fetch reward ad 
+09-07 15:19:42.553 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:19:42.554 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:19:42.628 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:19:42.885 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:19:43.000 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:19:43.026 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:19:46.280 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:19:46.281 D/wm_log==(11267): WMRewardAd load start
+09-07 15:19:46.281 D/wm_log==(11267): fetch reward ad 
+09-07 15:19:46.281 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:19:46.281 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:19:46.299 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:19:46.524 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:19:46.633 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:19:46.805 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:19:49.826 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:19:49.826 D/wm_log==(11267): WMRewardAd load start
+09-07 15:19:49.826 D/wm_log==(11267): fetch reward ad 
+09-07 15:19:49.826 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:19:49.826 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:19:49.852 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:19:50.083 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:19:50.233 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:19:50.364 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:19:51.547 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:19:51.547 D/wm_log==(11267): WMRewardAd load start
+09-07 15:19:51.547 D/wm_log==(11267): fetch reward ad 
+09-07 15:19:51.547 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:19:51.547 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:19:51.615 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:19:51.691 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:19:51.701 D/HARDCODER(20237): [protocol.h,requestUnifyCpuIOThreadCoreGpu:1190]"requestUnifyCpuIOThreadCoreGpu requestid:1788765591700856, scene:201, action:127040, cpulevel:2, iol
+evel:2, bindlen:0, gpulevel:1, timeoutms:1023"
+09-07 15:19:51.701 D/HARDCODER(20237): [com_tencent_mm_hardcoder_HardCoderJNI.cpp,Java_com_tencent_mm_hardcoder_HardCoderJNI_requestUnifyCpuIOThreadCoreGpu:358]"requestUnifyCpuIOThreadCore
+Gpu, requestId:1788765591700856, scene:201, action:127040, cpulevel:2, iolevel:2, bindtids len:1, " "gpulevel:0 timeout:1023 tid:20336 timestamp:" PRId64
+09-07 15:19:51.757 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:19:51.949 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:19:52.169 E/ADVISTA (11267): reward video countdown time:15.0
+09-07 15:19:54.428 I/chromium(15811): [15875:0907/151954.428126:INFO:runner.cc(65)] mmcronet::quic::timeout-guard tid 15914
+09-07 15:19:55.969 D/HARDCODER(20237): [protocol.h,requestUnifyCpuIOThreadCoreGpu:1190]"requestUnifyCpuIOThreadCoreGpu requestid:1788765595968780, scene:201, action:127040, cpulevel:2, iol
+evel:2, bindlen:0, gpulevel:1, timeoutms:1023"
+09-07 15:19:55.969 D/HARDCODER(20237): [com_tencent_mm_hardcoder_HardCoderJNI.cpp,Java_com_tencent_mm_hardcoder_HardCoderJNI_requestUnifyCpuIOThreadCoreGpu:358]"requestUnifyCpuIOThreadCore
+Gpu, requestId:1788765595968780, scene:201, action:127040, cpulevel:2, iolevel:2, bindtids len:1, " "gpulevel:0 timeout:1023 tid:20336 timestamp:" PRId64
+09-07 15:20:56.653 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:20:56.932 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:20:59.639 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:20:59.833 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:03.530 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:21:03.858 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:07.135 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:21:07.762 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:10.636 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:21:10.968 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:14.243 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:21:14.422 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:17.770 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:21:18.084 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:21.246 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:21:21.589 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:24.926 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:21:25.170 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:28.488 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:21:28.710 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:32.082 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:21:32.321 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:34.691 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:21:34.941 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:38.319 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:21:39.115 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:21:46.719 E/ADVISTA (11267): reward video countdown time:15.0
+09-07 15:22:02.837 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:03.091 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:05.858 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:06.079 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:06.848 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:07.227 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:10.888 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:10.896 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:12.045 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:12.391 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:15.756 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:15.956 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:18.441 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:18.678 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:19.004 E/ADVISTA (11267): reward video countdown time:30.0
+09-07 15:22:28.688 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:29.014 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:31.732 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:31.999 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:35.429 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:35.678 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:37.999 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:38.189 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:41.485 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:41.785 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:45.119 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:45.314 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:45.970 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:46.293 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:49.550 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:49.831 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:53.125 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:53.277 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:54.167 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:54.419 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:22:57.611 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:22:57.936 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:01.413 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:01.605 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:04.882 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:05.187 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:08.441 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:08.880 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:12.053 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:12.248 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:15.844 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:15.924 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:18.265 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:18.577 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:19.449 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:19.782 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:20.071 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:20.324 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:23.839 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:24.084 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:27.326 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:27.668 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:31.007 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:31.332 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:34.646 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:34.834 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:38.248 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:38.459 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:41.524 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:23:41.525 D/wm_log==(11267): WMRewardAd load start
+09-07 15:23:41.525 D/wm_log==(11267): fetch reward ad 
+09-07 15:23:41.525 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:23:41.525 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:23:41.567 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:23:41.668 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:23:41.809 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:41.987 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:45.161 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:23:45.162 D/wm_log==(11267): WMRewardAd load start
+09-07 15:23:45.162 D/wm_log==(11267): fetch reward ad 
+09-07 15:23:45.162 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:23:45.162 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:23:45.199 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:23:45.406 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:45.558 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:23:45.658 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:48.958 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:23:48.958 D/wm_log==(11267): WMRewardAd load start
+09-07 15:23:48.959 D/wm_log==(11267): fetch reward ad 
+09-07 15:23:48.959 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:23:48.959 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:23:48.997 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:23:49.094 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:23:49.239 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:49.474 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:52.579 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:23:52.579 D/wm_log==(11267): WMRewardAd load start
+09-07 15:23:52.579 D/wm_log==(11267): fetch reward ad 
+09-07 15:23:52.579 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:23:52.579 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:23:52.606 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:23:52.638 I/System.out( 4882): HomeRenderOrchestrator stage1 timeout T1 force reach
+09-07 15:23:52.685 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:52.997 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:23:53.132 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:23:56.465 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:23:56.465 D/wm_log==(11267): WMRewardAd load start
+09-07 15:23:56.465 D/wm_log==(11267): fetch reward ad 
+09-07 15:23:56.465 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:23:56.465 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:23:56.516 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:23:56.630 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:23:56.800 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:23:57.083 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:00.093 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:24:00.093 D/wm_log==(11267): WMRewardAd load start
+09-07 15:24:00.093 D/wm_log==(11267): fetch reward ad 
+09-07 15:24:00.093 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:24:00.093 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:24:00.135 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:24:00.327 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:00.524 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:24:00.585 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:03.894 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:04.208 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:07.224 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:24:07.224 D/wm_log==(11267): WMRewardAd load start
+09-07 15:24:07.224 D/wm_log==(11267): fetch reward ad 
+09-07 15:24:07.224 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:24:07.224 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:24:07.264 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:24:07.369 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:24:07.463 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:07.724 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:10.771 D/WM_UNIAD_ADAPTER==(11267): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:24:10.772 D/wm_log==(11267): WMRewardAd load start
+09-07 15:24:10.772 D/wm_log==(11267): fetch reward ad 
+09-07 15:24:10.772 D/wm_log==(11267): WMRewardAd adWidth=0
+09-07 15:24:10.772 D/wm_log==(11267): WMRewardAd adHeight=0
+09-07 15:24:10.806 D/BeiZis  (11267):  request RewardedVideoAd adUnitId:133996
+09-07 15:24:11.045 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:11.168 D/BeiZis  (11267): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:24:11.278 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:14.562 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:14.775 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:15.409 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:15.713 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:19.179 I/g       (11267): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:19.407 E/CustomYTRewardAd(11267): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:28.284 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:28.312 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:31.840 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:32.304 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:35.566 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:35.821 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:39.281 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:39.550 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:42.928 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:43.197 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:46.479 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:46.723 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:49.974 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:50.453 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:53.772 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:53.919 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:24:57.512 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:24:57.641 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:00.806 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:01.189 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:04.446 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:04.799 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:08.087 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:08.363 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:11.455 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:11.455 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:11.456 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:11.456 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:11.456 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:11.483 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:11.685 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:11.804 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:11.963 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:14.804 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:14.804 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:14.805 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:14.805 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:14.805 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:14.832 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:14.921 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:15.089 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:15.285 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:18.359 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:18.360 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:18.360 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:18.360 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:18.360 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:18.393 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:18.663 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:18.792 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:18.868 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:21.896 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:21.897 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:21.898 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:21.898 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:21.898 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:21.930 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:22.161 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:22.330 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:22.445 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:25.509 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:25.509 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:25.512 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:25.512 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:25.512 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:25.527 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:25.652 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:25.801 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:26.117 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:29.131 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:29.131 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:29.131 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:29.131 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:29.131 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:29.153 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:29.408 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:29.560 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:29.670 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:32.695 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:32.695 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:32.695 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:32.695 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:32.695 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:32.733 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:32.986 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:33.153 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:33.497 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:36.525 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:36.525 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:36.525 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:36.526 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:36.526 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:36.555 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:36.823 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:36.956 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:37.057 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:40.070 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:40.070 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:40.070 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:40.071 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:40.071 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:40.099 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:40.193 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:40.319 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:40.646 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:43.660 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:43.661 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:43.661 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:43.661 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:43.661 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:43.692 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:43.941 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:44.084 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:44.154 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:47.423 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:47.423 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:47.424 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:47.424 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:47.424 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:47.459 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:47.524 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:47.686 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:47.923 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:49.023 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:49.023 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:49.024 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:49.024 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:49.024 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:49.055 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:49.197 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:49.438 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:49.567 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:52.585 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:52.585 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:52.585 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:52.585 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:52.585 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:52.603 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:52.848 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:52.895 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:53.025 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:56.153 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:56.153 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:56.153 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:56.154 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:56.154 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:56.183 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:56.369 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:25:56.561 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:56.653 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:25:59.795 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:25:59.795 D/wm_log==(24061): WMRewardAd load start
+09-07 15:25:59.795 D/wm_log==(24061): fetch reward ad 
+09-07 15:25:59.796 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:25:59.796 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:25:59.833 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:25:59.919 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:25:59.929 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:00.295 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:03.577 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:03.577 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:03.577 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:03.577 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:03.577 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:03.601 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:05.244 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:05.441 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:05.618 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:08.642 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:08.643 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:08.643 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:08.643 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:08.643 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:08.673 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:08.767 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:08.901 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:09.110 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:09.757 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:09.757 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:09.757 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:09.757 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:09.757 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:09.791 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:09.845 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:10.202 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:10.242 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:13.426 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:13.426 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:13.427 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:13.427 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:13.427 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:13.458 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:13.535 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:13.645 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:13.915 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:17.083 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:17.083 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:17.084 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:17.084 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:17.084 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:17.121 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:17.360 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:17.446 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:17.565 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:20.660 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:20.660 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:20.660 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:20.660 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:20.661 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:20.693 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:20.770 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:20.776 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:21.169 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:23.948 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:23.949 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:23.949 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:23.949 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:23.949 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:23.986 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:24.200 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:24.403 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:24.434 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:25.547 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:25.547 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:25.547 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:25.547 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:25.547 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:25.602 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:25.861 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:25.871 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:26.072 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:29.386 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:29.387 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:29.387 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:29.387 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:29.387 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:29.419 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:29.646 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:29.802 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:29.883 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:30.215 W/Glide   (24061): Load failed for [https://xingyeapp1-1432341846.cos.ap-guangzhou.myqcloud.com/2026-08-27/07a3b711cba748ca844b63ea6e5de87e.exe] with dimensions [1080x21
+24]
+09-07 15:26:32.912 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:32.913 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:32.913 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:32.913 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:32.913 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:32.942 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:33.163 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:33.362 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:33.533 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:36.549 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:36.549 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:36.550 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:36.550 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:36.587 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:36.806 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:37.003 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:37.045 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:40.218 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:40.219 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:40.220 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:40.220 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:40.220 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:40.261 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:40.347 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:40.536 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:40.824 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:43.849 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:43.849 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:43.850 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:43.850 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:43.850 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:43.882 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:44.072 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:44.206 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:44.342 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:47.412 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:47.412 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:47.413 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:47.413 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:47.413 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:47.438 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:47.643 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:26:47.811 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:47.951 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:26:50.965 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:26:50.966 D/wm_log==(24061): WMRewardAd load start
+09-07 15:26:50.966 D/wm_log==(24061): fetch reward ad 
+09-07 15:26:50.966 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:26:50.967 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:26:50.999 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:26:51.090 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:26:51.238 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:27:17.828 D/YTNativeEvolution(24061): a: reward_time_text_view layout: Layout{point=Point{x=16, y=20}, anchor=null, size=Size{width=200, height=28, ratio=0.0}, align=null}
+09-07 15:27:17.828 D/YTNativeEvolution(24061): a: reward_time_text_view rect: Rect{point=Point{x=16, y=20}, size=Size{width=200, height=28, ratio=0.0}}
+09-07 15:27:17.854 E/YTNativeEvolution(24061): d: getElementView : mediaContainer, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.tem
+platesdk.re.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=b_b_s_s_scs1, linearContainer=b_b_s_1022, ad_logo=al_0, mute=vs_0_mute, video=
+vs_0, title=b_b_s_10221, cta=b_b_s_20003, appIcon=b_b_s_1021, sixElements=s_e_0, adContainer=100, text=ad_text_icon_view, close=close_s_0, desc=b_b_s_10222}, holderMap: {b_b_s_20003=com.ga
+meley.templatesdk.re.core.ComponentViewHolder@1ed0079, bottom_bar_style_0_container=com.gameley.templatesdk.re.core.ComponentViewHolder@ea441be, blur_background=com.gameley.templatesdk.re.
+core.ComponentViewHolder@eec121f, b_b_s_s_scs2=com.gameley.templatesdk.re.core.ComponentViewHolder@b03596c, b_b_s_s_scs1=com.gameley.templatesdk.re.core.ComponentViewHolder@b342b35, ad_tex
+t_icon_view=com.gameley.templatesdk.re.core.ComponentViewHolder@a5ebbca, s_e_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@fc9b13b, s_e_0=com.gameley.templatesdk.re.core.Componen
+tViewHolder@b82a058, b_b_s_102=com.gameley.templatesdk.re.core.ComponentViewHolder@f8945b1, b_b_s_10222=com.gameley.templatesdk.re.core.ComponentViewHolder@894ca96, b_b_s_101=com.gameley.t
+emplatesdk.re.core.ComponentViewHolder@3182617, b_b_s_10221=com.gameley.templatesdk.re.core.ComponentViewHolder@9ad6a04, vs_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@83b8bed,
+ b_b_s_1021=com.gameley.templatesdk.re.core.ComponentViewHolder@c4afa22, 100=com.gameley.templatesdk.re.core.ComponentViewHolder@c6f0cb3, al_0=com.gameley.templatesdk.re.core.ComponentView
+Holder@6992270, b_b_s_1022=com.gameley.templatesdk.re.core.ComponentViewHolder@a51f9e9, vs_0_mute=com.gameley.templatesdk.re.core.ComponentViewHolder@242966e, reward_time_text_view=com.gam
+eley.templatesdk.re.core.ComponentViewHolder@743c10f, vs_0=com.gameley.templatesdk.re.core.ComponentViewHolder@d45f59c, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a474ba5, c
+lose_s_0=com.gameley.templatesdk.re.core.ComponentViewHolder@5ab7a, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@7055f2b}
+09-07 15:27:17.854 E/YTNativeEvolution(24061): d: getElementView : interaction, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.templa
+tesdk.re.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=b_b_s_s_scs1, linearContainer=b_b_s_1022, ad_logo=al_0, mute=vs_0_mute, video=vs_
+0, title=b_b_s_10221, cta=b_b_s_20003, appIcon=b_b_s_1021, sixElements=s_e_0, adContainer=100, text=ad_text_icon_view, close=close_s_0, desc=b_b_s_10222}, holderMap: {b_b_s_20003=com.gamel
+ey.templatesdk.re.core.ComponentViewHolder@1ed0079, bottom_bar_style_0_container=com.gameley.templatesdk.re.core.ComponentViewHolder@ea441be, blur_background=com.gameley.templatesdk.re.cor
+e.ComponentViewHolder@eec121f, b_b_s_s_scs2=com.gameley.templatesdk.re.core.ComponentViewHolder@b03596c, b_b_s_s_scs1=com.gameley.templatesdk.re.core.ComponentViewHolder@b342b35, ad_text_i
+con_view=com.gameley.templatesdk.re.core.ComponentViewHolder@a5ebbca, s_e_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@fc9b13b, s_e_0=com.gameley.templatesdk.re.core.ComponentVi
+ewHolder@b82a058, b_b_s_102=com.gameley.templatesdk.re.core.ComponentViewHolder@f8945b1, b_b_s_10222=com.gameley.templatesdk.re.core.ComponentViewHolder@894ca96, b_b_s_101=com.gameley.temp
+latesdk.re.core.ComponentViewHolder@3182617, b_b_s_10221=com.gameley.templatesdk.re.core.ComponentViewHolder@9ad6a04, vs_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@83b8bed, b_
+b_s_1021=com.gameley.templatesdk.re.core.ComponentViewHolder@c4afa22, 100=com.gameley.templatesdk.re.core.ComponentViewHolder@c6f0cb3, al_0=com.gameley.templatesdk.re.core.ComponentViewHol
+der@6992270, b_b_s_1022=com.gameley.templatesdk.re.core.ComponentViewHolder@a51f9e9, vs_0_mute=com.gameley.templatesdk.re.core.ComponentViewHolder@242966e, reward_time_text_view=com.gamele
+y.templatesdk.re.core.ComponentViewHolder@743c10f, vs_0=com.gameley.templatesdk.re.core.ComponentViewHolder@d45f59c, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a474ba5, clos
+e_s_0=com.gameley.templatesdk.re.core.ComponentViewHolder@5ab7a, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@7055f2b}
+09-07 15:27:17.855 E/YTNativeEvolution(24061): d: getElementView : mainImage, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.template
+sdk.re.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=b_b_s_s_scs1, linearContainer=b_b_s_1022, ad_logo=al_0, mute=vs_0_mute, video=vs_0,
+ title=b_b_s_10221, cta=b_b_s_20003, appIcon=b_b_s_1021, sixElements=s_e_0, adContainer=100, text=ad_text_icon_view, close=close_s_0, desc=b_b_s_10222}, holderMap: {b_b_s_20003=com.gameley
+.templatesdk.re.core.ComponentViewHolder@1ed0079, bottom_bar_style_0_container=com.gameley.templatesdk.re.core.ComponentViewHolder@ea441be, blur_background=com.gameley.templatesdk.re.core.
+ComponentViewHolder@eec121f, b_b_s_s_scs2=com.gameley.templatesdk.re.core.ComponentViewHolder@b03596c, b_b_s_s_scs1=com.gameley.templatesdk.re.core.ComponentViewHolder@b342b35, ad_text_ico
+n_view=com.gameley.templatesdk.re.core.ComponentViewHolder@a5ebbca, s_e_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@fc9b13b, s_e_0=com.gameley.templatesdk.re.core.ComponentView
+Holder@b82a058, b_b_s_102=com.gameley.templatesdk.re.core.ComponentViewHolder@f8945b1, b_b_s_10222=com.gameley.templatesdk.re.core.ComponentViewHolder@894ca96, b_b_s_101=com.gameley.templa
+tesdk.re.core.ComponentViewHolder@3182617, b_b_s_10221=com.gameley.templatesdk.re.core.ComponentViewHolder@9ad6a04, vs_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@83b8bed, b_b_
+s_1021=com.gameley.templatesdk.re.core.ComponentViewHolder@c4afa22, 100=com.gameley.templatesdk.re.core.ComponentViewHolder@c6f0cb3, al_0=com.gameley.templatesdk.re.core.ComponentViewHolde
+r@6992270, b_b_s_1022=com.gameley.templatesdk.re.core.ComponentViewHolder@a51f9e9, vs_0_mute=com.gameley.templatesdk.re.core.ComponentViewHolder@242966e, reward_time_text_view=com.gameley.
+templatesdk.re.core.ComponentViewHolder@743c10f, vs_0=com.gameley.templatesdk.re.core.ComponentViewHolder@d45f59c, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a474ba5, close_
+s_0=com.gameley.templatesdk.re.core.ComponentViewHolder@5ab7a, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@7055f2b}
+09-07 15:27:17.855 E/YTNativeEvolution(24061): d: getElementView : skip, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.templatesdk.r
+e.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=b_b_s_s_scs1, linearContainer=b_b_s_1022, ad_logo=al_0, mute=vs_0_mute, video=vs_0, titl
+e=b_b_s_10221, cta=b_b_s_20003, appIcon=b_b_s_1021, sixElements=s_e_0, adContainer=100, text=ad_text_icon_view, close=close_s_0, desc=b_b_s_10222}, holderMap: {b_b_s_20003=com.gameley.temp
+latesdk.re.core.ComponentViewHolder@1ed0079, bottom_bar_style_0_container=com.gameley.templatesdk.re.core.ComponentViewHolder@ea441be, blur_background=com.gameley.templatesdk.re.core.Compo
+nentViewHolder@eec121f, b_b_s_s_scs2=com.gameley.templatesdk.re.core.ComponentViewHolder@b03596c, b_b_s_s_scs1=com.gameley.templatesdk.re.core.ComponentViewHolder@b342b35, ad_text_icon_vie
+w=com.gameley.templatesdk.re.core.ComponentViewHolder@a5ebbca, s_e_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@fc9b13b, s_e_0=com.gameley.templatesdk.re.core.ComponentViewHolde
+r@b82a058, b_b_s_102=com.gameley.templatesdk.re.core.ComponentViewHolder@f8945b1, b_b_s_10222=com.gameley.templatesdk.re.core.ComponentViewHolder@894ca96, b_b_s_101=com.gameley.templatesdk
+.re.core.ComponentViewHolder@3182617, b_b_s_10221=com.gameley.templatesdk.re.core.ComponentViewHolder@9ad6a04, vs_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@83b8bed, b_b_s_102
+1=com.gameley.templatesdk.re.core.ComponentViewHolder@c4afa22, 100=com.gameley.templatesdk.re.core.ComponentViewHolder@c6f0cb3, al_0=com.gameley.templatesdk.re.core.ComponentViewHolder@699
+2270, b_b_s_1022=com.gameley.templatesdk.re.core.ComponentViewHolder@a51f9e9, vs_0_mute=com.gameley.templatesdk.re.core.ComponentViewHolder@242966e, reward_time_text_view=com.gameley.templ
+atesdk.re.core.ComponentViewHolder@743c10f, vs_0=com.gameley.templatesdk.re.core.ComponentViewHolder@d45f59c, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a474ba5, close_s_0=c
+om.gameley.templatesdk.re.core.ComponentViewHolder@5ab7a, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@7055f2b}
+09-07 15:27:17.855 E/YTNativeEvolution(24061): d: getElementView : ctaDownload, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.templa
+tesdk.re.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=b_b_s_s_scs1, linearContainer=b_b_s_1022, ad_logo=al_0, mute=vs_0_mute, video=vs_
+0, title=b_b_s_10221, cta=b_b_s_20003, appIcon=b_b_s_1021, sixElements=s_e_0, adContainer=100, text=ad_text_icon_view, close=close_s_0, desc=b_b_s_10222}, holderMap: {b_b_s_20003=com.gamel
+ey.templatesdk.re.core.ComponentViewHolder@1ed0079, bottom_bar_style_0_container=com.gameley.templatesdk.re.core.ComponentViewHolder@ea441be, blur_background=com.gameley.templatesdk.re.cor
+e.ComponentViewHolder@eec121f, b_b_s_s_scs2=com.gameley.templatesdk.re.core.ComponentViewHolder@b03596c, b_b_s_s_scs1=com.gameley.templatesdk.re.core.ComponentViewHolder@b342b35, ad_text_i
+con_view=com.gameley.templatesdk.re.core.ComponentViewHolder@a5ebbca, s_e_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@fc9b13b, s_e_0=com.gameley.templatesdk.re.core.ComponentVi
+ewHolder@b82a058, b_b_s_102=com.gameley.templatesdk.re.core.ComponentViewHolder@f8945b1, b_b_s_10222=com.gameley.templatesdk.re.core.ComponentViewHolder@894ca96, b_b_s_101=com.gameley.temp
+latesdk.re.core.ComponentViewHolder@3182617, b_b_s_10221=com.gameley.templatesdk.re.core.ComponentViewHolder@9ad6a04, vs_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@83b8bed, b_
+b_s_1021=com.gameley.templatesdk.re.core.ComponentViewHolder@c4afa22, 100=com.gameley.templatesdk.re.core.ComponentViewHolder@c6f0cb3, al_0=com.gameley.templatesdk.re.core.ComponentViewHol
+der@6992270, b_b_s_1022=com.gameley.templatesdk.re.core.ComponentViewHolder@a51f9e9, vs_0_mute=com.gameley.templatesdk.re.core.ComponentViewHolder@242966e, reward_time_text_view=com.gamele
+y.templatesdk.re.core.ComponentViewHolder@743c10f, vs_0=com.gameley.templatesdk.re.core.ComponentViewHolder@d45f59c, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a474ba5, clos
+e_s_0=com.gameley.templatesdk.re.core.ComponentViewHolder@5ab7a, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@7055f2b}
+09-07 15:27:17.856 E/YTNativeEvolution(24061): d: getElementView : , error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.templatesdk.re.co
+re.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=b_b_s_s_scs1, linearContainer=b_b_s_1022, ad_logo=al_0, mute=vs_0_mute, video=vs_0, title=b_
+b_s_10221, cta=b_b_s_20003, appIcon=b_b_s_1021, sixElements=s_e_0, adContainer=100, text=ad_text_icon_view, close=close_s_0, desc=b_b_s_10222}, holderMap: {b_b_s_20003=com.gameley.template
+sdk.re.core.ComponentViewHolder@1ed0079, bottom_bar_style_0_container=com.gameley.templatesdk.re.core.ComponentViewHolder@ea441be, blur_background=com.gameley.templatesdk.re.core.Component
+ViewHolder@eec121f, b_b_s_s_scs2=com.gameley.templatesdk.re.core.ComponentViewHolder@b03596c, b_b_s_s_scs1=com.gameley.templatesdk.re.core.ComponentViewHolder@b342b35, ad_text_icon_view=co
+m.gameley.templatesdk.re.core.ComponentViewHolder@a5ebbca, s_e_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@fc9b13b, s_e_0=com.gameley.templatesdk.re.core.ComponentViewHolder@b8
+2a058, b_b_s_102=com.gameley.templatesdk.re.core.ComponentViewHolder@f8945b1, b_b_s_10222=com.gameley.templatesdk.re.core.ComponentViewHolder@894ca96, b_b_s_101=com.gameley.templatesdk.re.
+core.ComponentViewHolder@3182617, b_b_s_10221=com.gameley.templatesdk.re.core.ComponentViewHolder@9ad6a04, vs_c_0=com.gameley.templatesdk.re.core.ComponentViewHolder@83b8bed, b_b_s_1021=co
+m.gameley.templatesdk.re.core.ComponentViewHolder@c4afa22, 100=com.gameley.templatesdk.re.core.ComponentViewHolder@c6f0cb3, al_0=com.gameley.templatesdk.re.core.ComponentViewHolder@6992270
+, b_b_s_1022=com.gameley.templatesdk.re.core.ComponentViewHolder@a51f9e9, vs_0_mute=com.gameley.templatesdk.re.core.ComponentViewHolder@242966e, reward_time_text_view=com.gameley.templates
+dk.re.core.ComponentViewHolder@743c10f, vs_0=com.gameley.templatesdk.re.core.ComponentViewHolder@d45f59c, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a474ba5, close_s_0=com.g
+ameley.templatesdk.re.core.ComponentViewHolder@5ab7a, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@7055f2b}
+09-07 15:27:45.260 D/YTNativeEvolution(24061): a: reward_time_text_view layout: Layout{point=Point{x=16, y=20}, anchor=null, size=Size{width=200, height=28, ratio=0.0}, align=null}
+09-07 15:27:45.260 D/YTNativeEvolution(24061): a: reward_time_text_view rect: Rect{point=Point{x=16, y=20}, size=Size{width=200, height=28, ratio=0.0}}
+09-07 15:27:45.268 E/YTNativeEvolution(24061): d: getElementView : mediaContainer, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.tem
+platesdk.re.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=blur_background, cta=100015, appIcon=100011, sixElements=s_e_0, linearContaine
+r=10001, ad_logo=al_0, text=reward_time_text_view, title=100012, close=close_s_0, desc=100013}, holderMap: {blur_background=com.gameley.templatesdk.re.core.ComponentViewHolder@28bef80, 100
+011=com.gameley.templatesdk.re.core.ComponentViewHolder@58e29b9, ad_text_icon_view=com.gameley.templatesdk.re.core.ComponentViewHolder@c5451fe, s_e_c_0=com.gameley.templatesdk.re.core.Comp
+onentViewHolder@9567d5f, s_e_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a8083ac, al_0=com.gameley.templatesdk.re.core.ComponentViewHolder@3dea875, reward_time_text_view=com.game
+ley.templatesdk.re.core.ComponentViewHolder@c9f900a, 1002=com.gameley.templatesdk.re.core.ComponentViewHolder@f8f907b, 100012=com.gameley.templatesdk.re.core.ComponentViewHolder@8482e98, 1
+00013=com.gameley.templatesdk.re.core.ComponentViewHolder@67e56f1, 10001=com.gameley.templatesdk.re.core.ComponentViewHolder@1aea2d6, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHol
+der@47cb957, 100015=com.gameley.templatesdk.re.core.ComponentViewHolder@9dd9c44, 100016=com.gameley.templatesdk.re.core.ComponentViewHolder@990712d, close_s_0=com.gameley.templatesdk.re.co
+re.ComponentViewHolder@aca1662, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@ca993f3}
+09-07 15:27:45.268 E/YTNativeEvolution(24061): d: getElementView : interaction, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.templa
+tesdk.re.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=blur_background, cta=100015, appIcon=100011, sixElements=s_e_0, linearContainer=1
+0001, ad_logo=al_0, text=reward_time_text_view, title=100012, close=close_s_0, desc=100013}, holderMap: {blur_background=com.gameley.templatesdk.re.core.ComponentViewHolder@28bef80, 100011
+=com.gameley.templatesdk.re.core.ComponentViewHolder@58e29b9, ad_text_icon_view=com.gameley.templatesdk.re.core.ComponentViewHolder@c5451fe, s_e_c_0=com.gameley.templatesdk.re.core.Compone
+ntViewHolder@9567d5f, s_e_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a8083ac, al_0=com.gameley.templatesdk.re.core.ComponentViewHolder@3dea875, reward_time_text_view=com.gameley
+.templatesdk.re.core.ComponentViewHolder@c9f900a, 1002=com.gameley.templatesdk.re.core.ComponentViewHolder@f8f907b, 100012=com.gameley.templatesdk.re.core.ComponentViewHolder@8482e98, 1000
+13=com.gameley.templatesdk.re.core.ComponentViewHolder@67e56f1, 10001=com.gameley.templatesdk.re.core.ComponentViewHolder@1aea2d6, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder
+@47cb957, 100015=com.gameley.templatesdk.re.core.ComponentViewHolder@9dd9c44, 100016=com.gameley.templatesdk.re.core.ComponentViewHolder@990712d, close_s_0=com.gameley.templatesdk.re.core.
+ComponentViewHolder@aca1662, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@ca993f3}
+09-07 15:27:45.268 E/YTNativeEvolution(24061): d: getElementView : mainImage, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.template
+sdk.re.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=blur_background, cta=100015, appIcon=100011, sixElements=s_e_0, linearContainer=100
+01, ad_logo=al_0, text=reward_time_text_view, title=100012, close=close_s_0, desc=100013}, holderMap: {blur_background=com.gameley.templatesdk.re.core.ComponentViewHolder@28bef80, 100011=c
+om.gameley.templatesdk.re.core.ComponentViewHolder@58e29b9, ad_text_icon_view=com.gameley.templatesdk.re.core.ComponentViewHolder@c5451fe, s_e_c_0=com.gameley.templatesdk.re.core.Component
+ViewHolder@9567d5f, s_e_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a8083ac, al_0=com.gameley.templatesdk.re.core.ComponentViewHolder@3dea875, reward_time_text_view=com.gameley.t
+emplatesdk.re.core.ComponentViewHolder@c9f900a, 1002=com.gameley.templatesdk.re.core.ComponentViewHolder@f8f907b, 100012=com.gameley.templatesdk.re.core.ComponentViewHolder@8482e98, 100013
+=com.gameley.templatesdk.re.core.ComponentViewHolder@67e56f1, 10001=com.gameley.templatesdk.re.core.ComponentViewHolder@1aea2d6, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder@4
+7cb957, 100015=com.gameley.templatesdk.re.core.ComponentViewHolder@9dd9c44, 100016=com.gameley.templatesdk.re.core.ComponentViewHolder@990712d, close_s_0=com.gameley.templatesdk.re.core.Co
+mponentViewHolder@aca1662, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@ca993f3}
+09-07 15:27:45.269 E/YTNativeEvolution(24061): d: getElementView : skip, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.templatesdk.r
+e.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=blur_background, cta=100015, appIcon=100011, sixElements=s_e_0, linearContainer=10001, a
+d_logo=al_0, text=reward_time_text_view, title=100012, close=close_s_0, desc=100013}, holderMap: {blur_background=com.gameley.templatesdk.re.core.ComponentViewHolder@28bef80, 100011=com.ga
+meley.templatesdk.re.core.ComponentViewHolder@58e29b9, ad_text_icon_view=com.gameley.templatesdk.re.core.ComponentViewHolder@c5451fe, s_e_c_0=com.gameley.templatesdk.re.core.ComponentViewH
+older@9567d5f, s_e_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a8083ac, al_0=com.gameley.templatesdk.re.core.ComponentViewHolder@3dea875, reward_time_text_view=com.gameley.templa
+tesdk.re.core.ComponentViewHolder@c9f900a, 1002=com.gameley.templatesdk.re.core.ComponentViewHolder@f8f907b, 100012=com.gameley.templatesdk.re.core.ComponentViewHolder@8482e98, 100013=com.
+gameley.templatesdk.re.core.ComponentViewHolder@67e56f1, 10001=com.gameley.templatesdk.re.core.ComponentViewHolder@1aea2d6, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder@47cb95
+7, 100015=com.gameley.templatesdk.re.core.ComponentViewHolder@9dd9c44, 100016=com.gameley.templatesdk.re.core.ComponentViewHolder@990712d, close_s_0=com.gameley.templatesdk.re.core.Compone
+ntViewHolder@aca1662, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@ca993f3}
+09-07 15:27:45.269 E/YTNativeEvolution(24061): d: getElementView : ctaDownload, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.templa
+tesdk.re.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=blur_background, cta=100015, appIcon=100011, sixElements=s_e_0, linearContainer=1
+0001, ad_logo=al_0, text=reward_time_text_view, title=100012, close=close_s_0, desc=100013}, holderMap: {blur_background=com.gameley.templatesdk.re.core.ComponentViewHolder@28bef80, 100011
+=com.gameley.templatesdk.re.core.ComponentViewHolder@58e29b9, ad_text_icon_view=com.gameley.templatesdk.re.core.ComponentViewHolder@c5451fe, s_e_c_0=com.gameley.templatesdk.re.core.Compone
+ntViewHolder@9567d5f, s_e_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a8083ac, al_0=com.gameley.templatesdk.re.core.ComponentViewHolder@3dea875, reward_time_text_view=com.gameley
+.templatesdk.re.core.ComponentViewHolder@c9f900a, 1002=com.gameley.templatesdk.re.core.ComponentViewHolder@f8f907b, 100012=com.gameley.templatesdk.re.core.ComponentViewHolder@8482e98, 1000
+13=com.gameley.templatesdk.re.core.ComponentViewHolder@67e56f1, 10001=com.gameley.templatesdk.re.core.ComponentViewHolder@1aea2d6, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder
+@47cb957, 100015=com.gameley.templatesdk.re.core.ComponentViewHolder@9dd9c44, 100016=com.gameley.templatesdk.re.core.ComponentViewHolder@990712d, close_s_0=com.gameley.templatesdk.re.core.
+ComponentViewHolder@aca1662, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@ca993f3}
+09-07 15:27:45.269 E/YTNativeEvolution(24061): d: getElementView : mute, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.templatesdk.r
+e.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=blur_background, cta=100015, appIcon=100011, sixElements=s_e_0, linearContainer=10001, a
+d_logo=al_0, text=reward_time_text_view, title=100012, close=close_s_0, desc=100013}, holderMap: {blur_background=com.gameley.templatesdk.re.core.ComponentViewHolder@28bef80, 100011=com.ga
+meley.templatesdk.re.core.ComponentViewHolder@58e29b9, ad_text_icon_view=com.gameley.templatesdk.re.core.ComponentViewHolder@c5451fe, s_e_c_0=com.gameley.templatesdk.re.core.ComponentViewH
+older@9567d5f, s_e_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a8083ac, al_0=com.gameley.templatesdk.re.core.ComponentViewHolder@3dea875, reward_time_text_view=com.gameley.templa
+tesdk.re.core.ComponentViewHolder@c9f900a, 1002=com.gameley.templatesdk.re.core.ComponentViewHolder@f8f907b, 100012=com.gameley.templatesdk.re.core.ComponentViewHolder@8482e98, 100013=com.
+gameley.templatesdk.re.core.ComponentViewHolder@67e56f1, 10001=com.gameley.templatesdk.re.core.ComponentViewHolder@1aea2d6, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder@47cb95
+7, 100015=com.gameley.templatesdk.re.core.ComponentViewHolder@9dd9c44, 100016=com.gameley.templatesdk.re.core.ComponentViewHolder@990712d, close_s_0=com.gameley.templatesdk.re.core.Compone
+ntViewHolder@aca1662, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@ca993f3}
+09-07 15:27:45.269 E/YTNativeEvolution(24061): d: getElementView : video, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.templatesdk.
+re.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=blur_background, cta=100015, appIcon=100011, sixElements=s_e_0, linearContainer=10001, 
+ad_logo=al_0, text=reward_time_text_view, title=100012, close=close_s_0, desc=100013}, holderMap: {blur_background=com.gameley.templatesdk.re.core.ComponentViewHolder@28bef80, 100011=com.g
+ameley.templatesdk.re.core.ComponentViewHolder@58e29b9, ad_text_icon_view=com.gameley.templatesdk.re.core.ComponentViewHolder@c5451fe, s_e_c_0=com.gameley.templatesdk.re.core.ComponentView
+Holder@9567d5f, s_e_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a8083ac, al_0=com.gameley.templatesdk.re.core.ComponentViewHolder@3dea875, reward_time_text_view=com.gameley.templ
+atesdk.re.core.ComponentViewHolder@c9f900a, 1002=com.gameley.templatesdk.re.core.ComponentViewHolder@f8f907b, 100012=com.gameley.templatesdk.re.core.ComponentViewHolder@8482e98, 100013=com
+.gameley.templatesdk.re.core.ComponentViewHolder@67e56f1, 10001=com.gameley.templatesdk.re.core.ComponentViewHolder@1aea2d6, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder@47cb9
+57, 100015=com.gameley.templatesdk.re.core.ComponentViewHolder@9dd9c44, 100016=com.gameley.templatesdk.re.core.ComponentViewHolder@990712d, close_s_0=com.gameley.templatesdk.re.core.Compon
+entViewHolder@aca1662, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@ca993f3}
+09-07 15:27:45.270 E/YTNativeEvolution(24061): d: getElementView : , error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.templatesdk.re.co
+re.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=blur_background, cta=100015, appIcon=100011, sixElements=s_e_0, linearContainer=10001, ad_lo
+go=al_0, text=reward_time_text_view, title=100012, close=close_s_0, desc=100013}, holderMap: {blur_background=com.gameley.templatesdk.re.core.ComponentViewHolder@28bef80, 100011=com.gamele
+y.templatesdk.re.core.ComponentViewHolder@58e29b9, ad_text_icon_view=com.gameley.templatesdk.re.core.ComponentViewHolder@c5451fe, s_e_c_0=com.gameley.templatesdk.re.core.ComponentViewHolde
+r@9567d5f, s_e_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a8083ac, al_0=com.gameley.templatesdk.re.core.ComponentViewHolder@3dea875, reward_time_text_view=com.gameley.templatesd
+k.re.core.ComponentViewHolder@c9f900a, 1002=com.gameley.templatesdk.re.core.ComponentViewHolder@f8f907b, 100012=com.gameley.templatesdk.re.core.ComponentViewHolder@8482e98, 100013=com.game
+ley.templatesdk.re.core.ComponentViewHolder@67e56f1, 10001=com.gameley.templatesdk.re.core.ComponentViewHolder@1aea2d6, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder@47cb957, 1
+00015=com.gameley.templatesdk.re.core.ComponentViewHolder@9dd9c44, 100016=com.gameley.templatesdk.re.core.ComponentViewHolder@990712d, close_s_0=com.gameley.templatesdk.re.core.ComponentVi
+ewHolder@aca1662, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@ca993f3}
+09-07 15:27:45.270 E/YTNativeEvolution(24061): d: getElementView : adContainer, error:java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View com.gameley.templa
+tesdk.re.core.ComponentViewHolder.view()' on a null object reference, typeIdMap: {container=s_e_c_0, image=blur_background, cta=100015, appIcon=100011, sixElements=s_e_0, linearContainer=1
+0001, ad_logo=al_0, text=reward_time_text_view, title=100012, close=close_s_0, desc=100013}, holderMap: {blur_background=com.gameley.templatesdk.re.core.ComponentViewHolder@28bef80, 100011
+=com.gameley.templatesdk.re.core.ComponentViewHolder@58e29b9, ad_text_icon_view=com.gameley.templatesdk.re.core.ComponentViewHolder@c5451fe, s_e_c_0=com.gameley.templatesdk.re.core.Compone
+ntViewHolder@9567d5f, s_e_0=com.gameley.templatesdk.re.core.ComponentViewHolder@a8083ac, al_0=com.gameley.templatesdk.re.core.ComponentViewHolder@3dea875, reward_time_text_view=com.gameley
+.templatesdk.re.core.ComponentViewHolder@c9f900a, 1002=com.gameley.templatesdk.re.core.ComponentViewHolder@f8f907b, 100012=com.gameley.templatesdk.re.core.ComponentViewHolder@8482e98, 1000
+13=com.gameley.templatesdk.re.core.ComponentViewHolder@67e56f1, 10001=com.gameley.templatesdk.re.core.ComponentViewHolder@1aea2d6, e_p_0=com.gameley.templatesdk.re.core.ComponentViewHolder
+@47cb957, 100015=com.gameley.templatesdk.re.core.ComponentViewHolder@9dd9c44, 100016=com.gameley.templatesdk.re.core.ComponentViewHolder@990712d, close_s_0=com.gameley.templatesdk.re.core.
+ComponentViewHolder@aca1662, 10=com.gameley.templatesdk.re.core.ComponentViewHolder@ca993f3}
+09-07 15:27:57.036 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:27:57.036 D/wm_log==(24061): WMRewardAd load start
+09-07 15:27:57.036 D/wm_log==(24061): fetch reward ad 
+09-07 15:27:57.036 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:27:57.036 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:27:57.146 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:27:57.337 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:27:57.535 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:27:57.611 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:28:00.699 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:28:00.699 D/wm_log==(24061): WMRewardAd load start
+09-07 15:28:00.700 D/wm_log==(24061): fetch reward ad 
+09-07 15:28:00.700 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:28:00.700 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:28:00.737 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:28:00.821 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:28:00.999 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:28:01.197 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:28:04.282 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:28:04.282 D/wm_log==(24061): WMRewardAd load start
+09-07 15:28:04.282 D/wm_log==(24061): fetch reward ad 
+09-07 15:28:04.282 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:28:04.283 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:28:04.299 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:28:04.548 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:28:04.723 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:28:04.818 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:28:08.117 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:28:08.117 D/wm_log==(24061): WMRewardAd load start
+09-07 15:28:08.117 D/wm_log==(24061): fetch reward ad 
+09-07 15:28:08.117 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:28:08.117 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:28:08.147 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:28:08.310 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:28:08.616 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:28:08.664 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:28:11.855 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:28:11.855 D/wm_log==(24061): WMRewardAd load start
+09-07 15:28:11.855 D/wm_log==(24061): fetch reward ad 
+09-07 15:28:11.855 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:28:11.856 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:28:11.872 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:28:12.048 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:28:12.127 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:28:12.225 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:28:13.385 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:28:13.385 D/wm_log==(24061): WMRewardAd load start
+09-07 15:28:13.386 D/wm_log==(24061): fetch reward ad 
+09-07 15:28:13.386 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:28:13.386 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:28:13.411 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:28:13.577 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:28:13.657 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:28:14.144 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:28:17.156 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:28:17.156 D/wm_log==(24061): WMRewardAd load start
+09-07 15:28:17.157 D/wm_log==(24061): fetch reward ad 
+09-07 15:28:17.157 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:28:17.157 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:28:17.184 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:28:17.387 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:28:17.502 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:28:17.556 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:28:20.582 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:28:20.582 D/wm_log==(24061): WMRewardAd load start
+09-07 15:28:20.582 D/wm_log==(24061): fetch reward ad 
+09-07 15:28:20.583 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:28:20.583 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:28:20.626 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:28:20.708 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:28:20.798 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:28:20.961 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:29:28.197 W/Glide   (24061): Load failed for [https://hyt-polymer.oss-cn-beijing.aliyuncs.com/2026-05-15/386ab3d82e794f238683f415d9dd7e47.png] with dimensions [1080x2124]
+09-07 15:30:35.998 E/ADVISTA (24061): reward video countdown time:30.0
+09-07 15:31:07.729 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:07.729 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:07.729 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:07.729 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:07.729 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:07.889 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:08.214 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:08.280 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:08.341 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:10.693 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:10.694 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:10.694 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:10.694 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:10.694 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:10.749 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:10.998 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:11.151 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:11.245 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:14.337 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:14.337 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:14.337 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:14.337 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:14.337 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:14.368 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:14.447 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:14.651 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:14.884 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:18.014 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:18.014 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:18.014 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:18.014 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:18.014 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:18.039 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:18.284 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:18.510 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:21.527 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:21.527 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:21.528 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:21.528 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:21.528 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:21.551 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:21.806 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:21.953 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:22.004 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:25.055 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:25.055 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:25.055 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:25.055 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:25.055 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:25.072 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:25.173 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:25.177 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:25.513 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:28.722 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:28.722 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:28.722 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:28.723 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:28.723 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:28.751 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:29.048 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:29.165 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:29.269 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:32.299 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:32.299 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:32.299 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:32.299 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:32.299 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:32.319 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:32.559 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:32.717 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:32.833 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:35.851 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:35.851 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:35.851 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:35.851 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:35.851 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:35.869 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:36.321 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:36.700 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:37.241 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:40.259 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:40.259 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:40.260 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:40.261 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:40.261 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:40.311 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:40.510 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:40.666 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:40.677 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:41.068 E/byas    ( 6790): java.util.concurrent.TimeoutException: Timed out waiting for Task
+09-07 15:31:41.147 D/HARDCODER(20237): [protocol.h,requestUnifyCpuIOThreadCoreGpu:1190]"requestUnifyCpuIOThreadCoreGpu requestid:1788766301147515, scene:201, action:127040, cpulevel:2, iol
+evel:2, bindlen:0, gpulevel:1, timeoutms:1021"
+09-07 15:31:41.147 D/HARDCODER(20237): [com_tencent_mm_hardcoder_HardCoderJNI.cpp,Java_com_tencent_mm_hardcoder_HardCoderJNI_requestUnifyCpuIOThreadCoreGpu:358]"requestUnifyCpuIOThreadCore
+Gpu, requestId:1788766301147515, scene:201, action:127040, cpulevel:2, iolevel:2, bindtids len:1, " "gpulevel:0 timeout:1021 tid:20275 timestamp:" PRId64
+09-07 15:31:42.810 D/HARDCODER(20237): [protocol.h,requestUnifyCpuIOThreadCoreGpu:1190]"requestUnifyCpuIOThreadCoreGpu requestid:1788766302809829, scene:201, action:127040, cpulevel:2, iol
+evel:2, bindlen:0, gpulevel:1, timeoutms:1021"
+09-07 15:31:42.810 D/HARDCODER(20237): [com_tencent_mm_hardcoder_HardCoderJNI.cpp,Java_com_tencent_mm_hardcoder_HardCoderJNI_requestUnifyCpuIOThreadCoreGpu:358]"requestUnifyCpuIOThreadCore
+Gpu, requestId:1788766302809829, scene:201, action:127040, cpulevel:2, iolevel:2, bindtids len:1, " "gpulevel:0 timeout:1021 tid:20275 timestamp:" PRId64
+09-07 15:31:43.762 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:43.763 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:43.763 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:43.763 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:43.763 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:43.805 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:43.884 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:44.020 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:44.230 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:47.345 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:47.345 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:47.345 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:47.345 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:47.346 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:47.372 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:47.665 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:47.929 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:48.107 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:51.134 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:51.134 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:51.134 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:51.134 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:51.134 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:51.173 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:51.245 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:51.428 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:51.571 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:54.784 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:54.784 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:54.784 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:54.784 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:54.784 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:54.821 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:55.090 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:55.203 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:55.364 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:31:58.393 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:31:58.393 D/wm_log==(24061): WMRewardAd load start
+09-07 15:31:58.393 D/wm_log==(24061): fetch reward ad 
+09-07 15:31:58.393 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:31:58.393 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:31:58.423 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:31:58.728 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:31:58.875 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:31:58.970 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:02.169 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:02.169 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:02.169 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:02.169 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:02.169 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:02.212 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:02.282 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:02.358 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:02.559 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:05.716 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:05.716 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:05.716 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:05.716 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:05.716 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:05.745 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:05.842 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:06.039 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:06.276 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:09.289 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:09.289 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:09.289 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:09.289 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:09.289 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:09.320 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:09.522 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:09.706 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:09.732 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:12.817 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:12.817 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:12.817 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:12.818 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:12.818 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:12.846 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:12.919 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:13.083 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:13.259 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:16.391 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:16.391 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:16.391 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:16.391 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:16.391 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:16.421 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:16.595 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:16.717 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:16.785 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:19.937 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:19.938 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:19.938 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:19.939 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:19.939 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:19.974 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:20.277 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:20.280 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:21.070 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:24.191 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:24.191 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:24.192 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:24.192 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:24.192 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:24.223 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:24.871 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:25.240 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:25.461 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:28.474 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:28.474 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:28.474 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:28.475 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:28.475 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:28.503 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:28.813 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:28.980 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:29.855 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:32.876 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:32.876 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:32.876 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:32.876 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:32.877 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:32.918 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:33.338 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:33.917 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:34.022 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:37.196 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:37.196 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:37.197 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:37.197 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:37.197 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:37.226 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:37.450 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:37.657 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:37.681 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:40.905 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:40.905 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:40.905 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:40.905 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:40.905 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:40.939 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:41.136 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:41.281 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:41.645 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:44.579 W/CCTUploader( 6790): java.net.SocketTimeoutException
+09-07 15:32:44.770 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:44.770 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:44.770 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:44.771 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:44.771 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:44.792 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:45.467 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:46.072 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:46.330 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:46.960 W/HeterodyneSyncer( 6790): Caused by: java.io.IOException: request timeout
+09-07 15:32:46.960 W/HeterodyneSyncer( 6790): Caused by: java.util.concurrent.TimeoutException: Waited 60000 milliseconds (plus 10 milliseconds, 263466 nanoseconds delay) for bne@57fe36[st
+atus=PENDING, info=[tag=[awnq@8afe137]]]
+09-07 15:32:47.325 E/HeterodyneSyncTaskChime( 6790): Caused by: java.io.IOException: request timeout
+09-07 15:32:47.325 E/HeterodyneSyncTaskChime( 6790): Caused by: java.util.concurrent.TimeoutException: Waited 60000 milliseconds (plus 10 milliseconds, 263466 nanoseconds delay) for bne@57
+fe36[status=PENDING, info=[tag=[awnq@8afe137]]]
+09-07 15:32:49.346 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:49.346 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:49.347 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:49.347 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:49.347 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:49.370 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:49.660 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:49.974 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:50.755 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:53.768 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:53.768 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:53.769 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:53.769 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:53.769 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:53.796 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:54.015 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:32:54.283 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:32:54.502 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:32:57.539 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:32:57.539 D/wm_log==(24061): WMRewardAd load start
+09-07 15:32:57.539 D/wm_log==(24061): fetch reward ad 
+09-07 15:32:57.539 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:32:57.539 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:32:57.556 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:32:58.577 I/g       (24061): onAdRewardVideoAdFailedToLoad:80003
+09-07 15:32:58.597 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:00.575 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:02.942 W/Glide   (24061): Load failed for [https://hyt-polymer.oss-cn-beijing.aliyuncs.com/2026-05-15/65ff392ffc614ac5804d24a2247df70c.png] with dimensions [1080x2124]
+09-07 15:33:02.943 I/Glide   (24061): Caused by: java.net.SocketTimeoutException: Read timed out
+09-07 15:33:03.587 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:03.587 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:03.587 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:03.587 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:03.587 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:03.609 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:03.804 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:04.818 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:05.342 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:08.354 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:08.354 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:08.354 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:08.354 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:08.354 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:08.381 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:09.403 I/g       (24061): onAdRewardVideoAdFailedToLoad:80003
+09-07 15:33:09.514 E/CustomYTRewardAd(24061): onError, error code = 2, error msg = Failed to connect to de.ad.gameley.com/49.233.99.62:443
+09-07 15:33:14.805 D/HARDCODER(20237): [protocol.h,requestUnifyCpuIOThreadCoreGpu:1190]"requestUnifyCpuIOThreadCoreGpu requestid:1788766394805178, scene:201, action:127040, cpulevel:2, iol
+evel:2, bindlen:0, gpulevel:1, timeoutms:1021"
+09-07 15:33:14.805 D/HARDCODER(20237): [com_tencent_mm_hardcoder_HardCoderJNI.cpp,Java_com_tencent_mm_hardcoder_HardCoderJNI_requestUnifyCpuIOThreadCoreGpu:358]"requestUnifyCpuIOThreadCore
+Gpu, requestId:1788766394805178, scene:201, action:127040, cpulevel:2, iolevel:2, bindtids len:1, " "gpulevel:0 timeout:1021 tid:20300 timestamp:" PRId64
+09-07 15:33:16.339 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:16.339 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:16.339 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:16.339 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:16.339 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:16.378 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:16.627 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:16.770 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:16.950 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:20.131 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:20.131 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:20.131 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:20.131 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:20.131 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:20.163 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:20.276 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:20.412 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:20.772 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:23.792 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:23.792 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:23.792 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:23.792 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:23.792 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:23.836 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:24.121 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:24.248 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:24.352 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:27.362 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:27.362 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:27.363 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:27.363 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:27.363 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:27.397 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:27.516 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:27.658 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:28.021 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:31.053 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:31.054 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:31.054 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:31.054 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:31.054 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:31.092 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:31.304 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:31.455 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:31.507 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:34.560 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:34.561 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:34.561 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:34.561 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:34.561 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:34.593 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:34.692 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:34.831 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:35.059 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:38.079 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:38.079 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:38.079 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:38.080 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:38.080 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:38.118 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:38.376 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:38.533 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:38.596 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:41.754 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:41.754 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:41.754 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:41.754 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:41.754 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:41.795 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:42.089 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:42.098 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:42.208 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:45.512 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:45.514 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:45.515 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:45.515 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:45.516 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:45.553 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:45.775 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:45.901 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:45.985 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:49.036 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:49.036 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:49.036 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:49.037 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:49.037 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:49.069 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:49.304 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:49.470 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:49.571 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:52.724 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:52.724 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:52.724 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:52.724 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:52.724 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:52.749 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:52.988 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:53.060 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:53.179 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:33:56.455 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:33:56.455 D/wm_log==(24061): WMRewardAd load start
+09-07 15:33:56.455 D/wm_log==(24061): fetch reward ad 
+09-07 15:33:56.455 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:33:56.455 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:33:56.484 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:33:56.668 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:33:56.689 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:33:56.819 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:34:00.093 D/WM_UNIAD_ADAPTER==(24061): WMRewardVideoAdapter---->mm sdk is ready
+09-07 15:34:00.093 D/wm_log==(24061): WMRewardAd load start
+09-07 15:34:00.093 D/wm_log==(24061): fetch reward ad 
+09-07 15:34:00.093 D/wm_log==(24061): WMRewardAd adWidth=0
+09-07 15:34:00.093 D/wm_log==(24061): WMRewardAd adHeight=0
+09-07 15:34:00.144 D/BeiZis  (24061):  request RewardedVideoAd adUnitId:133996
+09-07 15:34:00.240 I/g       (24061): onAdRewardVideoAdFailedToLoad:80100
+09-07 15:34:00.469 D/BeiZis  (24061): showBeiZiRewardedVideoAd onAdFailedToLoad: 3
+09-07 15:34:00.576 E/CustomYTRewardAd(24061): onError, error code = 500011, error msg = 鏃犲～鍏?
+09-07 15:34:08.707 I/chromium(26870): [27006:0907/153408.707297:INFO:runner.cc(65)] mmcronet::quic::timeout-guard tid 27048
+09-07 15:34:08.951 D/HARDCODER(20237): [protocol.h,requestUnifyCpuIOThreadCoreGpu:1190]"requestUnifyCpuIOThreadCoreGpu requestid:1788766448951534, scene:201, action:127040, cpulevel:2, iol
+evel:2, bindlen:0, gpulevel:1, timeoutms:1030"
+09-07 15:34:08.951 D/HARDCODER(20237): [com_tencent_mm_hardcoder_HardCoderJNI.cpp,Java_com_tencent_mm_hardcoder_HardCoderJNI_requestUnifyCpuIOThreadCoreGpu:358]"requestUnifyCpuIOThreadCore
+Gpu, requestId:1788766448951534, scene:201, action:127040, cpulevel:2, iolevel:2, bindtids len:1, " "gpulevel:0 timeout:1030 tid:20336 timestamp:" PRId64
+09-07 15:34:09.781 I/chromium(26943): [27170:0907/153409.781227:INFO:runner.cc(65)] mmcronet::quic::timeout-guard tid 27210
+09-07 15:34:10.317 D/HARDCODER(20237): [protocol.h,requestUnifyCpuIOThreadCoreGpu:1190]"requestUnifyCpuIOThreadCoreGpu requestid:1788766450316943, scene:201, action:127040, cpulevel:2, iol
+evel:2, bindlen:0, gpulevel:1, timeoutms:1030"
+09-07 15:34:10.317 D/HARDCODER(20237): [com_tencent_mm_hardcoder_HardCoderJNI.cpp,Java_com_tencent_mm_hardcoder_HardCoderJNI_requestUnifyCpuIOThreadCoreGpu:358]"requestUnifyCpuIOThreadCore
+Gpu, requestId:1788766450316943, scene:201, action:127040, cpulevel:2, iolevel:2, bindtids len:1, " "gpulevel:0 timeout:1030 tid:20336 timestamp:" PRId64
+09-07 15:34:42.141 I/chromium(15400): [15759:0907/153442.141663:INFO:timeout_event_tracker.cc(18)] tracker 0x765c8d4290 TimeoutEventTracker()
+09-07 15:34:42.373 I/chromium(15400): [7013:0907/153442.373142:INFO:timeout_event_tracker.cc(18)] tracker 0x765c8c5f60 TimeoutEventTracker()
+09-07 15:34:42.490 I/chromium(15400): [15759:0907/153442.490759:INFO:event_poll.cc(136)] poll timeout. elipsed 250
+09-07 15:34:42.710 I/chromium(15400): [7013:0907/153442.710224:INFO:event_poll.cc(136)] poll timeout. elipsed 250

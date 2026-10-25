@@ -1,0 +1,35 @@
+--------- beginning of main
+06-25 16:55:46.031 I/chromium(12282): [0625/165546.031373:INFO:android_webview/browser/variations/variations_seed_loader.cc:67] Failed to open file for reading.: No such file or directory (2)
+06-25 16:55:46.360 W/chromium(12282): [WARNING:android_webview/browser/network_service/net_helpers.cc:143] HTTP Cache size is: 335544320
+06-25 16:55:46.524 W/chromium(12422): [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+06-25 16:55:46.538 W/chromium(12422): [WARNING:content/child/runtime_features.cc:561] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+06-25 16:55:46.538 W/chromium(12422): [WARNING:content/child/runtime_features.cc:586] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+06-25 16:55:46.538 W/chromium(12422): [WARNING:content/child/runtime_features.cc:607] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+06-25 16:55:46.704 I/TakuAdBridge(12282): Initializing Taku SDK, appId=a6a2768f6227eb
+06-25 16:55:46.802 I/TakuAdBridge(12282): Loading splash ad, placementId=b6a2769587c201
+06-25 16:55:47.627 I/chromium(12282): [0625/165547.627815:INFO:tnet_request_common.cc(192)] Front request create: 0xb400007d31b0cd50, delegate: 0xb400007d51adef70
+06-25 16:55:47.627 I/chromium(12282): [0625/165547.627932:INFO:tnet_quic_adapter.cc(43)] Create tnet adapter, this: 0xb400007d51adef70
+06-25 16:55:47.739 I/chromium(12282): [0625/165547.739143:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51adef70
+06-25 16:55:47.739 I/chromium(12282): [0625/165547.739233:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51adef70
+06-25 16:55:47.739 I/chromium(12282): [0625/165547.739251:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51adef70
+06-25 16:55:47.739 I/chromium(12282): [0625/165547.739266:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51adef70
+06-25 16:55:47.739 I/chromium(12282): [0625/165547.739326:INFO:tnet_quic_adapter.cc(136)] TnetAdapter send request, this: 0xb400007d51adef70
+06-25 16:55:47.739 I/chromium(12282): [0625/165547.739337:INFO:tnet_quic_adapter.cc(145)] Type: 0 send request
+06-25 16:55:48.203 I/TakuAdBridge(12282): onAdLoaded, placementId=b6a2769587c201, isCached=false
+06-25 16:55:48.212 I/TakuAdBridge(12282): Showing splash ad, placementId=b6a2769587c201
+06-25 16:55:48.325 I/chromium(12282): [0625/165548.325775:INFO:tnet_quic_adapter.cc(48)] Destroy tnet adapter, this: 0xb400007d51adef70
+06-25 16:55:48.325 I/chromium(12282): [0625/165548.325936:INFO:tnet_quic_request.cc(49)] TnetQuicRequest destroy, set delegate nullptr
+06-25 16:55:48.326 I/chromium(12282): [0625/165548.326285:INFO:tnet_quic_adapter.cc(50)] request has been delete
+06-25 16:55:48.327 I/chromium(12282): [0625/165548.326348:INFO:tnet_request_common.cc(198)] Front request destroy: 0xb400007d31b0cd50
+06-25 16:55:48.387 I/TakuAdBridge(12282): onAdShow, placementId=b6a2769587c201, network=kuying
+06-25 16:55:53.296 I/TakuAdBridge(12282): onAdDismiss, placementId=b6a2769587c201
+06-25 16:56:00.874 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 16:57:30.886 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 16:59:00.897 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 17:00:30.904 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 17:00:36.201 W/chromium(30570): [WARNING:dns_config_service_android.cc(69)] Failed to read DnsConfig.
+06-25 17:02:00.922 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 17:02:03.592 I/AndroidRuntime(10797): VM exiting with result code -1, cleanup skipped.
+06-25 17:03:30.933 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 17:04:48.484 I/AndroidRuntime(12422): VM exiting with result code 0, cleanup skipped.
+06-25 17:05:00.944 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager

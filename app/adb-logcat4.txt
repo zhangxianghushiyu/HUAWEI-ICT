@@ -1,0 +1,96 @@
+--------- beginning of main
+06-25 17:17:18.969 E/chromium(19340): [0625/171718.969397:ERROR:android_webview/browser/variations/variations_seed_loader.cc:39] Seed missing signature.
+06-25 17:17:19.285 W/chromium(19340): [WARNING:android_webview/browser/network_service/net_helpers.cc:143] HTTP Cache size is: 335544320
+06-25 17:17:19.450 W/chromium(19491): [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+06-25 17:17:19.461 W/chromium(19491): [WARNING:content/child/runtime_features.cc:561] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+06-25 17:17:19.461 W/chromium(19491): [WARNING:content/child/runtime_features.cc:586] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+06-25 17:17:19.461 W/chromium(19491): [WARNING:content/child/runtime_features.cc:607] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+06-25 17:17:19.639 I/TakuAdBridge(19340): Initializing Taku SDK, appId=a6a2768f6227eb
+06-25 17:17:19.735 I/TakuAdBridge(19340): Loading splash ad, placementId=b6a2769587c201
+06-25 17:17:20.427 I/chromium(19340): [0625/171720.427167:INFO:tnet_request_common.cc(192)] Front request create: 0xb400007d31b07530, delegate: 0xb400007d51ad7330
+06-25 17:17:20.427 I/chromium(19340): [0625/171720.427339:INFO:tnet_quic_adapter.cc(43)] Create tnet adapter, this: 0xb400007d51ad7330
+06-25 17:17:20.528 I/chromium(19340): [0625/171720.528354:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51ad7330
+06-25 17:17:20.528 I/chromium(19340): [0625/171720.528780:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51ad7330
+06-25 17:17:20.529 I/chromium(19340): [0625/171720.529026:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51ad7330
+06-25 17:17:20.529 I/chromium(19340): [0625/171720.529392:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51ad7330
+06-25 17:17:20.529 I/chromium(19340): [0625/171720.529706:INFO:tnet_quic_adapter.cc(136)] TnetAdapter send request, this: 0xb400007d51ad7330
+06-25 17:17:20.529 I/chromium(19340): [0625/171720.529893:INFO:tnet_quic_adapter.cc(145)] Type: 0 send request
+06-25 17:17:20.890 I/chromium(19340): [0625/171720.890920:INFO:tnet_quic_adapter.cc(48)] Destroy tnet adapter, this: 0xb400007d51ad7330
+06-25 17:17:20.891 I/chromium(19340): [0625/171720.891030:INFO:tnet_quic_request.cc(49)] TnetQuicRequest destroy, set delegate nullptr
+06-25 17:17:20.891 I/chromium(19340): [0625/171720.891082:INFO:tnet_quic_adapter.cc(50)] request has been delete
+06-25 17:17:20.894 I/chromium(19340): [0625/171720.894097:INFO:tnet_request_common.cc(198)] Front request destroy: 0xb400007d31b07530
+06-25 17:17:21.276 I/TakuAdBridge(19340): onAdLoaded, placementId=b6a2769587c201, isCached=false
+06-25 17:17:21.281 I/TakuAdBridge(19340): Showing splash ad, placementId=b6a2769587c201
+06-25 17:17:21.432 I/TakuAdBridge(19340): onAdShow, placementId=b6a2769587c201, network=kuying
+06-25 17:17:23.503 I/TakuAdBridge(19340): onAdDismiss, placementId=b6a2769587c201
+06-25 17:17:24.702 E/chromium(19491): [ERROR:cc/tiles/tile_manager.cc:998] WARNING: tile memory limits exceeded, some content may not draw
+06-25 17:17:24.702 E/chromium(19491): [ERROR:cc/tiles/tile_manager.cc:998] WARNING: tile memory limits exceeded, some content may not draw
+06-25 17:17:35.818 E/chromium(19491): [ERROR:cc/tiles/tile_manager.cc:998] WARNING: tile memory limits exceeded, some content may not draw
+06-25 17:17:35.818 E/chromium(19491): [ERROR:cc/tiles/tile_manager.cc:998] WARNING: tile memory limits exceeded, some content may not draw
+06-25 17:17:40.469 E/chromium(20156): [ERROR:android_webview/browser/variations/variations_seed_loader.cc:39] Seed missing signature.
+06-25 17:17:40.774 W/chromium(20156): [WARNING:android_webview/browser/network_service/net_helpers.cc:143] HTTP Cache size is: 335544320
+06-25 17:17:40.950 W/chromium(20276): [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+06-25 17:17:40.960 W/chromium(20276): [WARNING:content/child/runtime_features.cc:561] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+06-25 17:17:40.960 W/chromium(20276): [WARNING:content/child/runtime_features.cc:586] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+06-25 17:17:40.960 W/chromium(20276): [WARNING:content/child/runtime_features.cc:607] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+06-25 17:17:41.140 I/TakuAdBridge(20156): Initializing Taku SDK, appId=a6a2768f6227eb
+06-25 17:17:41.243 I/TakuAdBridge(20156): Loading splash ad, placementId=b6a2769587c201
+06-25 17:17:42.291 I/chromium(20156): [0625/171742.291679:INFO:tnet_request_common.cc(192)] Front request create: 0xb400007d31b0eb50, delegate: 0xb400007d51aeb370
+06-25 17:17:42.291 I/chromium(20156): [0625/171742.291800:INFO:tnet_quic_adapter.cc(43)] Create tnet adapter, this: 0xb400007d51aeb370
+06-25 17:17:42.376 I/chromium(20156): [0625/171742.376081:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51aeb370
+06-25 17:17:42.376 I/chromium(20156): [0625/171742.376464:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51aeb370
+06-25 17:17:42.376 I/chromium(20156): [0625/171742.376771:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51aeb370
+06-25 17:17:42.376 I/chromium(20156): [0625/171742.376859:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51aeb370
+06-25 17:17:42.377 I/chromium(20156): [0625/171742.377493:INFO:tnet_quic_adapter.cc(136)] TnetAdapter send request, this: 0xb400007d51aeb370
+06-25 17:17:42.377 I/chromium(20156): [0625/171742.377596:INFO:tnet_quic_adapter.cc(145)] Type: 0 send request
+06-25 17:17:42.722 I/chromium(20156): [0625/171742.722036:INFO:tnet_quic_adapter.cc(48)] Destroy tnet adapter, this: 0xb400007d51aeb370
+06-25 17:17:42.722 I/chromium(20156): [0625/171742.722096:INFO:tnet_quic_request.cc(49)] TnetQuicRequest destroy, set delegate nullptr
+06-25 17:17:42.722 I/chromium(20156): [0625/171742.722125:INFO:tnet_quic_adapter.cc(50)] request has been delete
+06-25 17:17:42.722 I/chromium(20156): [0625/171742.722825:INFO:tnet_request_common.cc(198)] Front request destroy: 0xb400007d31b0eb50
+06-25 17:17:43.421 I/TakuAdBridge(20156): onAdLoaded, placementId=b6a2769587c201, isCached=false
+06-25 17:17:43.424 I/TakuAdBridge(20156): Showing splash ad, placementId=b6a2769587c201
+06-25 17:17:43.577 I/TakuAdBridge(20156): onAdShow, placementId=b6a2769587c201, network=kuying
+06-25 17:17:44.831 I/TakuAdBridge(20156): onAdDismiss, placementId=b6a2769587c201
+06-25 17:17:46.149 I/TakuAdBridge(20156): Initializing Taku SDK, appId=a6a2768f6227eb
+06-25 17:17:46.165 I/TakuAdBridge(20156): Loading interstitial ad, placementId=b6a27695ae4bad
+06-25 17:17:46.191 E/chromium(20276): [ERROR:cc/tiles/tile_manager.cc:998] WARNING: tile memory limits exceeded, some content may not draw
+06-25 17:17:46.191 E/chromium(20276): [ERROR:cc/tiles/tile_manager.cc:998] WARNING: tile memory limits exceeded, some content may not draw
+06-25 17:17:46.851 I/TakuAdBridge(20156): onInterstitialAdLoaded, placementId=b6a27695ae4bad
+06-25 17:18:31.027 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 17:19:20.526 I/AndroidRuntime(20276): VM exiting with result code 0, cleanup skipped.
+06-25 17:19:21.819 E/chromium(21488): [0625/171921.819407:ERROR:android_webview/browser/variations/variations_seed_loader.cc:39] Seed missing signature.
+06-25 17:19:22.129 W/chromium(21488): [WARNING:android_webview/browser/network_service/net_helpers.cc:143] HTTP Cache size is: 335544320
+06-25 17:19:22.266 W/chromium(21601): [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+06-25 17:19:22.276 W/chromium(21601): [WARNING:content/child/runtime_features.cc:561] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+06-25 17:19:22.276 W/chromium(21601): [WARNING:content/child/runtime_features.cc:586] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+06-25 17:19:22.276 W/chromium(21601): [WARNING:content/child/runtime_features.cc:607] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+06-25 17:19:22.434 I/TakuAdBridge(21488): Initializing Taku SDK, appId=a6a2768f6227eb
+06-25 17:19:22.509 I/TakuAdBridge(21488): Loading splash ad, placementId=b6a2769587c201
+06-25 17:19:24.922 I/chromium(21488): [0625/171924.922827:INFO:tnet_request_common.cc(192)] Front request create: 0xb400007d31b097e0, delegate: 0xb400007d51ad2010
+06-25 17:19:24.922 I/chromium(21488): [0625/171924.922940:INFO:tnet_quic_adapter.cc(43)] Create tnet adapter, this: 0xb400007d51ad2010
+06-25 17:19:25.184 I/chromium(21488): [0625/171925.184854:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51ad2010
+06-25 17:19:25.184 I/chromium(21488): [0625/171925.184973:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51ad2010
+06-25 17:19:25.184 I/chromium(21488): [0625/171925.184995:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51ad2010
+06-25 17:19:25.185 I/chromium(21488): [0625/171925.185016:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51ad2010
+06-25 17:19:25.185 I/chromium(21488): [0625/171925.185244:INFO:tnet_quic_adapter.cc(136)] TnetAdapter send request, this: 0xb400007d51ad2010
+06-25 17:19:25.185 I/chromium(21488): [0625/171925.185266:INFO:tnet_quic_adapter.cc(145)] Type: 0 send request
+06-25 17:19:25.733 I/chromium(21488): [0625/171925.733684:INFO:tnet_quic_adapter.cc(48)] Destroy tnet adapter, this: 0xb400007d51ad2010
+06-25 17:19:25.733 I/chromium(21488): [0625/171925.733762:INFO:tnet_quic_request.cc(49)] TnetQuicRequest destroy, set delegate nullptr
+06-25 17:19:25.733 I/chromium(21488): [0625/171925.733836:INFO:tnet_quic_adapter.cc(50)] request has been delete
+06-25 17:19:25.736 I/chromium(21488): [0625/171925.736505:INFO:tnet_request_common.cc(198)] Front request destroy: 0xb400007d31b097e0
+06-25 17:19:27.120 I/TakuAdBridge(21488): onAdLoaded, placementId=b6a2769587c201, isCached=false
+06-25 17:19:27.128 I/TakuAdBridge(21488): Showing splash ad, placementId=b6a2769587c201
+06-25 17:19:27.256 I/TakuAdBridge(21488): onAdShow, placementId=b6a2769587c201, network=Baidu
+06-25 17:19:30.212 I/TakuAdBridge(21488): onAdDismiss, placementId=b6a2769587c201
+06-25 17:20:01.039 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 17:21:31.042 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 17:22:18.960 I/AndroidRuntime(21601): VM exiting with result code 0, cleanup skipped.
+06-25 17:22:21.863 E/chromium(22623): [0625/172221.863118:ERROR:android_webview/browser/variations/variations_seed_loader.cc:39] Seed missing signature.
+06-25 17:22:22.136 W/chromium(22623): [WARNING:android_webview/browser/network_service/net_helpers.cc:143] HTTP Cache size is: 335544320
+06-25 17:22:23.941 W/chromium(22751): [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+06-25 17:22:23.948 W/chromium(22751): [WARNING:content/child/runtime_features.cc:561] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+06-25 17:22:23.948 W/chromium(22751): [WARNING:content/child/runtime_features.cc:586] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+06-25 17:22:23.948 W/chromium(22751): [WARNING:content/child/runtime_features.cc:607] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+06-25 17:23:01.050 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 17:24:31.064 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 17:26:01.072 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager

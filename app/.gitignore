@@ -1,0 +1,25 @@
+# Build and Release Folders
+node_modules/
+unpackage/
+package-lock.json
+# Other files and folders
+.settings/
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+# IDE / local tooling
+.idea/
+.vscode/
+.claude/
+
+# Signing keystores (sensitive — never commit)
+*.keystore
+*.jks
+
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.
