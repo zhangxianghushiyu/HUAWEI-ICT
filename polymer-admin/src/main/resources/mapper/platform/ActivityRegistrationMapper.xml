@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.ActivityRegistrationMapper">
+    
+    <resultMap type="ActivityRegistration" id="ActivityRegistrationResult">
+        <result property="id"    column="id"    />
+        <result property="title"    column="title"    />
+        <result property="description"    column="description"    />
+        <result property="coverImage"    column="cover_image"    />
+        <result property="startTime"    column="start_time"    />
+        <result property="endTime"    column="end_time"    />
+        <result property="status"    column="status"    />
+        <result property="location"    column="location"    />
+        <result property="organizer"    column="organizer"    />
+        <result property="contactPhone"    column="contact_phone"    />
+        <result property="delStatus"    column="del_status"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectActivityRegistrationVo">
+        select id, title, description, cover_image, start_time, end_time, status, location, organizer, contact_phone, del_status, create_time, update_time from t_activity_registration
+    </sql>
+
+    <select id="selectActivityRegistrationList" parameterType="ActivityRegistration" resultMap="ActivityRegistrationResult">
+        <include refid="selectActivityRegistrationVo"/>
+        <where>  
+            <if test="title != null  and title != ''"> and title = #{title}</if>
+            <if test="description != null  and description != ''"> and description = #{description}</if>
+            <if test="coverImage != null  and coverImage != ''"> and cover_image = #{coverImage}</if>
+            <if test="startTime != null "> and start_time = #{startTime}</if>
+            <if test="endTime != null "> and end_time = #{endTime}</if>
+            <if test="status != null "> and status = #{status}</if>
+            <if test="location != null  and location != ''"> and location = #{location}</if>
+            <if test="organizer != null  and organizer != ''"> and organizer = #{organizer}</if>
+            <if test="contactPhone != null  and contactPhone != ''"> and contact_phone = #{contactPhone}</if>
+            <if test="delStatus != null "> and del_status = #{delStatus}</if>
+        </where>
+    </select>
+    
+    <select id="selectActivityRegistrationById" parameterType="Long" resultMap="ActivityRegistrationResult">
+        <include refid="selectActivityRegistrationVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertActivityRegistration" parameterType="ActivityRegistration" useGeneratedKeys="true" keyProperty="id">
+        insert into t_activity_registration
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null and title != ''">title,</if>
+            <if test="description != null and description != ''">description,</if>
+            <if test="coverImage != null and coverImage != ''">cover_image,</if>
+            <if test="startTime != null">start_time,</if>
+            <if test="endTime != null">end_time,</if>
+            <if test="status != null">status,</if>
+            <if test="location != null and location != ''">location,</if>
+            <if test="organizer != null and organizer != ''">organizer,</if>
+            <if test="contactPhone != null and contactPhone != ''">contact_phone,</if>
+            <if test="delStatus != null">del_status,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null and title != ''">#{title},</if>
+            <if test="description != null and description != ''">#{description},</if>
+            <if test="coverImage != null and coverImage != ''">#{coverImage},</if>
+            <if test="startTime != null">#{startTime},</if>
+            <if test="endTime != null">#{endTime},</if>
+            <if test="status != null">#{status},</if>
+            <if test="location != null and location != ''">#{location},</if>
+            <if test="organizer != null and organizer != ''">#{organizer},</if>
+            <if test="contactPhone != null and contactPhone != ''">#{contactPhone},</if>
+            <if test="delStatus != null">#{delStatus},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateActivityRegistration" parameterType="ActivityRegistration">
+        update t_activity_registration
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="title != null and title != ''">title = #{title},</if>
+            <if test="description != null and description != ''">description = #{description},</if>
+            <if test="coverImage != null and coverImage != ''">cover_image = #{coverImage},</if>
+            <if test="startTime != null">start_time = #{startTime},</if>
+            <if test="endTime != null">end_time = #{endTime},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="location != null and location != ''">location = #{location},</if>
+            <if test="organizer != null and organizer != ''">organizer = #{organizer},</if>
+            <if test="contactPhone != null and contactPhone != ''">contact_phone = #{contactPhone},</if>
+            <if test="delStatus != null">del_status = #{delStatus},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteActivityRegistrationById" parameterType="Long">
+        delete from t_activity_registration where id = #{id}
+    </delete>
+
+    <delete id="deleteActivityRegistrationByIds" parameterType="String">
+        delete from t_activity_registration where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VoteRecordMapper">
+    
+    <resultMap type="VoteRecord" id="VoteRecordResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="activityId"    column="activity_id"    />
+        <result property="optionId"    column="option_id"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectVoteRecordVo">
+        select id, user_id, activity_id, option_id, create_time, update_time from t_vote_record
+    </sql>
+
+    <select id="selectVoteRecordList" parameterType="VoteRecord" resultMap="VoteRecordResult">
+        <include refid="selectVoteRecordVo"/>
+        <where>  
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="activityId != null "> and activity_id = #{activityId}</if>
+            <if test="optionId != null "> and option_id = #{optionId}</if>
+        </where>
+    </select>
+    
+    <select id="selectVoteRecordById" parameterType="Long" resultMap="VoteRecordResult">
+        <include refid="selectVoteRecordVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertVoteRecord" parameterType="VoteRecord" useGeneratedKeys="true" keyProperty="id">
+        insert into t_vote_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="activityId != null">activity_id,</if>
+            <if test="optionId != null">option_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="activityId != null">#{activityId},</if>
+            <if test="optionId != null">#{optionId},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateVoteRecord" parameterType="VoteRecord">
+        update t_vote_record
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="activityId != null">activity_id = #{activityId},</if>
+            <if test="optionId != null">option_id = #{optionId},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteVoteRecordById" parameterType="Long">
+        delete from t_vote_record where id = #{id}
+    </delete>
+
+    <delete id="deleteVoteRecordByIds" parameterType="String">
+        delete from t_vote_record where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

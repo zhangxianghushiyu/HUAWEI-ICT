@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.TaskDailyLookVideoToCoinMapper">
+
+    <resultMap type="TaskDailyLookVideoToCoin" id="TaskDailyLookVideoToCoinResult">
+        <result property="id"    column="id"    />
+        <result property="count"    column="count"    />
+        <result property="secondInfo"    column="second_info"    />
+        <result property="price"    column="price"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectTaskDailyLookVideoToCoinVo">
+        select id, count,second_info, price, create_time, update_time from t_task_daily_look_video_to_coin
+    </sql>
+
+    <select id="selectTaskDailyLookVideoToCoinList" parameterType="TaskDailyLookVideoToCoin" resultMap="TaskDailyLookVideoToCoinResult">
+        <include refid="selectTaskDailyLookVideoToCoinVo"/>
+        <where>
+            <if test="count != null "> and count = #{count}</if>
+            <if test="price != null "> and price = #{price}</if>
+        </where>
+    </select>
+
+    <select id="selectTaskDailyLookVideoToCoinById" parameterType="Long" resultMap="TaskDailyLookVideoToCoinResult">
+        <include refid="selectTaskDailyLookVideoToCoinVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertTaskDailyLookVideoToCoin" parameterType="TaskDailyLookVideoToCoin" useGeneratedKeys="true" keyProperty="id">
+        insert into t_task_daily_look_video_to_coin
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="count != null">count,</if>
+            <if test="secondInfo != null">second_info,</if>
+            <if test="price != null">price,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="count != null">#{count},</if>
+            <if test="secondInfo != null">#{secondInfo},</if>
+            <if test="price != null">#{price},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateTaskDailyLookVideoToCoin" parameterType="TaskDailyLookVideoToCoin">
+        update t_task_daily_look_video_to_coin
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="count != null">count = #{count},</if>
+            <if test="secondInfo != null">second_info = #{secondInfo},</if>
+            <if test="price != null">price = #{price},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTaskDailyLookVideoToCoinById" parameterType="Long">
+        delete from t_task_daily_look_video_to_coin where id = #{id}
+    </delete>
+
+    <delete id="deleteTaskDailyLookVideoToCoinByIds" parameterType="String">
+        delete from t_task_daily_look_video_to_coin where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

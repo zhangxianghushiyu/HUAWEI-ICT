@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.TaKuCallbackMapper">
+    
+    <resultMap type="TaKuCallback" id="TaKuCallbackResult">
+        <result property="id"    column="id"    />
+        <result property="scene"    column="scene"    />
+        <result property="money"    column="money"    />
+        <result property="userId"    column="user_id"    />
+        <result property="extraData"    column="extra_data"    />
+        <result property="transId"    column="trans_id"    />
+        <result property="reqId"    column="req_id"    />
+        <result property="rewardName"    column="reward_name"    />
+        <result property="rewardAmount"    column="reward_amount"    />
+        <result property="placementId"    column="placement_id"    />
+        <result property="networkFirmId"    column="network_firm_id"    />
+        <result property="scenarioId"    column="scenario_id"    />
+        <result property="packageName"    column="package_name"    />
+        <result property="platform"    column="platform"    />
+        <result property="ilrd"    column="ilrd"    />
+        <result property="sign"    column="sign"    />
+        <result property="remarks"    column="remarks"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectTaKuCallbackVo">
+        select id, scene, money, user_id, extra_data, trans_id, req_id, reward_name, reward_amount, placement_id, network_firm_id, scenario_id, package_name, platform, ilrd, sign, remarks, create_time, update_time from t_ta_ku_callback
+    </sql>
+
+    <select id="selectTaKuCallbackList" parameterType="TaKuCallback" resultType="com.ruoyi.platform.domain.TaKuCallback">
+        select kc.id, kc.scene, kc.money, kc.user_id userId, kc.extra_data extraData, kc.trans_id, kc.req_id reqId,
+        kc.reward_name rewardName,
+        kc.reward_amount rewardAmount, kc.placement_id placementId, kc.network_firm_id networkFirmId, kc.scenario_id
+        scenarioId,
+        kc.package_name packageName, kc.platform, kc.ilrd, kc.sign, kc.remarks, kc.create_time createTime,
+        kc.update_time updateTime ,kc.publisher_revenue publisherRevenue,kc.adsource_price adsourcePrice,
+        tu.user_name userName,tu.avatar,tu.nick_name nickName
+        from t_ta_ku_callback kc
+        LEFT JOIN t_user tu on tu.id=kc.user_id
+        where 1=1
+        <if test="nickName != null  and nickName != ''">and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="userName != null  and userName != ''">and tu.user_name like concat('%', #{userName}, '%')</if>
+        <if test="scene != null  and scene != ''">and kc.scene like concat('%', #{scene}, '%')</if>
+        <if test="networkFirmId != null  and networkFirmId != ''">and kc.network_firm_id = #{networkFirmId}</if>
+        <if test="startTime != null">
+            and kc.create_time &gt;= #{startTime}
+        </if>
+        <if test="endTime != null">
+            and kc.create_time &lt;= #{endTime}
+        </if>
+        order by kc.create_time desc
+    </select>
+    
+    <select id="selectTaKuCallbackById" parameterType="Long" resultMap="TaKuCallbackResult">
+        <include refid="selectTaKuCallbackVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertTaKuCallback" parameterType="TaKuCallback" useGeneratedKeys="true" keyProperty="id">
+        insert into t_ta_ku_callback
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="scene != null">scene,</if>
+            <if test="money != null">money,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="extraData != null">extra_data,</if>
+            <if test="transId != null">trans_id,</if>
+            <if test="reqId != null">req_id,</if>
+            <if test="rewardName != null">reward_name,</if>
+            <if test="rewardAmount != null">reward_amount,</if>
+            <if test="placementId != null">placement_id,</if>
+            <if test="networkFirmId != null">network_firm_id,</if>
+            <if test="scenarioId != null">scenario_id,</if>
+            <if test="packageName != null">package_name,</if>
+            <if test="platform != null">platform,</if>
+            <if test="ilrd != null">ilrd,</if>
+            <if test="sign != null">sign,</if>
+            <if test="remarks != null">remarks,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="scene != null">#{scene},</if>
+            <if test="money != null">#{money},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="extraData != null">#{extraData},</if>
+            <if test="transId != null">#{transId},</if>
+            <if test="reqId != null">#{reqId},</if>
+            <if test="rewardName != null">#{rewardName},</if>
+            <if test="rewardAmount != null">#{rewardAmount},</if>
+            <if test="placementId != null">#{placementId},</if>
+            <if test="networkFirmId != null">#{networkFirmId},</if>
+            <if test="scenarioId != null">#{scenarioId},</if>
+            <if test="packageName != null">#{packageName},</if>
+            <if test="platform != null">#{platform},</if>
+            <if test="ilrd != null">#{ilrd},</if>
+            <if test="sign != null">#{sign},</if>
+            <if test="remarks != null">#{remarks},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTaKuCallback" parameterType="TaKuCallback">
+        update t_ta_ku_callback
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="scene != null">scene = #{scene},</if>
+            <if test="money != null">money = #{money},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="extraData != null">extra_data = #{extraData},</if>
+            <if test="transId != null">trans_id = #{transId},</if>
+            <if test="reqId != null">req_id = #{reqId},</if>
+            <if test="rewardName != null">reward_name = #{rewardName},</if>
+            <if test="rewardAmount != null">reward_amount = #{rewardAmount},</if>
+            <if test="placementId != null">placement_id = #{placementId},</if>
+            <if test="networkFirmId != null">network_firm_id = #{networkFirmId},</if>
+            <if test="scenarioId != null">scenario_id = #{scenarioId},</if>
+            <if test="packageName != null">package_name = #{packageName},</if>
+            <if test="platform != null">platform = #{platform},</if>
+            <if test="ilrd != null">ilrd = #{ilrd},</if>
+            <if test="sign != null">sign = #{sign},</if>
+            <if test="remarks != null">remarks = #{remarks},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTaKuCallbackById" parameterType="Long">
+        delete from t_ta_ku_callback where id = #{id}
+    </delete>
+
+    <delete id="deleteTaKuCallbackByIds" parameterType="String">
+        delete from t_ta_ku_callback where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

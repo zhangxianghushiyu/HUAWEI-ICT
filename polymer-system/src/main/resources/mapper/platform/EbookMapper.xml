@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.EbookMapper">
+    
+    <resultMap type="Ebook" id="EbookResult">
+        <result property="id"    column="id"    />
+        <result property="words"    column="words"    />
+        <result property="url"    column="url"    />
+        <result property="sort"    column="sort"    />
+        <result property="fraction"    column="fraction"    />
+        <result property="title"    column="title"    />
+        <result property="isEnd"    column="is_end"    />
+        <result property="delicate"    column="delicate"    />
+        <result property="author"    column="author"    />
+        <result property="introduce"    column="introduce"    />
+        <result property="delStatus"    column="del_status"    />
+        <result property="upStatus"    column="up_status"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectEbookVo">
+        select id, words, url, sort, fraction, title, is_end, delicate, author, introduce, del_status, up_status, create_time, update_time from t_ebook
+    </sql>
+
+    <select id="selectEbookList" parameterType="Ebook" resultMap="EbookResult">
+        <include refid="selectEbookVo"/>
+        where del_status=1
+        <if test="words != null ">and words = #{words}</if>
+        <if test="url != null  and url != ''">and url = #{url}</if>
+        <if test="sort != null ">and sort = #{sort}</if>
+        <if test="fraction != null ">and fraction = #{fraction}</if>
+        <if test="title != null  and title != ''">and title like concat('%', #{title}, '%')</if>
+        <if test="isEnd != null ">and is_end = #{isEnd}</if>
+        <if test="delicate != null ">and delicate = #{delicate}</if>
+        <if test="author != null  and author != ''">and author like concat('%', #{author}, '%')</if>
+        <if test="introduce != null  and introduce != ''">and introduce like concat('%', #{introduce}, '%')</if>
+        <if test="delStatus != null ">and del_status = #{delStatus}</if>
+        <if test="upStatus != null ">and up_status = #{upStatus}</if>
+        order by sort asc,update_time desc
+    </select>
+    
+    <select id="selectEbookById" parameterType="Long" resultMap="EbookResult">
+        <include refid="selectEbookVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertEbook" parameterType="Ebook" useGeneratedKeys="true" keyProperty="id">
+        insert into t_ebook
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="words != null">words,</if>
+            <if test="url != null">url,</if>
+            <if test="sort != null">sort,</if>
+            <if test="fraction != null">fraction,</if>
+            <if test="title != null">title,</if>
+            <if test="isEnd != null">is_end,</if>
+            <if test="delicate != null">delicate,</if>
+            <if test="author != null">author,</if>
+            <if test="introduce != null">introduce,</if>
+            <if test="delStatus != null">del_status,</if>
+            <if test="upStatus != null">up_status,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="words != null">#{words},</if>
+            <if test="url != null">#{url},</if>
+            <if test="sort != null">#{sort},</if>
+            <if test="fraction != null">#{fraction},</if>
+            <if test="title != null">#{title},</if>
+            <if test="isEnd != null">#{isEnd},</if>
+            <if test="delicate != null">#{delicate},</if>
+            <if test="author != null">#{author},</if>
+            <if test="introduce != null">#{introduce},</if>
+            <if test="delStatus != null">#{delStatus},</if>
+            <if test="upStatus != null">#{upStatus},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateEbook" parameterType="Ebook">
+        update t_ebook
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="words != null">words = #{words},</if>
+            <if test="url != null">url = #{url},</if>
+            <if test="sort != null">sort = #{sort},</if>
+            <if test="fraction != null">fraction = #{fraction},</if>
+            <if test="title != null">title = #{title},</if>
+            <if test="isEnd != null">is_end = #{isEnd},</if>
+            <if test="delicate != null">delicate = #{delicate},</if>
+            <if test="author != null">author = #{author},</if>
+            <if test="introduce != null">introduce = #{introduce},</if>
+            <if test="delStatus != null">del_status = #{delStatus},</if>
+            <if test="upStatus != null">up_status = #{upStatus},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteEbookById" parameterType="Long">
+        delete from t_ebook where id = #{id}
+    </delete>
+
+    <update id="deleteEbookByIds" parameterType="String">
+        update  t_ebook set del_status=0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+
+    <update id="undercarriage" parameterType="String">
+        update  t_ebook set up_status=0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+
+    <update id="grounding" parameterType="String">
+        update  t_ebook set up_status=1 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+</mapper>

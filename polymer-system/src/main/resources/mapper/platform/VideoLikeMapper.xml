@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VideoLikeMapper">
+
+    <resultMap type="VideoLike" id="VideoLikeResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="videoId"    column="video_id"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectVideoLikeVo">
+        select id, user_id, video_id, create_time, update_time from t_video_like
+    </sql>
+
+    <select id="selectVideoLikeList" parameterType="VideoLike" resultMap="VideoLikeResult">
+        <include refid="selectVideoLikeVo"/>
+        <where>
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="videoId != null "> and video_id = #{videoId}</if>
+        </where>
+    </select>
+
+    <select id="selectVideoLikeById" parameterType="Long" resultMap="VideoLikeResult">
+        <include refid="selectVideoLikeVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertVideoLike" parameterType="VideoLike" useGeneratedKeys="true" keyProperty="id">
+        insert into t_video_like
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="videoId != null">video_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="videoId != null">#{videoId},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateVideoLike" parameterType="VideoLike">
+        update t_video_like
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="videoId != null">video_id = #{videoId},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteVideoLikeById" parameterType="Long">
+        delete from t_video_like where id = #{id}
+    </delete>
+
+    <delete id="deleteVideoLikeByIds" parameterType="String">
+        delete from t_video_like where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <select id="selectVideoLikeListVO" resultType="com.ruoyi.platform.vo.VideoLikeListVO"
+    parameterType="com.ruoyi.platform.dto.VideoLikeListDTO">
+        select tvl.`id`,
+               tvl.`user_id` as userId,
+               tvl.`video_id` as videoId,
+               tvl.`create_time` as createTime,
+               tvl.`update_time` as updateTime,
+               tu.`nick_name` as nickName,
+               tu.`avatar`,
+               tv.`name` as videoName,
+               tv.`video_cover` as videoCover,
+               tv.`video_url` as videoUrl
+               from t_video_like tvl
+        inner join t_video tv on tvl.video_id = tv.id
+        inner join t_user tu on tvl.user_id = tu.id
+        <if test="nickName!=null">and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="name!=null">and tv.name like concat('%', #{name}, '%')</if>
+        order by tvl.create_time desc
+    </select>
+</mapper>

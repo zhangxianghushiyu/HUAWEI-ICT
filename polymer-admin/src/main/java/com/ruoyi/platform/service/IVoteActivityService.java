@@ -1,0 +1,61 @@
+package com.ruoyi.platform.service;
+
+import java.util.List;
+import com.ruoyi.platform.domain.VoteActivity;
+
+/**
+ * 投票活动Service接口
+ * 
+ * @author lhr
+ * @date 2026-05-15
+ */
+public interface IVoteActivityService 
+{
+    /**
+     * 查询投票活动
+     * 
+     * @param id 投票活动主键
+     * @return 投票活动
+     */
+    public VoteActivity selectVoteActivityById(Long id);
+
+    /**
+     * 查询投票活动列表
+     * 
+     * @param voteActivity 投票活动
+     * @return 投票活动集合
+     */
+    public List<VoteActivity> selectVoteActivityList(VoteActivity voteActivity);
+
+    /**
+     * 新增投票活动
+     * 
+     * @param voteActivity 投票活动
+     * @return 结果
+     */
+    public int insertVoteActivity(VoteActivity voteActivity);
+
+    /**
+     * 修改投票活动
+     * 
+     * @param voteActivity 投票活动
+     * @return 结果
+     */
+    public int updateVoteActivity(VoteActivity voteActivity);
+
+    /**
+     * 批量删除投票活动
+     * 
+     * @param ids 需要删除的投票活动主键集合
+     * @return 结果
+     */
+    public int deleteVoteActivityByIds(Long[] ids);
+
+    /**
+     * 删除投票活动信息
+     * 
+     * @param id 投票活动主键
+     * @return 结果
+     */
+    public int deleteVoteActivityById(Long id);
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.TaskCompleteRecordMapper">
+
+    <resultMap type="TaskCompleteRecord" id="TaskCompleteRecordResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="taskRewardId"    column="task_reward_id"    />
+        <result property="taskTitle"    column="task_title"    />
+        <result property="taskDescribe"    column="task_describe"    />
+        <result property="taskType"    column="task_type"    />
+        <result property="taskFollowType"    column="task_follow_type"    />
+        <result property="taskRewardType"    column="task_reward_type"    />
+        <result property="taskPrice"    column="task_price"    />
+        <result property="describe"    column="describe"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectTaskCompleteRecordVo">
+        select id, user_id, task_reward_id, task_title, task_describe, task_type, task_follow_type, task_reward_type, task_price, `describe`, create_time, update_time from t_task_complete_record
+    </sql>
+
+    <select id="selectTaskCompleteRecordList" parameterType="TaskCompleteRecord" resultMap="TaskCompleteRecordResult">
+        <include refid="selectTaskCompleteRecordVo"/>
+        <where>
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="taskRewardId != null "> and task_reward_id = #{taskRewardId}</if>
+            <if test="taskTitle != null  and taskTitle != ''"> and task_title = #{taskTitle}</if>
+            <if test="taskDescribe != null  and taskDescribe != ''"> and task_describe = #{taskDescribe}</if>
+            <if test="taskType != null "> and task_type = #{taskType}</if>
+            <if test="taskFollowType != null "> and task_follow_type = #{taskFollowType}</if>
+            <if test="taskRewardType != null "> and task_reward_type = #{taskRewardType}</if>
+            <if test="taskPrice != null "> and task_price = #{taskPrice}</if>
+            <if test="describe != null  and describe != ''"> and `describe` = #{describe}</if>
+        </where>
+    </select>
+
+    <select id="selectTaskCompleteRecordById" parameterType="Long" resultMap="TaskCompleteRecordResult">
+        <include refid="selectTaskCompleteRecordVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertTaskCompleteRecord" parameterType="TaskCompleteRecord" useGeneratedKeys="true" keyProperty="id">
+        insert into t_task_complete_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="taskRewardId != null">task_reward_id,</if>
+            <if test="taskTitle != null">task_title,</if>
+            <if test="taskDescribe != null">task_describe,</if>
+            <if test="taskType != null">task_type,</if>
+            <if test="taskFollowType != null">task_follow_type,</if>
+            <if test="taskRewardType != null">task_reward_type,</if>
+            <if test="taskPrice != null">task_price,</if>
+            <if test="describe != null">`describe`,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="taskRewardId != null">#{taskRewardId},</if>
+            <if test="taskTitle != null">#{taskTitle},</if>
+            <if test="taskDescribe != null">#{taskDescribe},</if>
+            <if test="taskType != null">#{taskType},</if>
+            <if test="taskFollowType != null">#{taskFollowType},</if>
+            <if test="taskRewardType != null">#{taskRewardType},</if>
+            <if test="taskPrice != null">#{taskPrice},</if>
+            <if test="describe != null">#{describe},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTaskCompleteRecord" parameterType="TaskCompleteRecord">
+        update t_task_complete_record
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="taskRewardId != null">task_reward_id = #{taskRewardId},</if>
+            <if test="taskTitle != null">task_title = #{taskTitle},</if>
+            <if test="taskDescribe != null">task_describe = #{taskDescribe},</if>
+            <if test="taskType != null">task_type = #{taskType},</if>
+            <if test="taskFollowType != null">task_follow_type = #{taskFollowType},</if>
+            <if test="taskRewardType != null">task_reward_type = #{taskRewardType},</if>
+            <if test="taskPrice != null">task_price = #{taskPrice},</if>
+            <if test="describe != null">`describe` = #{describe},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTaskCompleteRecordById" parameterType="Long">
+        delete from t_task_complete_record where id = #{id}
+    </delete>
+
+    <delete id="deleteTaskCompleteRecordByIds" parameterType="String">
+        delete from t_task_complete_record where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <select id="selectTaskCompleteRecordDetailList" resultType="com.ruoyi.platform.vo.TaskCompleteRecordVO" parameterType="com.ruoyi.platform.dto.TaskCompleteRecordDTO">
+        select ttcr.`id`,ttcr.`user_id` userId, tu.`nick_name` nickName, tu.`avatar`, tu.`phone`,
+               ttcr.`task_reward_id` taskRewardId,ttcr.`task_title` taskTitle,ttcr.`task_describe` taskDescribe,
+               ttcr.`task_type` taskType,ttcr.`task_follow_type` taskFollowType,ttcr.`task_reward_type` taskRewardType,
+               ttcr.`task_price` taskPrice, ttcr.`describe`,ttcr.`create_time` createTime from t_task_complete_record ttcr
+        left join t_user tu on ttcr.`user_id` = tu.`id`
+        <where>
+            <if test="userId != null "> and ttcr.`user_id` = #{userId}</if>
+            <if test="nickName != null  and nickName != ''"> and tu.nick_name like concat('%', #{nickName}, '%')</if>
+            <if test="taskRewardId != null and taskRewardId != ''"> and ttcr.task_reward_id like concat('%', #{taskRewardId}, '%')</if>
+            <if test="taskTitle != null and taskTitle != ''"> and ttcr.task_title like concat('%', #{taskTitle}, '%')</if>
+            <if test="taskDescribe != null and taskDescribe != ''"> and ttcr.task_describe like concat('%', #{taskDescribe}, '%')</if>
+            <if test="taskType != null and taskType != ''"> and ttcr.task_type like concat('%', #{taskType}, '%')</if>
+            <if test="taskFollowType != null and taskFollowType != ''"> and ttcr.task_follow_type like concat('%', #{taskFollowType}, '%')</if>
+            <if test="taskRewardType != null and taskRewardType !=''"> and ttcr.task_reward_type like concat('%', #{taskRewardType}, '%')</if>
+        </where>
+        order by ttcr.`create_time` desc
+    </select>
+</mapper>

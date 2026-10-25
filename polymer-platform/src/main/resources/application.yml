@@ -1,0 +1,22 @@
+# 环境配置
+server:
+  port: 9521
+spring:
+  profiles:
+    active: prod
+#    active: ssh
+  servlet:
+    multipart:
+      max-file-size: 300MB
+      max-request-size: 500MB
+# MyBatis
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.ruoyi.platform
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/**/*Dao.xml
+#阿里
+ali:
+  #支付宝网关地址
+  payServerUrl: https://openapi.alipay.com/gateway.do
+

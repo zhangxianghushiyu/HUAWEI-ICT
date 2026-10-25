@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.DramaDao">
+  <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.Drama">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="title_img" jdbcType="VARCHAR" property="titleImg" />
+    <result column="is_recommend" jdbcType="INTEGER" property="isRecommend" />
+    <result column="classify_id" jdbcType="INTEGER" property="classifyId" />
+    <result column="details" jdbcType="VARCHAR" property="details" />
+    <result column="del_status" jdbcType="INTEGER" property="delStatus" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="play_count" jdbcType="INTEGER" property="playCount" />
+    <result column="like_count" jdbcType="INTEGER" property="likeCount" />
+    <result column="is_price" jdbcType="INTEGER" property="isPrice" />
+    <result column="is_end" jdbcType="INTEGER" property="isEnd" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="up_time" jdbcType="TIMESTAMP" property="upTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, title, title_img,  is_recommend, classify_id, details, del_status, `status`,
+    play_count, like_count,is_price,is_end, create_time,
+      up_time,
+      update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_drama
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_drama
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.Drama" useGeneratedKeys="true">
+      insert into t_drama (title, title_img,
+                             is_recommend, classify_id, details,
+                             del_status, `status`, play_count,
+                             like_count, is_price,is_end, create_time,
+                             up_time,
+                             update_time)
+      values (#{title,jdbcType=VARCHAR}, #{titleImg,jdbcType=VARCHAR},
+              #{isRecommend,jdbcType=INTEGER}, #{classifyId,jdbcType=INTEGER}, #{details,jdbcType=VARCHAR},
+              #{delStatus,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{playCount,jdbcType=INTEGER},
+              #{likeCount,jdbcType=INTEGER},
+               #{isPrice},#{isEnd},
+              #{createTime,jdbcType=TIMESTAMP},
+              #{upTime,jdbcType=TIMESTAMP},
+              #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.Drama" useGeneratedKeys="true">
+    insert into t_drama
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        title,
+      </if>
+      <if test="titleImg != null">
+        title_img,
+      </if>
+      <if test="isRecommend != null">
+        is_recommend,
+      </if>
+      <if test="classifyId != null">
+        classify_id,
+      </if>
+      <if test="details != null">
+        details,
+      </if>
+      <if test="delStatus != null">
+        del_status,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="playCount != null">
+        play_count,
+      </if>
+      <if test="likeCount != null">
+        like_count,
+      </if>
+      <if test="isPrice != null">
+        is_price,
+      </if>
+      <if test="isEnd != null">
+        is_end,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="upTime != null">
+        up_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="titleImg != null">
+        #{titleImg,jdbcType=VARCHAR},
+      </if>
+      <if test="isRecommend != null">
+        #{isRecommend,jdbcType=INTEGER},
+      </if>
+      <if test="classifyId != null">
+        #{classifyId,jdbcType=INTEGER},
+      </if>
+      <if test="details != null">
+        #{details,jdbcType=VARCHAR},
+      </if>
+      <if test="delStatus != null">
+        #{delStatus,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="playCount != null">
+        #{playCount,jdbcType=INTEGER},
+      </if>
+      <if test="likeCount != null">
+        #{likeCount,jdbcType=INTEGER},
+      </if>
+      <if test="isPrice != null">
+        #{isPrice},
+      </if>
+      <if test="isEnd != null">
+        #{isEnd},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="upTime != null">
+        #{upTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.Drama">
+    update t_drama
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="titleImg != null">
+        title_img = #{titleImg,jdbcType=VARCHAR},
+      </if>
+      <if test="isRecommend != null">
+        is_recommend = #{isRecommend,jdbcType=INTEGER},
+      </if>
+      <if test="classifyId != null">
+        classify_id = #{classifyId,jdbcType=INTEGER},
+      </if>
+      <if test="details != null">
+        details = #{details,jdbcType=VARCHAR},
+      </if>
+      <if test="delStatus != null">
+        del_status = #{delStatus,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="playCount != null">
+        play_count = #{playCount,jdbcType=INTEGER},
+      </if>
+      <if test="likeCount != null">
+        like_count = #{likeCount,jdbcType=INTEGER},
+      </if>
+      <if test="isPrice != null">
+        is_price = #{isPrice},
+      </if>
+      <if test="isEnd != null">
+        is_end = #{isEnd},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="upTime != null">
+        up_time = #{upTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.Drama">
+      update t_drama
+      set title        = #{title,jdbcType=VARCHAR},
+          title_img    = #{titleImg,jdbcType=VARCHAR},
+          is_recommend = #{isRecommend,jdbcType=INTEGER},
+          classify_id  = #{classifyId,jdbcType=INTEGER},
+          details      = #{details,jdbcType=VARCHAR},
+          del_status   = #{delStatus,jdbcType=INTEGER},
+          `status`     = #{status,jdbcType=INTEGER},
+          play_count   = #{playCount,jdbcType=INTEGER},
+          like_count   = #{likeCount,jdbcType=INTEGER},
+          is_price     = #{isPrice},
+          is_end     = #{isEnd},
+          create_time  = #{createTime,jdbcType=TIMESTAMP},
+          up_time      = #{upTime,jdbcType=TIMESTAMP} update_time = #{updateTime,jdbcType=TIMESTAMP}
+      where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="selectDramaHomePageVO" resultType="com.ruoyi.platform.vo.DramaHomePageVO">
+      SELECT tp.id dramaId, tp.title, tp.title_img as titleImg,  tp.is_recommend as isRecommend,
+      tp.classify_id as classifyId, tp.details, tp.del_status as delStatus, tp.`status`,
+      tp.play_count as playCount, tp.like_count as likeCount, tp.create_time as createTime,
+      tp.up_time as upTime,tp.is_end isEnd,
+      tp.update_time as updateTime,tp.is_price as isPrice
+      from t_drama tp
+      LEFT JOIN t_drama_category tpc on tpc.id=tp.classify_id
+      where tp.del_status=1 and tp.status=1
+      <if test="mainType==1">and tp.is_recommend=1</if>
+    <if test="categoryId!=null and categoryId!=''">and tp.classify_id=#{categoryId}</if>
+      <if test="mainType==1">order by tp.create_time desc</if>
+      <if test="mainType==2">and tp.is_price=0 order by tp.up_time desc</if>
+      <if test="mainType==3">order by tp.up_time desc</if>
+  </select>
+
+
+  <select id="queryDrama" resultType="com.ruoyi.platform.vo.DramaHomePageVO">
+    SELECT tp.id dramaId, tp.title, tp.title_img as titleImg,  tp.is_recommend as isRecommend,
+    tp.classify_id as classifyId, tp.details, tp.del_status as delStatus, tp.`status`,
+    tp.play_count as playCount, tp.like_count as likeCount, tp.create_time as createTime,
+    tp.up_time as upTime,tp.is_end isEnd,
+    tp.update_time as updateTime,tp.is_price as isPrice
+    from t_drama tp
+    LEFT JOIN t_drama_category tpc on tpc.id=tp.classify_id
+    where tp.del_status=1 and tp.status=1
+    <if test="title!=null"> and tp.title like concat('%', #{title}, '%')</if>
+    order by tp.like_count desc
+  </select>
+
+  <update id="addDramaPlayCount">
+      update t_drama
+      set play_count=play_count + 1
+      where id = #{id}
+  </update>
+
+
+  <update id="addDramaLikeCount">
+    update t_drama
+    set like_count=like_count + 1
+    where id = #{id}
+  </update>
+
+
+  <update id="subDramaLikeCount">
+    update t_drama
+    set like_count=like_count - 1
+    where id = #{id}
+  </update>
+
+  <select id="selectAppointDramaCoinListVOInfo" resultType="com.ruoyi.platform.vo.AppointDramaCoinListVO">
+    SELECT dc.drama_id     dramaId,
+           td.title,
+           td.title_img    titleImg,
+           td.is_recommend isRecommend,
+           td.classify_id  classifyId,
+           td.details,
+           td.play_count   playCount,
+           td.like_count   likeCount,
+           td.is_end       isEnd,
+           td.is_price     isPrice,
+           td.create_time  createTime
+    from t_task_daily_appoint_drama_coin dc
+           LEFT JOIN t_drama td on td.id = dc.drama_id
+    where td.`status` = 1
+      and td.del_status = 1
+  </select>
+
+    <select id="selectDramaAll"  resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from t_drama
+    </select>
+
+</mapper>

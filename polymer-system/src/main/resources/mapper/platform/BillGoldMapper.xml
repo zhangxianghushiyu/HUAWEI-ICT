@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.BillGoldMapper">
+    
+    <resultMap type="BillGold" id="BillGoldResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="scene"    column="scene"    />
+        <result property="describe"    column="describe"    />
+        <result property="money"    column="money"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectBillGoldVo">
+        select id, user_id, scene, `describe`, money, create_time, update_time from t_bill_gold
+    </sql>
+
+    <select id="selectBillGoldList" parameterType="BillGold" resultMap="BillGoldResult">
+        <include refid="selectBillGoldVo"/>
+        <where>  
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="scene != null "> and scene = #{scene}</if>
+            <if test="describe != null  and describe != ''"> and `describe` = #{describe}</if>
+            <if test="money != null "> and money = #{money}</if>
+        </where>
+        order by create_time desc
+    </select>
+    
+    <select id="selectBillGoldById" parameterType="Long" resultMap="BillGoldResult">
+        <include refid="selectBillGoldVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBillGold" parameterType="BillGold" useGeneratedKeys="true" keyProperty="id">
+        insert into t_bill_gold
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="scene != null">scene,</if>
+            <if test="describe != null">`describe`,</if>
+            <if test="money != null">money,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="scene != null">#{scene},</if>
+            <if test="describe != null">#{describe},</if>
+            <if test="money != null">#{money},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBillGold" parameterType="BillGold">
+        update t_bill_gold
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="scene != null">scene = #{scene},</if>
+            <if test="describe != null">`describe` = #{describe},</if>
+            <if test="money != null">money = #{money},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBillGoldById" parameterType="Long">
+        delete from t_bill_gold where id = #{id}
+    </delete>
+
+    <delete id="deleteBillGoldByIds" parameterType="String">
+        delete from t_bill_gold where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+    <select id="selectBillGoldListVOInfo" resultType="com.ruoyi.platform.vo.BillGoldListVO"
+    parameterType="com.ruoyi.platform.dto.BillGoldListDTO">
+        SELECT tbg.id,
+               tbg.scene,
+               tbg.`describe`,
+               tbg.money,
+               tbg.create_time createTime,
+               tu.nick_name    nickName,
+               tu.avatar
+        from t_bill_gold tbg
+                 inner join  t_user tu on tu.id = tbg.user_id
+        <if test="nickName!=null">and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="scene!=null">and tbg.scene=#{scene}</if>
+        order by tbg.create_time desc
+    </select>
+
+
+
+    <select id="selectBillGoldListJunior" resultType="com.ruoyi.platform.vo.BillGoldListVO"
+            parameterType="com.ruoyi.platform.dto.BillGoldListDTO">
+        SELECT tbg.id,
+        tbg.scene,
+        tbg.`describe`,
+        tbg.money,
+        tbg.create_time createTime,
+        tu.nick_name    nickName,
+        tu.avatar
+        from t_bill_gold tbg
+        inner join  t_user tu on tu.id = tbg.user_id
+        where tu.parent_id=#{parentId}
+        <if test="nickName!=null">and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="scene!=null">and tbg.scene=#{scene}</if>
+        order by tbg.create_time desc
+    </select>
+</mapper>

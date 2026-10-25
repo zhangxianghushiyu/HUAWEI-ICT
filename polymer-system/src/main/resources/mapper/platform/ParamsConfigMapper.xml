@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.ParamsConfigMapper">
+
+    <resultMap type="ParamsConfig" id="ParamsConfigResult">
+        <result property="id"    column="id"    />
+        <result property="type"    column="type"    />
+        <result property="followType"    column="follow_type"    />
+        <result property="value"    column="value"    />
+        <result property="remarks"    column="remarks"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectParamsConfigVo">
+        select id, type, follow_type, value, remarks, create_time, update_time from t_params_config
+    </sql>
+
+    <select id="selectParamsConfigList" parameterType="ParamsConfig" resultMap="ParamsConfigResult">
+        <include refid="selectParamsConfigVo"/>
+        <where>
+            <if test="type != null "> and type = #{type}</if>
+            <if test="followType != null "> and follow_type = #{followType}</if>
+            <if test="value != null  and value != ''"> and value = #{value}</if>
+            <if test="remarks != null  and remarks != ''"> and remarks = #{remarks}</if>
+        </where>
+    </select>
+
+    <select id="selectParamsConfigById" parameterType="Long" resultMap="ParamsConfigResult">
+        <include refid="selectParamsConfigVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertParamsConfig" parameterType="ParamsConfig" useGeneratedKeys="true" keyProperty="id">
+        insert into t_params_config
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="type != null">type,</if>
+            <if test="followType != null">follow_type,</if>
+            <if test="value != null">value,</if>
+            <if test="remarks != null">remarks,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="type != null">#{type},</if>
+            <if test="followType != null">#{followType},</if>
+            <if test="value != null">#{value},</if>
+            <if test="remarks != null">#{remarks},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateParamsConfig" parameterType="ParamsConfig">
+        update t_params_config
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="type != null">type = #{type},</if>
+            <if test="followType != null">follow_type = #{followType},</if>
+            <if test="value != null">value = #{value},</if>
+            <if test="remarks != null">remarks = #{remarks},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteParamsConfigById" parameterType="Long">
+        delete from t_params_config where id = #{id}
+    </delete>
+
+    <delete id="deleteParamsConfigByIds" parameterType="String">
+        delete from t_params_config where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="selectParamsConfigListByType"   resultMap="ParamsConfigResult">
+        <include refid="selectParamsConfigVo"/>
+        where type = #{type}
+    </select>
+
+
+    <select id="selectAliPayConfigListVO" resultType="com.ruoyi.platform.vo.AliPayConfigListVO">
+        select id, type, follow_type followType, `value`, remarks, create_time, update_time
+        from t_params_config
+        where type = 4 order by id asc
+    </select>
+
+
+    <select id="selectAliInfoConfigListVO" resultType="com.ruoyi.platform.vo.AliInfoConfigListVO">
+        select id, type, follow_type followType, `value`, remarks, create_time, update_time
+        from t_params_config
+        where type in(1,2,9) order by type asc,follow_type asc
+    </select>
+
+
+    <select id="selectWxPayConfigListVO" resultType="com.ruoyi.platform.vo.WxPayConfigListVO">
+        select id, type, follow_type followType, `value`, remarks, create_time, update_time
+        from t_params_config
+        where follow_type in(23,10,11,12,13,14,29,30,31,32) order by id asc
+    </select>
+
+
+    <select id="selectClientConfigListVO" resultType="com.ruoyi.platform.vo.ClientConfigListVO">
+        select id, type, follow_type followType, `value`, remarks, create_time, update_time
+        from t_params_config
+        where `type` in (5, 6, 7,8,10,11,12,13,16)
+        order by id asc
+    </select>
+</mapper>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.BillCashMapper">
+    
+    <resultMap type="BillCash" id="BillCashResult">
+        <result property="id"    column="id"    />
+        <result property="method"    column="method"    />
+        <result property="type"    column="type"    />
+        <result property="orderNo"    column="order_no"    />
+        <result property="failureReason"    column="failure_reason"    />
+        <result property="userId"    column="user_id"    />
+        <result property="scene"    column="scene"    />
+        <result property="describe"    column="describe"    />
+        <result property="zfbName"    column="zfb_name"    />
+        <result property="zfbUserName"    column="zfb_user_name"    />
+        <result property="money"    column="money"    />
+        <result property="status"    column="status"    />
+        <result property="withdrawalTabId"    column="withdrawal_tab_id"    />
+        <result property="autoAccount"    column="auto_account"    />
+        <result property="take"    column="take"    />
+        <result property="payTime"    column="pay_time"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectBillCashVo">
+        select id, method,type, order_no, failure_reason, user_id, scene, `describe`, money, status, withdrawal_tab_id,zfb_name,zfb_user_name,
+               auto_account,take, pay_time, create_time, update_time from t_bill_cash
+    </sql>
+
+    <select id="selectBillCashList" parameterType="BillCash" resultMap="BillCashResult">
+        <include refid="selectBillCashVo"/>
+        <where>  
+            <if test="method != null "> and `method` = #{method}</if>
+            <if test="type != null "> and `type` = #{type}</if>
+            <if test="orderNo != null  and orderNo != ''"> and order_no = #{orderNo}</if>
+            <if test="failureReason != null  and failureReason != ''"> and failure_reason = #{failureReason}</if>
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="scene != null "> and scene = #{scene}</if>
+            <if test="describe != null  and describe != ''"> and `describe` = #{describe}</if>
+            <if test="money != null "> and money = #{money}</if>
+            <if test="status != null "> and status = #{status}</if>
+            <if test="withdrawalTabId != null "> and withdrawal_tab_id = #{withdrawalTabId}</if>
+            <if test="autoAccount != null "> and auto_account = #{autoAccount}</if>
+            <if test="take != null "> and take = #{take}</if>
+            <if test="payTime != null "> and pay_time = #{payTime}</if>
+        </where>
+    </select>
+    
+    <select id="selectBillCashById" parameterType="Long" resultMap="BillCashResult">
+        <include refid="selectBillCashVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBillCash" parameterType="BillCash">
+        insert into t_bill_cash
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="method != null">`method`,</if>
+            <if test="type != null">`type`,</if>
+            <if test="orderNo != null">order_no,</if>
+            <if test="failureReason != null">failure_reason,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="scene != null">scene,</if>
+            <if test="describe != null">`describe`,</if>
+            <if test="money != null">money,</if>
+            <if test="status != null">status,</if>
+            <if test="withdrawalTabId != null">withdrawal_tab_id,</if>
+            <if test="autoAccount != null">auto_account,</if>
+            <if test="take != null">take,</if>
+            <if test="payTime != null">pay_time,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="method != null">#{method},</if>
+            <if test="type != null">#{type},</if>
+            <if test="orderNo != null">#{orderNo},</if>
+            <if test="failureReason != null">#{failureReason},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="scene != null">#{scene},</if>
+            <if test="describe != null">#{describe},</if>
+            <if test="money != null">#{money},</if>
+            <if test="status != null">#{status},</if>
+            <if test="withdrawalTabId != null">#{withdrawalTabId},</if>
+            <if test="autoAccount != null">#{autoAccount},</if>
+            <if test="take != null">#{take},</if>
+            <if test="payTime != null">#{payTime},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBillCash" parameterType="BillCash">
+        update t_bill_cash
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="method != null">method = #{method},</if>
+            <if test="type != null">`type` = #{type},</if>
+            <if test="orderNo != null">order_no = #{orderNo},</if>
+            <if test="failureReason != null">failure_reason = #{failureReason},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="scene != null">scene = #{scene},</if>
+            <if test="describe != null">`describe` = #{describe},</if>
+            <if test="zfbName != null">zfb_name = #{zfbName},</if>
+            <if test="zfbUserName != null">zfb_user_name = #{zfbUserName},</if>
+            <if test="money != null">money = #{money},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="withdrawalTabId != null">withdrawal_tab_id = #{withdrawalTabId},</if>
+            <if test="autoAccount != null">auto_account = #{autoAccount},</if>
+            <if test="take != null">take = #{take},</if>
+            <if test="payTime != null">pay_time = #{payTime},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="method != null">method = #{method},</if>
+            <if test="packageInfo != null">package_info = #{packageInfo},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBillCashById" parameterType="Long">
+        delete from t_bill_cash where id = #{id}
+    </delete>
+
+    <delete id="deleteBillCashByIds" parameterType="String">
+        delete from t_bill_cash where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="selectBillCashListVOInfo" resultType="com.ruoyi.platform.vo.BillCashListVO" parameterType="com.ruoyi.platform.dto.BillCashListDTO">
+        SELECT tbc.id, tbc.method,tbc.type, tbc.order_no orderNo, tbc.failure_reason failureReason, tbc.user_id userId,
+        tbc.scene, tbc.`describe`, tbc.money, tbc.status, tbc.withdrawal_tab_id withdrawalTabId,
+        tbc.auto_account autoAccount, tbc.pay_time payTime, tbc.create_time createTime, tbc.update_time updateTime ,
+        tu.nick_name nickName,tu.avatar,tu.commander,tu2.nick_name commanderUserName,
+        tbc.zfb_name zfbName,tbc.zfb_user_name zfbUserName
+        from t_bill_cash tbc
+        INNER JOIN t_user tu on tu.id=tbc.user_id
+        LEFT JOIN t_user tu2 on tu2.id=tu.parent_id
+        where 1=1
+        <if test="method!=null"> and tbc.method=#{method}</if>
+        <if test="type!=null"> and tbc.type=#{type}</if>
+        <if test="scene!=null"> and tbc.scene=#{scene}</if>
+        <if test="commander != null ">and tu.commander = #{commander}</if>
+        <if test="status!=null"> and tbc.status=#{status}</if>
+        <if test="autoAccount!=null"> and tbc.auto_account=#{autoAccount}</if>
+        <if test="nickName!=null"> and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="commanderUserName != null and commanderUserName!=''">and tu2.nick_name like concat('%', #{commanderUserName}, '%')</if>
+        ORDER BY tbc.create_time DESC
+    </select>
+
+
+    <select id="selectBillCashListJunior" resultType="com.ruoyi.platform.vo.BillCashListVO" parameterType="com.ruoyi.platform.dto.BillCashListDTO">
+        SELECT tbc.id, tbc.method,tbc.type, tbc.order_no orderNo, tbc.failure_reason failureReason, tbc.user_id userId,
+        tbc.scene, tbc.`describe`, tbc.money, tbc.status, tbc.withdrawal_tab_id withdrawalTabId,
+        tbc.auto_account autoAccount, tbc.pay_time payTime, tbc.create_time createTime, tbc.update_time updateTime ,
+        tu.nick_name nickName,tu.avatar,tu.commander,tu2.nick_name commanderUserName,
+        tbc.zfb_name zfbName,tbc.zfb_user_name zfbUserName
+        from t_bill_cash tbc
+        INNER JOIN t_user tu on tu.id=tbc.user_id
+        LEFT JOIN t_user tu2 on tu2.id=tu.parent_id
+        where 1=1
+        and tu.parent_id=#{parentId}
+        <if test="method!=null">and tbc.method=#{method}</if>
+        <if test="type!=null">and tbc.type=#{type}</if>
+        <if test="scene!=null">and tbc.scene=#{scene}</if>
+        <if test="status!=null">and tbc.status=#{status}</if>
+        <if test="autoAccount!=null">and tbc.auto_account=#{autoAccount}</if>
+        <if test="nickName!=null">and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="commander != null ">and tu.commander = #{commander}</if>
+        <if test="commanderUserName != null and commanderUserName!=''">and tu2.nick_name like concat('%', #{commanderUserName}, '%')</if>
+        ORDER BY tbc.create_time DESC
+    </select>
+
+
+    <select id="selectBillCashByOrderNo"   resultMap="BillCashResult">
+        <include refid="selectBillCashVo"/>
+        where order_no=#{orderNo} limit 1
+    </select>
+
+    <select id="selectBillCashSumMoney"   resultType="java.lang.Float" parameterType="com.ruoyi.platform.dto.BillCashListDTO">
+        SELECT IFNULL(SUM(tbc.money),0)
+        from t_bill_cash tbc
+        INNER JOIN t_user tu on tu.id=tbc.user_id
+        LEFT JOIN t_user tu2 on tu2.id=tu.parent_id
+        where 1=1
+        <if test="method!=null"> and tbc.method=#{method}</if>
+        <if test="type!=null"> and tbc.type=#{type}</if>
+        <if test="scene!=null"> and tbc.scene=#{scene}</if>
+        <if test="commander != null ">and tu.commander = #{commander}</if>
+        <if test="status!=null"> and tbc.status=#{status}</if>
+        <if test="autoAccount!=null"> and tbc.auto_account=#{autoAccount}</if>
+        <if test="nickName!=null"> and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="commanderUserName != null and commanderUserName!=''">and tu2.nick_name like concat('%', #{commanderUserName}, '%')</if>
+    </select>
+
+
+    <select id="selectBillCashSumMoneyJunior"    resultType="java.lang.Float" parameterType="com.ruoyi.platform.dto.BillCashListDTO">
+        SELECT IFNULL(SUM(tbc.money),0)
+        from t_bill_cash tbc
+        INNER JOIN t_user tu on tu.id=tbc.user_id
+        LEFT JOIN t_user tu2 on tu2.id=tu.parent_id
+        where 1=1
+        and tu.parent_id=#{parentId}
+        <if test="method!=null">and tbc.method=#{method}</if>
+        <if test="type!=null">and tbc.type=#{type}</if>
+        <if test="scene!=null">and tbc.scene=#{scene}</if>
+        <if test="status!=null">and tbc.status=#{status}</if>
+        <if test="autoAccount!=null">and tbc.auto_account=#{autoAccount}</if>
+        <if test="nickName!=null">and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="commander != null ">and tu.commander = #{commander}</if>
+        <if test="commanderUserName != null and commanderUserName!=''">and tu2.nick_name like concat('%', #{commanderUserName}, '%')</if>
+    </select>
+</mapper>

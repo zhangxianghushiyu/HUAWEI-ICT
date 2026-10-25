@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.TDefaultRatioMapper">
+    
+    <resultMap type="com.ruoyi.platform.domain.TDefaultRatio" id="TDefaultRatioResult">
+        <result property="id"    column="id"    />
+        <result property="haveManagerRatio"    column="have_manager_ratio"    />
+        <result property="noManagerRatio"    column="no_manager_ratio"    />
+        <result property="userRatio"    column="user_ratio"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectTDefaultRatioVo">
+        select id, have_manager_ratio, no_manager_ratio, user_ratio, create_time, update_time from t_default_ratio
+    </sql>
+
+    <select id="selectTDefaultRatioList" parameterType="com.ruoyi.platform.domain.TDefaultRatio" resultMap="TDefaultRatioResult">
+        <include refid="selectTDefaultRatioVo"/>
+        <where>  
+            <if test="haveManagerRatio != null "> and have_manager_ratio = #{haveManagerRatio}</if>
+            <if test="noManagerRatio != null "> and no_manager_ratio = #{noManagerRatio}</if>
+            <if test="userRatio != null "> and user_ratio = #{userRatio}</if>
+        </where>
+    </select>
+    
+    <select id="selectTDefaultRatioById" parameterType="Long" resultMap="TDefaultRatioResult">
+        <include refid="selectTDefaultRatioVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertTDefaultRatio" parameterType="com.ruoyi.platform.domain.TDefaultRatio" useGeneratedKeys="true" keyProperty="id">
+        insert into t_default_ratio
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="haveManagerRatio != null">have_manager_ratio,</if>
+            <if test="noManagerRatio != null">no_manager_ratio,</if>
+            <if test="userRatio != null">user_ratio,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="haveManagerRatio != null">#{haveManagerRatio},</if>
+            <if test="noManagerRatio != null">#{noManagerRatio},</if>
+            <if test="userRatio != null">#{userRatio},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTDefaultRatio" parameterType="com.ruoyi.platform.domain.TDefaultRatio">
+        update t_default_ratio
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="haveManagerRatio != null">have_manager_ratio = #{haveManagerRatio},</if>
+            <if test="noManagerRatio != null">no_manager_ratio = #{noManagerRatio},</if>
+            <if test="userRatio != null">user_ratio = #{userRatio},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTDefaultRatioById" parameterType="Long">
+        delete from t_default_ratio where id = #{id}
+    </delete>
+
+    <delete id="deleteTDefaultRatioByIds" parameterType="String">
+        delete from t_default_ratio where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

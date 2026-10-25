@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.UserDeactivateMapper">
+    
+    <resultMap type="UserDeactivate" id="UserDeactivateResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="remarks"    column="remarks"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectUserDeactivateVo">
+        select id, user_id, remarks, create_time, update_time from t_user_deactivate
+    </sql>
+
+    <select id="selectUserDeactivateList" parameterType="UserDeactivate" resultType="com.ruoyi.platform.domain.UserDeactivate">
+        select ud.remarks, ud.create_time createTime,
+               tu.user_name userName ,tu.nick_name nickName,tu.avatar
+        from t_user_deactivate ud
+                 inner join  t_user tu on tu.id=ud.user_id
+        <if test="userName != null  and userName != ''">and tu.user_name like concat('%', #{userName}, '%')</if>
+        ORDER BY ud.create_time DESC
+    </select>
+    
+    <select id="selectUserDeactivateById" parameterType="Long" resultMap="UserDeactivateResult">
+        <include refid="selectUserDeactivateVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertUserDeactivate" parameterType="UserDeactivate" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user_deactivate
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="remarks != null">remarks,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="remarks != null">#{remarks},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateUserDeactivate" parameterType="UserDeactivate">
+        update t_user_deactivate
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="remarks != null">remarks = #{remarks},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteUserDeactivateById" parameterType="Long">
+        delete from t_user_deactivate where id = #{id}
+    </delete>
+
+    <delete id="deleteUserDeactivateByIds" parameterType="String">
+        delete from t_user_deactivate where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

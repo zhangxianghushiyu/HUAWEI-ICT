@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.DramaCategoryMapper">
+    
+    <resultMap type="DramaCategory" id="DramaCategoryResult">
+        <result property="id" column="id"/>
+        <result property="sort" column="sort"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="name" column="name"/>
+        <result property="delStatus" column="del_status"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="selectDramaCategoryVo">
+        select id, sort, parent_id, name, del_status, create_time, update_time
+        from t_drama_category
+    </sql>
+
+    <select id="selectDramaCategoryList" parameterType="DramaCategory" resultMap="DramaCategoryResult">
+        <include refid="selectDramaCategoryVo"/>
+        where del_status=1
+        <if test="sort != null ">and sort = #{sort}</if>
+        <if test="parentId != null ">and parent_id = #{parentId}</if>
+        <if test="name != null  and name != ''">and name like concat('%', #{name}, '%')</if>
+        <if test="delStatus != null ">and del_status = #{delStatus}</if>
+        order by sort asc,create_time desc
+    </select>
+
+    <select id="selectDramaCategoryById" parameterType="Long" resultMap="DramaCategoryResult">
+        <include refid="selectDramaCategoryVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertDramaCategory" parameterType="DramaCategory" useGeneratedKeys="true" keyProperty="id">
+        insert into t_drama_category
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="sort != null">sort,</if>
+            <if test="parentId != null">parent_id,</if>
+            <if test="name != null">name,</if>
+            <if test="delStatus != null">del_status,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="sort != null">#{sort},</if>
+            <if test="parentId != null">#{parentId},</if>
+            <if test="name != null">#{name},</if>
+            <if test="delStatus != null">#{delStatus},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateDramaCategory" parameterType="DramaCategory">
+        update t_drama_category
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="sort != null">sort = #{sort},</if>
+            <if test="parentId != null">parent_id = #{parentId},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="delStatus != null">del_status = #{delStatus},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDramaCategoryById" parameterType="Long">
+        delete
+        from t_drama_category
+        where id = #{id}
+    </delete>
+
+    <update id="deleteDramaCategoryByIds" parameterType="String">
+        update t_drama_category set del_status=0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <select id="selectDramaCategoryListInfo" parameterType="DramaCategory" resultMap="DramaCategoryResult">
+        select tdc1.id, CONCAT(tdc2.`name`,'-',tdc1.`name`) name
+        from t_drama_category tdc1
+                 left join t_drama_category tdc2 on tdc1.parent_id = tdc2.id
+        where tdc1.parent_id != 0
+        order by tdc2.sort asc,tdc1.sort asc,tdc1.create_time desc
+    </select>
+
+    <select id="selectDramaCategoryByParentId" parameterType="Long" resultType="Integer">
+        select count(1)
+        from t_drama_category
+        where parent_id = #{id}
+    </select>
+</mapper>

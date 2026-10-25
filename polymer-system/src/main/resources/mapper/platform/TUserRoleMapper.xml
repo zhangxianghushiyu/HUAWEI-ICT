@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.TUserRoleMapper">
+    
+    <resultMap type="TUserRole" id="TUserRoleResult">
+        <result property="id"    column="id"    />
+        <result property="roleType"    column="role_type"    />
+        <result property="ratio"    column="ratio"    />
+        <result property="myRatio"    column="my_ratio"    />
+        <result property="indirectRatio"    column="indirect_ratio"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectTUserRoleVo">
+        select id, role_type, ratio, my_ratio, indirect_ratio, create_time, update_time from t_user_role
+    </sql>
+
+    <select id="selectTUserRoleList" parameterType="TUserRole" resultMap="TUserRoleResult">
+        <include refid="selectTUserRoleVo"/>
+        <where>  
+            <if test="roleType != null "> and role_type = #{roleType}</if>
+            <if test="ratio != null "> and ratio = #{ratio}</if>
+        </where>
+    </select>
+    
+    <select id="selectTUserRoleById" parameterType="Long" resultMap="TUserRoleResult">
+        <include refid="selectTUserRoleVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertTUserRole" parameterType="TUserRole">
+        insert into t_user_role
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="roleType != null">role_type,</if>
+            <if test="ratio != null">ratio,</if>
+            <if test="myRatio != null">my_ratio,</if>
+            <if test="indirectRatio != null">indirect_ratio,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="roleType != null">#{roleType},</if>
+            <if test="ratio != null">#{ratio},</if>
+            <if test="myRatio != null">#{myRatio},</if>
+            <if test="indirectRatio != null">#{indirectRatio},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTUserRole" parameterType="TUserRole">
+        update t_user_role
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="roleType != null">role_type = #{roleType},</if>
+            <if test="ratio != null">ratio = #{ratio},</if>
+            <if test="myRatio != null">my_ratio = #{myRatio},</if>
+            <if test="indirectRatio != null">indirect_ratio = #{indirectRatio},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTUserRoleById" parameterType="Long">
+        delete from t_user_role where id = #{id}
+    </delete>
+
+    <delete id="deleteTUserRoleByIds" parameterType="String">
+        delete from t_user_role where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

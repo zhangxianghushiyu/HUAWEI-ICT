@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VersionDao">
+    <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.Version">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="version_no" jdbcType="VARCHAR" property="versionNo"/>
+        <result column="release_note" jdbcType="VARCHAR" property="releaseNote"/>
+        <result column="app_url" jdbcType="VARCHAR" property="appUrl"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id
+        , version_no, release_note, app_url,url, create_time, update_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_version
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from t_version
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.Version"
+            useGeneratedKeys="true">
+        insert into t_version (version_no, release_note, app_url,url,
+                               create_time, update_time)
+        values (#{versionNo,jdbcType=VARCHAR}, #{releaseNote,jdbcType=VARCHAR}, #{appUrl,jdbcType=VARCHAR},
+                #{url},
+                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.Version"
+            useGeneratedKeys="true">
+        insert into t_version
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="versionNo != null">
+                version_no,
+            </if>
+            <if test="releaseNote != null">
+                release_note,
+            </if>
+            <if test="appUrl != null">
+                app_url,
+            </if>
+            <if test="url != null">
+                url,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="versionNo != null">
+                #{versionNo,jdbcType=VARCHAR},
+            </if>
+            <if test="releaseNote != null">
+                #{releaseNote,jdbcType=VARCHAR},
+            </if>
+            <if test="appUrl != null">
+                #{appUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                #{url},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.Version">
+        update t_version
+        <set>
+            <if test="versionNo != null">
+                version_no = #{versionNo,jdbcType=VARCHAR},
+            </if>
+            <if test="releaseNote != null">
+                release_note = #{releaseNote,jdbcType=VARCHAR},
+            </if>
+            <if test="appUrl != null">
+                app_url = #{appUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                url = #{url},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.Version">
+        update t_version
+        set version_no   = #{versionNo,jdbcType=VARCHAR},
+            release_note = #{releaseNote,jdbcType=VARCHAR},
+            app_url      = #{appUrl,jdbcType=VARCHAR},
+            url      = #{url},
+            create_time  = #{createTime,jdbcType=TIMESTAMP},
+            update_time  = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+
+    <select id="selectVersionVO" resultType="com.ruoyi.platform.vo.VersionVO">
+        select id, version_no versionNo, release_note releaseNote, app_url appUrl,url, create_time createTime, update_time
+        from t_version limit 1
+    </select>
+</mapper>

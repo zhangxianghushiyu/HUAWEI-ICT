@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VideoMapper">
+
+    <resultMap type="Video" id="VideoResult">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="playCount" column="play_count"/>
+        <result property="likeCount" column="like_count"/>
+        <result property="collectCount" column="collect_count"/>
+        <result property="content" column="content"/>
+        <result property="videoUrl" column="video_url"/>
+        <result property="videoCover" column="video_cover"/>
+        <result property="status" column="status"/>
+        <result property="delStatus" column="del_status"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="dramaId" column="drama_id"/>
+        <result property="classifyId" column="classify_id"/>
+        <result property="videoWidth" column="video_width"/>
+        <result property="videoHeight" column="video_height"/>
+        <result property="seriesName" column="series_name"/>
+        <result property="episodeNum" column="episode_num"/>
+    </resultMap>
+
+    <sql id="selectVideoVo">
+        select id,
+               name,
+               play_count,
+               like_count,
+               collect_count,
+               content,
+               video_url,
+               video_cover,
+               status,
+               del_status,
+               create_time,
+               update_time,
+               drama_id,
+               classify_id,
+               series_name,
+               episode_num
+        from t_video
+    </sql>
+
+    <select id="selectVideoList" parameterType="Video" resultMap="VideoResult">
+        <include refid="selectVideoVo"/>
+        where 1=1
+        <if test="name != null  and name != ''">and name like concat('%', #{name}, '%')</if>
+        <if test="playCount != null ">and play_count = #{playCount}</if>
+        <if test="likeCount != null ">and like_count = #{likeCount}</if>
+        <if test="collectCount != null ">and collect_count = #{collectCount}</if>
+        <if test="content != null  and content != ''">and content = #{content}</if>
+        <if test="videoUrl != null  and videoUrl != ''">and video_url = #{videoUrl}</if>
+        <if test="videoCover != null  and videoCover != ''">and video_cover = #{videoCover}</if>
+        <if test="status != null ">and status = #{status}</if>
+        <if test="delStatus != null ">and del_status = #{delStatus}</if>
+        and del_status = 1
+        order by create_time desc
+    </select>
+
+
+    <select id="selectVideoListVO" parameterType="com.ruoyi.platform.dto.VideoListDTO"
+            resultType="com.ruoyi.platform.vo.VideoListVO">
+        select id, name, play_count playCount, like_count likeCount,collect_count collectCount, content,
+        video_url videoUrl, video_cover videoCover, status, del_status delStatus,
+        create_time createTime, update_time updateTime, drama_id dramaId, classify_id classifyId,
+        series_name seriesName from t_video
+        where 1=1
+        <if test="name != null  and name != ''">and name like concat('%', #{name}, '%')</if>
+        <if test="playCount != null ">and play_count = #{playCount}</if>
+        <if test="likeCount != null ">and like_count = #{likeCount}</if>
+        <if test="collectCount != null ">and collect_count = #{collectCount}</if>
+        <if test="content != null  and content != ''">and content = #{content}</if>
+        <if test="videoUrl != null  and videoUrl != ''">and video_url = #{videoUrl}</if>
+        <if test="videoCover != null  and videoCover != ''">and video_cover = #{videoCover}</if>
+        <if test="status != null ">and status = #{status}</if>
+        <if test="delStatus != null ">and del_status = #{delStatus}</if>
+        <if test="classifyId != null ">and classify_id = #{classifyId}</if>
+        <if test="seriesName != null  and seriesName != ''">and series_name = #{seriesName}</if>
+        and del_status = 1
+        order by create_time desc
+    </select>
+
+
+    <select id="selectVideoById" parameterType="Long" resultMap="VideoResult">
+        <include refid="selectVideoVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertVideo" parameterType="Video" useGeneratedKeys="true" keyProperty="id">
+        insert into t_video
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">name,</if>
+            <if test="playCount != null">play_count,</if>
+            <if test="likeCount != null">like_count,</if>
+            <if test="collectCount != null">collect_count,</if>
+            <if test="content != null">content,</if>
+            <if test="videoUrl != null">video_url,</if>
+            <if test="videoCover != null">video_cover,</if>
+            <if test="status != null">status,</if>
+            <if test="delStatus != null">del_status,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="dramaId != null">drama_id,</if>
+            <if test="classifyId != null">classify_id,</if>
+            <if test="seriesName != null">series_name,</if>
+            <if test="episodeNum != null">episode_num,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">#{name},</if>
+            <if test="playCount != null">#{playCount},</if>
+            <if test="likeCount != null">#{likeCount},</if>
+            <if test="collectCount != null">#{collectCount},</if>
+            <if test="content != null">#{content},</if>
+            <if test="videoUrl != null">#{videoUrl},</if>
+            <if test="videoCover != null">#{videoCover},</if>
+            <if test="status != null">#{status},</if>
+            <if test="delStatus != null">#{delStatus},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="dramaId != null">#{dramaId},</if>
+            <if test="classifyId != null">#{classifyId},</if>
+            <if test="seriesName != null">#{seriesName},</if>
+            <if test="episodeNum != null">#{episodeNum},</if>
+        </trim>
+    </insert>
+
+    <update id="updateVideo" parameterType="Video">
+        update t_video
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="playCount != null">play_count = #{playCount},</if>
+            <if test="likeCount != null">like_count = #{likeCount},</if>
+            <if test="collectCount != null">collect_count = #{collectCount},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="videoUrl != null">video_url = #{videoUrl},</if>
+            <if test="videoCover != null">video_cover = #{videoCover},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="delStatus != null">del_status = #{delStatus},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="dramaId != null">drama_id = #{dramaId},</if>
+            <if test="classifyId != null">classify_id = #{classifyId},</if>
+            <if test="seriesName != null">series_name = #{seriesName},</if>
+            <if test="episodeNum != null">episode_num = #{episodeNum},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteVideoById" parameterType="Long">
+        delete
+        from t_video
+        where id = #{id}
+    </delete>
+
+    <update id="deleteVideoByIds" parameterType="String">
+        update t_video set del_status=0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <update id="undercarriage" parameterType="String">
+        update t_video set `status` = 0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <update id="grounding" parameterType="String">
+        update t_video set `status` = 1 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <update id="delVideoByClassify" parameterType="Integer">
+        update t_video set del_status = 0 where classify_id = #{classifyId} and del_status = 1
+    </update>
+
+    <update id="delVideoBySeries" parameterType="String">
+        update t_video set del_status = 0 where series_name = #{seriesName} and del_status = 1
+    </update>
+
+    <update id="groundingByClassify" parameterType="Integer">
+        update t_video set `status` = 1 where classify_id = #{classifyId} and del_status = 1
+    </update>
+
+    <update id="groundingBySeries" parameterType="String">
+        update t_video set `status` = 1 where series_name = #{seriesName} and del_status = 1
+    </update>
+
+    <update id="undercarriageByClassify" parameterType="Integer">
+        update t_video set `status` = 0 where classify_id = #{classifyId} and del_status = 1
+    </update>
+
+    <update id="undercarriageBySeries" parameterType="String">
+        update t_video set `status` = 0 where series_name = #{seriesName} and del_status = 1
+    </update>
+
+    <select id="selectSeriesNameList" resultType="java.lang.String">
+        select distinct series_name
+        from t_video
+        where del_status = 1
+          and series_name is not null
+          and series_name != ''
+        <if test="classifyId != null ">and classify_id = #{classifyId}</if>
+        order by series_name
+    </select>
+
+    <insert id="batchInsert" parameterType="java.util.List">
+        insert into t_video (name,like_count,
+        collect_count,content,video_url,video_cover,create_time,drama_id,classify_id,series_name,episode_num) values
+        <foreach collection="list" item="t" index="index" separator=",">
+            (#{t.name}, #{t.likeCount},#{t.collectCount},
+            #{t.content},#{t.videoUrl}, #{t.videoCover}, #{createTime}, #{dramaId},
+            #{t.classifyId},
+            #{t.seriesName}, #{t.episodeNum})
+        </foreach>
+    </insert>
+
+    <select id="selectVideoSizeNull" resultMap="VideoResult">
+        select id, video_url
+        from t_video
+        where video_width is null
+          and video_url is not null
+          and video_url != ''
+          and del_status = 1
+    </select>
+
+    <update id="updateVideoSize">
+        update t_video
+        set video_width  = #{videoWidth},
+            video_height = #{videoHeight}
+        <if test="videoUrl != null and videoUrl != ''">, video_url = #{videoUrl}</if>
+        where id = #{id}
+    </update>
+
+    <update id="updateVideoSeriesName">
+        update t_video
+        set series_name = #{seriesName},
+            episode_num = #{episodeNum}
+        where id = #{id}
+    </update>
+</mapper>

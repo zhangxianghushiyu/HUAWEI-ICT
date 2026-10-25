@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.EbookItemMapper">
+    
+    <resultMap type="EbookItem" id="EbookItemResult">
+        <result property="id"    column="id"    />
+        <result property="ebookId"    column="ebook_id"    />
+        <result property="chapter"    column="chapter"    />
+        <result property="title"    column="title"    />
+        <result property="content"    column="content"    />
+        <result property="delStatus"    column="del_status"    />
+        <result property="upStatus"    column="up_status"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectEbookItemVo">
+        select id, ebook_id, chapter, title, content, del_status, up_status, create_time, update_time from t_ebook_item
+    </sql>
+
+    <select id="selectEbookItemList" parameterType="EbookItem" resultMap="EbookItemResult">
+        <include refid="selectEbookItemVo"/>
+        where del_status=1
+        <if test="ebookId != null ">and ebook_id = #{ebookId}</if>
+        <if test="chapter != null ">and chapter = #{chapter}</if>
+        <if test="title != null  and title != ''">and title like concat('%', #{title}, '%')</if>
+        <if test="content != null  and content != ''">and content = #{content}</if>
+        <if test="delStatus != null ">and del_status = #{delStatus}</if>
+        <if test="upStatus != null ">and up_status = #{upStatus}</if>
+        order by chapter asc,update_time desc
+    </select>
+    
+    <select id="selectEbookItemById" parameterType="Long" resultMap="EbookItemResult">
+        <include refid="selectEbookItemVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertEbookItem" parameterType="EbookItem" useGeneratedKeys="true" keyProperty="id">
+        insert into t_ebook_item
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="ebookId != null">ebook_id,</if>
+            <if test="chapter != null">chapter,</if>
+            <if test="title != null">title,</if>
+            <if test="content != null">content,</if>
+            <if test="delStatus != null">del_status,</if>
+            <if test="upStatus != null">up_status,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="ebookId != null">#{ebookId},</if>
+            <if test="chapter != null">#{chapter},</if>
+            <if test="title != null">#{title},</if>
+            <if test="content != null">#{content},</if>
+            <if test="delStatus != null">#{delStatus},</if>
+            <if test="upStatus != null">#{upStatus},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateEbookItem" parameterType="EbookItem">
+        update t_ebook_item
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="ebookId != null">ebook_id = #{ebookId},</if>
+            <if test="chapter != null">chapter = #{chapter},</if>
+            <if test="title != null">title = #{title},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="delStatus != null">del_status = #{delStatus},</if>
+            <if test="upStatus != null">up_status = #{upStatus},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteEbookItemById" parameterType="Long">
+        delete from t_ebook_item where id = #{id}
+    </delete>
+
+    <update id="deleteEbookItemByIds" parameterType="String">
+        update  t_ebook_item set del_status=0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <insert id="batchInsert" parameterType="java.util.List">
+        insert into t_ebook_item (ebook_id,chapter,
+        title,content,create_time) values
+        <foreach collection="list" item="t" index="index" separator=",">
+            (#{t.ebookId}, #{t.chapter},#{t.title},
+            #{t.content},
+            #{createTime})
+        </foreach>
+    </insert>
+
+    <update id="undercarriage" parameterType="String">
+        update  t_ebook_item set up_status=0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+
+    <update id="grounding" parameterType="String">
+        update  t_ebook_item set up_status=1 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+</mapper>

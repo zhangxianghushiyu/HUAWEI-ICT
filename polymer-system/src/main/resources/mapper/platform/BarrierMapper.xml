@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.BarrierMapper">
+    
+    <resultMap type="Barrier" id="BarrierResult">
+        <result property="id"    column="id"    />
+        <result property="barrier"    column="barrier"    />
+        <result property="number"    column="number"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectBarrierVo">
+        select id, barrier, number, create_time, update_time from t_barrier
+    </sql>
+
+    <select id="selectBarrierList" parameterType="Barrier" resultMap="BarrierResult">
+        <include refid="selectBarrierVo"/>
+        <where>  
+            <if test="barrier != null "> and barrier = #{barrier}</if>
+            <if test="number != null "> and number = #{number}</if>
+        </where>
+    </select>
+    
+    <select id="selectBarrierById" parameterType="Long" resultMap="BarrierResult">
+        <include refid="selectBarrierVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBarrier" parameterType="Barrier" useGeneratedKeys="true" keyProperty="id">
+        insert into t_barrier
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="barrier != null">barrier,</if>
+            <if test="number != null">number,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="barrier != null">#{barrier},</if>
+            <if test="number != null">#{number},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBarrier" parameterType="Barrier">
+        update t_barrier
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="barrier != null">barrier = #{barrier},</if>
+            <if test="number != null">number = #{number},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBarrierById" parameterType="Long">
+        delete from t_barrier where id = #{id}
+    </delete>
+
+    <delete id="deleteBarrierByIds" parameterType="String">
+        delete from t_barrier where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+    <select id="selectBarrierByBarrier"  resultMap="BarrierResult">
+        <include refid="selectBarrierVo"/>
+        where barrier=#{barrier} limit 1
+    </select>
+</mapper>

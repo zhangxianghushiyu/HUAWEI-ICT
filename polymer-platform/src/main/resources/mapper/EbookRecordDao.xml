@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.EbookRecordDao">
+
+    <resultMap id="ebookRecordResultMap" type="com.ruoyi.platform.vo.EbookRecordVo">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+
+        <!-- t_ebook_record 表基础字段 -->
+        <result property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="ebookId" column="ebook_id" jdbcType="BIGINT"/>
+        <result property="chapterId" column="chapter_id" jdbcType="BIGINT"/>
+        <result property="readProgress" column="read_progress" jdbcType="INTEGER"/>
+        <result property="readTime" column="read_time" jdbcType="VARCHAR"/>
+        <result property="isLatest" column="is_latest" jdbcType="TINYINT"/>
+        <result property="createTime" column="create_time" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="update_time" jdbcType="VARCHAR"/>
+        <result property="title" column="title"/>
+        <result property="url" column="url"/>
+        <result property="chapterTitle" column="chapter_title"/>
+    </resultMap>
+
+    <insert id="insert" keyColumn="id" parameterType="com.ruoyi.platform.domain.EbookRecord">
+        INSERT INTO `t_ebook_record`(`user_id`, `ebook_id`, `chapter_id`, `read_progress`, `read_time`, `is_latest`, `create_time`, `update_time`)
+        VALUES (#{userId}, #{eBookId}, #{chapterId}, #{readProgress}, now(), #{isLatest}, now(),  now());
+    </insert>
+
+    <select id="selectRecentRecords" resultMap="ebookRecordResultMap">
+        SELECT
+      rr.id,
+    rr.user_id,
+    rr.ebook_id,
+    rr.chapter_id,
+     rr.read_progress,
+     DATE_FORMAT(rr.read_time, '%Y-%m-%d %H:%i:%s') as read_time,
+     rr.is_latest,
+     DATE_FORMAT(rr.create_time, '%Y-%m-%d %H:%i:%s') as create_time,
+     DATE_FORMAT(rr.update_time, '%Y-%m-%d %H:%i:%s') as update_time,
+        n.title AS title,
+         n.url AS url,
+        c.title AS chapter_title
+        FROM
+        t_ebook_record rr
+        LEFT JOIN t_ebook n ON rr.ebook_id = n.id
+        LEFT JOIN t_ebook_item c ON rr.chapter_id = c.id
+        WHERE
+        rr.user_id =#{userId}
+        ORDER BY
+        rr.read_time DESC
+	</select>
+</mapper>
