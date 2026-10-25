@@ -1,0 +1,99 @@
+page,
+view,
+navigator,
+button,
+input,
+textarea,
+image,
+navigator,
+form,
+text {
+	box-sizing: border-box;
+	font-size: inherit;
+	font-family: "Microsof YaHei";
+	color: inherit;
+	line-height: inherit;
+}
+
+page {
+	font-size: 26rpx;
+	line-height: 1.4;
+	color: #333;
+	background-color:#fff;
+}
+
+//底部按钮
+.bottom-box {
+	position: fixed;
+	bottom: 0%;
+	left: 0%;
+	width: 100%;
+	padding: 20rpx 40rpx;
+	display: flex;
+	background-color: $uni-bg-white;
+	border-top:1px solid $uni-border-gray;
+	z-index: 99;
+}
+
+// 按钮相关
+button {
+	display: inline-block;
+	padding: 20rpx;
+	font-size: 32rpx;
+	margin: 0;
+	letter-spacing: 2rpx;
+	border-radius: 60rpx;
+}
+
+// 小的
+button[size="small"] {
+	padding: 0 28rpx;
+	line-height: 60rpx;
+	font-size: 24rpx;
+}
+
+// 中间的
+button[size="mid"] {
+	padding: 0 40rpx;
+	line-height: 64rpx;
+	font-size: 28rpx;
+}
+
+// 大的
+button[size="big"] {
+	padding: 0 30rpx;
+	line-height: 84rpx;
+	font-size: 32rpx;
+}
+
+// 长的
+button[size="long"] {
+	padding: 0 30rpx;
+	line-height: 84rpx;
+	font-size: 32rpx;
+	width: 100%;
+}
+
+.button-hover{
+	opacity: 0.7;
+}
+
+button[disabled] {
+	opacity: 0.7;
+}
+
+button[type="theme"] {
+	color: $uni-color-white;
+	background-image:linear-gradient(to right,#F12902, #FD8D47);
+}
+
+button[type="theme_border"] {
+	color: $uni-theme;
+	border: 2px solid $uni-theme;
+}
+
+
+
+
+
+

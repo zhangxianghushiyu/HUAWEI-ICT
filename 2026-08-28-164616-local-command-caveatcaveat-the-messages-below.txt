@@ -1,0 +1,681 @@
+╭─── Claude Code v2.1.158 ─────────────────────────────────────────────────────╮
+│                                        │ Tips for getting started            │
+│              Welcome back!             │ Run /init to create a CLAUDE.md fi… │
+│                                        │ ─────────────────────────────────── │
+│                 ▐▛███▜▌                │ What's new                          │
+│                ▝▜█████▛▘               │ Auto mode is now available on Bedr… │
+│                  ▘▘ ▝▝                 │ Plugins in `.claude/skills` direct… │
+│                                        │ Added `claude plugin init <name>` … │
+│   kimi-k2.7-code · API Usage Billing   │ /release-notes for more             │
+│   D:\data\liuyueliu\hoshino\hoshino    │                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+  ↑ Install the PyCharm plugin from the JetBrains Marketplace: https://docs.claude.com/s/claude-code-jetbrains
+
+❯ /model                                                                        
+  ⎿  Set model to kimi-k2.7-code and saved as your default for new sessions
+
+❯ 你读一下项目记忆。                                                            
+
+  Thought for 7s (ctrl+o to expand)
+
+● 已读完项目记忆，当前 MEMORY.md 索引共有 21 条记录，涵盖以下板块：
+
+  项目与产品
+  - [[project-hoshino]] — uni-app 旅游/娱乐 App，TabBar
+  结构、关键模块、API、Taku 广告说明
+  - [[project-ent-feature]] — 娱乐 Tab 改为分类浏览 + 系列播放，新建
+  ent-list.vue
+  - [[ent-random-feed]] / [[ent-tiktok-feed]] —
+  娱乐类抖音刷流、随机排序、跨剧混入、系列每 3/5 集弹广告
+  - [[dy-player-app-gesture-arch]] — App 端手势双路径：cover-view（iOS）+
+  plus.nativeObj.View（Android）
+
+  后端与服务器
+  - [[backend-dual-repos]] — lyl-backend（series_name 字符串） vs
+  hyt-backend（系列表 seriesId）；当前跑的是 lyl-backend；有 3 问题改动清单 +
+  待推送
+  - [[server-compromise-2026-08-21]] — 2026-08-21 入侵事件：挖矿/SSH
+  爆破木马、IOC、清理顺序
+  - [[server-hardening-followup]] — 加固待办（SSH 密钥、MySQL 收紧、监控等）
+  - [[server-architecture-docker]] — 全套服务在
+  Docker：nginx=lyl-froend、9521=polymer-platform、9123=polymer-admin
+  - [[cert-renewal]] — SSL 为腾讯云 TrustAsia 90 天免费 DV，2026-08-18
+  过期致全站 502，新证书至 2026-11-16
+
+  广告与合规
+  - [[ad-expansion]] — 15 页面接入 Banner/原生/插屏，5 个 placement
+  - [[taku-placement-app-mismatch]] — 首页横幅新 ID 加载失败，最终复用
+  b6a27695b77b77，margin 12rpx，高 180rpx，固定底部
+  - [[uniad-error-first-launch]] / [[privacy-template-oaid-fix]] — 同意前采 OAID
+  导致 -9001/-9002；已执行 Plan A 改 5 个文件充分披露
+  - [[ad-network-formalization]] — 穿山甲/优量汇需正式上架商店才能转正计费
+  - [[dcloud-workorder-bapull]] — ba_pull 工单已备好待贴
+
+  打包与发布
+  - [[apk-packaging-setup]] — 离线打包环境 SDK 5.24、签名 test.keystore、cli.exe
+  publish appResource 可脚本化、targetSdk 33→34
+  - [[agreement-db-update]] — 协议存在 t_agreement 表，不要后台粘贴，改 html
+  后跑 python scripts/update-agreement.py
+
+  Bug 修复
+  - [[bugfix-2026-08-12]] — 分类栏遮挡、选集失效、视频适配、间隔广告 ID、Taku ID
+  全量清单
+  - [[articel-banner-fix]] — 欢乐吧横幅 UniComponent 不渲染、overlay 坐标用 plus
+  物理像素、点 X 关闭本次不再弹
+  - [[ent-ads-interstitial-panel-scroll]] — 间隔广告改插屏、选集面板 App 端
+  cover-view 无法滚动→页级 scroll-view + 开面板卸载 video
+  - [[video-series-backend-gap]] — videoSeries 接口缺点赞/收藏字段、getVideoInfo
+  兜底、真机卡顿双解码器根因、顶部阴影
+
+  今日相关背景
+  - gitStatus 显示 common/api/config.js 有本地修改
+  - 当前分支 master
+  - 最近提交围绕视频播放进度、合集/娱乐模块、隐私协议、崩溃修复
+
+  记忆已全部加载。需要我针对哪一条记忆展开核对、补全或基于记忆做下一步操作吗？
+
+✻ Churned for 34s
+
+❯ 你还记得这两个项目记忆吗？5   uniad.dcloud.net.cn  用 DCloud 账号登录         
+  uniad.dcloud.net.cn，找到「众合星野」，走一遍开通流程。不用真上广告位，只把   
+  App 状态从"未开通"改成"已开通"，-9001/-9002                                   
+  开通 uni-ad 弹窗立即消失，同时给 uni-ad 加了一层"授权使用"的合规正当性        
+  6  ask.dcloud.net.cn     用 DCloud 账号提工单：报告 SDK 5.24.82669_20260813   
+  的 ADHandler.pull 在 Activity onCreate                                        
+  Runnable（"ba_pull"）里早于隐私弹框触发 MSA                                   
+  开工单InitSdk，附应用宝报告堆栈截图，问是否有补丁或新版本已修复。如果官方给补 
+  丁包/新 SDK，第 2 步的打包用新 SDK 重打一次                                   
+
+  Thought for 8s (ctrl+o to expand)
+
+● 记得，这两步出自 [[privacy-template-oaid-fix]]（整改方案 Plan A 的第 5、6
+  步），同时 [[dcloud-workorder-bapull]] 里已经把工单文案备好了。
+
+  我回忆的内容如下：
+
+  第 5 步：uni-ad 后台开通
+  - 地址：uniad.dcloud.net.cn
+  - 用 DCloud 账号登录，找到应用「众合星野」
+  - 目标：只走一遍开通流程，把 App 的 uni-ad 状态从「未开通」改为「已开通」
+  - 不需要真上广告位
+  - 效果：启动时 -9001/-9002 的 uni-ad 弹窗会消失；同时给 uni-ad
+  增加一层「授权使用」的合规正当性
+
+  第 6 步：DCloud 工单
+  - 地址：ask.dcloud.net.cn
+  - 用同一 DCloud 账号提工单
+  - 核心问题：SDK 5.24.82669_20260813 里 ADHandler.pull 在 Activity onCreate 的
+  Runnable（标记为 "ba_pull"）中，早于隐私弹框就触发了 MSA InitSdk
+  - 附件：应用宝报告的堆栈截图
+  - 问官方：是否有补丁包，或哪个新版本已修复
+  - 如果官方给了补丁/新 SDK，第 2 步的离线打包要用新 SDK 重新打一次
+
+  这两步目前状态是「待用户执行」，工单文案已备好、尚未贴单，工单号也待回填。
+
+  需要我现在帮你核对当前执行进度、补充工单文案细节，或者把这五步/六步整理成可勾
+  选的待办清单吗？
+
+✻ Cooked for 19s
+
+❯ OK，我现在已经找官方了。官方给了我反馈。给了一个官方地址，你读一下，然后看方  
+  案拦截uni-ad 在同意之前拦截OAID获取。以及-9001/-9002 问题。认真读一下https:// 
+  uniapp.dcloud.net.cn/tutorial/app-privacy-android.html                        
+
+  Thought for 9s (ctrl+o to expand)
+
+● Fetch(https://uniapp.dcloud.net.cn/tutorial/app-privacy-android.html)
+  ⎿  Error: Unable to verify if domain uniapp.dcloud.net.cn is safe to fetch. 
+     This may be due to network restrictions or enterprise security policies 
+     blocking claude.ai.
+
+  Thought for 3s (ctrl+o to expand)
+
+● Web Search("site:uniapp.dcloud.net.cn tutorial app-privacy-android OAID 拦截
+            -9001 -9002 uni-ad")
+  ⎿  Did 1 search in 47s
+
+  Thought for 6s (ctrl+o to expand)
+
+● Fetch(https://uniapp.dcloud.net.cn/tutorial/app-privacy-android.html)
+  ⎿  Error: Unable to verify if domain uniapp.dcloud.net.cn is safe to fetch. 
+     This may be due to network restrictions or enterprise security policies 
+     blocking claude.ai.
+
+● Fetch(https://uniapp.dcloud.net.cn/uni-ad/faq/ad-dev-faq.html)
+  ⎿  Error: Unable to verify if domain uniapp.dcloud.net.cn is safe to fetch. 
+     This may be due to network restrictions or enterprise security policies 
+     blocking claude.ai.
+
+● Fetch(https://uniapp.dcloud.net.cn/uni-ad/faq/ad-open-faq.html)
+  ⎿  Error: Unable to verify if domain uniapp.dcloud.net.cn is safe to fetch. 
+     This may be due to network restrictions or enterprise security policies 
+     blocking claude.ai.
+
+  Thought for 25s (ctrl+o to expand)
+
+● Web Search(""app-privacy-android" "OAID" "uni-ad" "同意" "拦截"
+            site:uniapp.dcloud.net.cn")
+  ⎿  Did 1 search in 38s
+
+● Web Search(""-9001" "-9002" "uni-ad" "MSA" "OAID" "dcloud"")
+  ⎿  Did 1 search in 12s
+
+● Web Search(""uni-ad" "ADHandler.pull" "ba_pull" "OAID" "隐私" "dcloud"")
+  ⎿  Did 1 search in 22s
+
+  Thought for 19s (ctrl+o to expand)
+
+● Web Search(""uni-app" "隐私协议" "模板" "OAID" "MSA" "manifest" "dcloud"")
+  ⎿  Did 1 search in 29s
+
+● Web Search(""uni-app" "用户同意" "隐私政策" "OAID" "SDK" "初始化" "拦截"")
+  ⎿  Did 1 search in 32s
+
+● Web Search(""uni-ad" "未开通" "-9001" "-9002" "错误码" "dcloud" "uni-app"")
+  ⎿  Did 1 search in 32s
+
+  Thought for 16s (ctrl+o to expand)
+● Fetch(https://ask.dcloud.net.cn/m/question/221425)
+  ⎿  Error: Unable to verify if domain ask.dcloud.net.cn is safe to fetch. This 
+     may be due to network restrictions or enterprise security policies blocking
+     claude.ai.
+
+● Fetch(https://uniapp.dcloud.net.cn/uni-ad/ad-error-code.html)
+  ⎿  Error: Unable to verify if domain uniapp.dcloud.net.cn is safe to fetch. 
+     This may be due to network restrictions or enterprise security policies 
+     blocking claude.ai.
+
+● Fetch(https://ask.dcloud.net.cn/m/question/221060)
+  ⎿  Error: Unable to verify if domain ask.dcloud.net.cn is safe to fetch. This 
+     may be due to network restrictions or enterprise security policies blocking
+     claude.ai.
+
+  Thought for 5s (ctrl+o to expand)
+
+● Web Search(""uniapp.dcloud.net.cn/tutorial/app-privacy-android.html" "OAID"
+            "用户同意"")
+  ⎿  Did 1 search in 44s
+
+● Web Search(""app-privacy-android" "enableOAID" "privacyRegisterMode"
+            "template"")
+  ⎿  Did 1 search in 15s
+
+● Web Search(""androidPrivacy.json" "template" "OAID" "MSA" "dcloud"
+            "用户同意前"")
+  ⎿  Did 1 search in 28s
+
+  Thought for 30s (ctrl+o to expand)
+
+● Web Search(""ba_pull" "ADHandler" "MSA" "InitSdk" "dcloud" "补丁" "修复"")
+  ⎿  Did 1 search in 46s
+
+● Web Search(""5.24" "uni-app" "离线打包" "隐私弹窗" "OAID" "ba_pull" "修复"")
+  ⎿  Did 1 search in 39s
+
+● Web Search(""uni-app" "androidPrivacy.json" "prompt" "template" "version"
+            "3.6.8" "OAID" "官方"")
+  ⎿  Did 3 searches in 39s
+
+  Thought for 35s (ctrl+o to expand)
+
+● Web Search(""5.24" "ba_pull" "修复" "dcloud" "官方" "补丁" "OAID"")
+  ⎿  Did 1 search in 35s
+
+● Web Search(""lib.5plus.base-release.aar" "ba_pull" "MSA" "OAID" "同意"
+            "隐私"")
+  ⎿  Did 1 search in 42s
+
+● Web Search(""uni-app" "隐私弹窗前" "uni-ad" "初始化" "官方回复" "已修复"")
+  ⎿  Did 7 searches in 100s
+
+  Thought for 17s (ctrl+o to expand)
+
+● 我认真去读了，但 uniapp.dcloud.net.cn 这个域在当前环境里被网络策略拦截，直接
+  fetch 失败。我通过搜索和已有的项目记忆，把同一篇官方文档的核心要点、以及和你这
+  个问题强相关的 DCloud 官方/社区反馈都拉出来了。
+
+  结论先放在前面：
+
+  ▎ 官方给的 app-privacy-android.html 主要讲的是「标准合规姿势」：用 
+  ▎ androidPrivacy.json 的 template 模式弹隐私框、在框里充分披露 OAID/IMEI 
+  ▎ 等、升级 HBuilderX/SDK 版本。但它针对的是普通场景。
+  ▎
+  ▎ 你项目里的 SDK 5.24 ba_pull 提前触发 MSA InitSdk 采 OAID 是一个已被 DCloud 
+  ▎ 官方社区确认的基座层时序 bug，单靠 template 
+  ▎ 隐私框是拦不住的。所以必须把「官方文档标准配置」和「这个具体 bug 
+  ▎ 的补丁/绕过」分开处理。
+
+  下面是我整理的分析和可执行方案。
+
+  ---
+  一、官方文档 app-privacy-android.html 的核心要求
+
+  根据搜索到的官方同源内容，这篇文档要求做到以下几点：
+
+  1. 隐私弹窗必须用 template 模式
+
+  - 文件：项目根目录/androidPrivacy.json
+  - 关键字段：
+  {
+    "version": "1",
+    "prompt": "template",
+    "title": "服务协议和隐私政策",
+    "message": "......<br>...IMEI、Android ID、DEVICE_ID、IDFA、IMSI、OAID...",
+    "buttonAccept": "同意并接受",
+    "buttonRefuse": "暂不同意",
+    "hrefLoader": "system",
+    "backToExit": "false",
+    "second": { ... },
+    "disagreeMode": { ... },
+    "styles": { ... }
+  }
+  - 不能用自定义原生弹窗。文档和官方问答反复强调：只有 template
+  模式才能在基座层正确拦截 SDK 在同意前的初始化。
+
+  2. 隐私文案里必须明确列出 OAID
+
+  message 里要包含：
+
+  ▎ IMEI / Android ID / DEVICE_ID / IDFA / IMSI / OAID 等设备标识信息
+
+  这一点你在 [[privacy-template-oaid-fix]] 里已经做了（改了 5 个文件）。
+
+  3. 版本要求
+
+  - 云端打包：HBuilderX 3.6.1+
+  - OAID 合规专项：HBuilderX 3.6.8+
+  - 如果完全不需要 OAID：manifest.json → android → "enableOAID": false（需
+  HBuilderX 3.8.5+），此后 plus.device.getOAID 返回空字符串。
+
+  4. 不同意模式 disagreeMode
+
+  用户点「暂不同意」后，App 仍可进入基础模式，但受限 API（包括
+  plus.device.getOAID、plus.ad.xxx 等）会被拦截。
+
+  ---
+  二、为什么单单照做官方文档，未必能解决你的问题
+
+  你的问题不是「没弹框」或「文案没写 OAID」，而是：
+
+  ▎ SDK 5.24 在 Activity onCreate 的 Runnable（字符串 "ba_pull"）里，先调了 
+  ▎ ADHandler.pull → 触发 MdidSdkHelper.InitSdk 采 OAID，然后才做 
+  ▎ AppRuntime.hasPrivacyForNotShown 判断。
+
+  也就是说：
+  - template 弹窗管的是业务层/JS 层调用。
+  - ba_pull 发生在基座原生层启动早期，隐私框还没出来就已经初始化完了。
+  - 社区反馈里有人验证：即使配了 androidPrivacy.json + template， fresh install
+  下 OAID 还是会被写入 dcloud-ads.xml 和 pdr.xml。
+
+  这是 DCloud 官方 Q&A
+  里被标记/回复过的已知问题，根因在基座，不是配置能完全兜住的。
+
+  ---
+  三、-9001 / -9002 是怎么回事
+
+  ┌────────┬─────────────────┬──────────────────────────────────────────────┐
+  │ 错误码 │      含义       │                   触发原因                   │
+  ├────────┼─────────────────┼──────────────────────────────────────────────┤
+  │        │ 应用的 uni-AD   │ 打包里包含了 uni-ad/广告渠道 SDK，但         │
+  │ -9001  │ 业务状态异常    │ uniad.dcloud.net.cn 后台该 App               │
+  │        │                 │ 未开通或广告位未审核                         │
+  ├────────┼─────────────────┼──────────────────────────────────────────────┤
+  │ -9002  │ 应用的 uni-AD   │ 同 -9001，属于同一类业务状态检测失败         │
+  │        │ 业务状态异常    │                                              │
+  └────────┴─────────────────┴──────────────────────────────────────────────┘
+
+  解决办法二选一：
+
+  1. 去 uni-ad 后台开通业务（你项目记忆里的第 5
+  步）。状态从「未开通」变「已开通」后，启动时就不会再弹 -9001/-9002。
+  2. 在 manifest.json 
+  里去掉广告模块。如果项目其实没接广告，取消勾选「广告」或具体渠道 SDK
+  后重打包。
+
+  你项目记忆里选择的是方案 1：开通
+  uni-ad。这一步确实能让弹窗消失，但它不解决「同意前采 
+  OAID」的问题——因为开通后广告 SDK 反而更“名正言顺”地初始化。
+
+  ---
+  四、结合你项目记忆的完整处理建议
+
+  你之前准备的 6 步 Plan A 里，第 5、6 步是核心。现在官方给了
+  app-privacy-android.html，建议把方案调整为：
+
+  必须保留/检查
+
+  1. androidPrivacy.json 用 template 模式，message 里写清 OAID。
+  2. 隐私政策 HTML 已更新（docs/隐私政策整改/typeN-*.html），并用 python 
+  scripts/update-agreement.py 直写 t_agreement 表。
+  3. manifest.json 里确认广告模块——既然你打算开通
+  uni-ad，就保留；如果不想要广告，直接去掉模块更简单。
+
+  针对 ba_pull 提前采 OAID
+
+  4. 先升级到最新 5.24 离线 SDK 小版本（当前你用的是
+  5.24.82669_20260813）。DCloud 官方在社区回复中的口径是：「更新到最新离线 SDK
+  验证是否修复」。如果有新的小版本（如 20260814/15 之后），优先试。
+  5. 如果最新 SDK 仍有此问题，带着以下材料找 DCloud 官方技术/商务要定向补丁：
+    - AppID
+    - 应用宝完整检测报告/堆栈截图
+    - 当前离线 SDK 版本号
+    - 反编译调用链（即 ba_pull → ADHandler.pull → MdidSdkHelper.InitSdk 这条链）
+
+  这是 DCloud 官方在 bug 帖里给出的路径。
+  6. 如果业务上不需要 OAID，可以考虑在 manifest.json 的 android 节点加
+  "enableOAID": false（需确认你的 HBuilderX/离线 SDK
+  版本支持）。但你们有广告业务，这样做可能影响广告归因，需要测试。
+
+  工单策略调整
+
+  你原来准备的 ask.dcloud.net.cn
+  工单可以继续提，但不要把重点只放在「问是否有补丁」，而是直接引用：
+  - SDK 版本 5.24.82669_20260813
+  - 调用链：io.dcloud.a$a.run → "ba_pull" → ADHandler.pull →
+  MdidSdkHelper.InitSdk
+  - 现象：隐私框未弹出前已写入 dcloud-ads.xml
+
+  诉求明确写：要求提供修复了该时序问题的基座 patch 或新 SDK 
+  版本，而不是泛泛地问有没有新版本。
+
+  ---
+  五、我对你当前情况的最直接判断
+
+  你目前的状态：
+  - 隐私文案和协议已整改 ✅
+  - 下一步是去 uni-ad 后台开通业务，消除 -9001/-9002 ✅
+  - 但开通 uni-ad 只是让弹窗消失，不保证应用宝不再报「同意前采 OAID」
+  - 真正要根治，需要 DCloud 给 5.24 离线 SDK 的补丁，或升级到已修复的小版本
+
+  所以建议你并行做两件事：
+  1. 开通 uni-ad（消弹窗）。
+  2. 向 DCloud 要 ba_pull 提前初始化的定向补丁（治根因）。
+
+  如果你愿意，我可以帮你把这两点整理成一份给 DCloud
+  的工单/沟通文案，或者更新项目记忆里 [[privacy-template-oaid-fix]] 的状态。
+
+✻ Brewed for 8m 46s
+
+❯ ok，我有一个问题，能不能把DCloud 下面的uni-ad                                 
+  广告SDK剔除，会不会影响taku广告以及和APP使用                                  
+
+  Thought for 10s (ctrl+o to expand)
+
+● Web Search(""uni-app" "Taku" "广告" "uni-ad" "manifest" "去掉" "影响"")
+  ⎿  Did 1 search in 32s
+
+● Web Search(""uni-app" "去除" "uni-ad" "SDK" "taku" "TopOn" "离线打包"")
+  ⎿  Did 1 search in 28s
+
+● Web Search(""uni-ad" "TopOn" "Taku" "dcloud" "不需要" "模块" "manifest.json"")
+  ⎿  Did 1 search in 28s
+
+  Thought for 1m 23s, searched for 8 patterns, read 5 files (ctrl+o to expand)
+
+● 我看了项目代码，给你一个非常明确但可能有点反直觉的结论：
+
+  直接回答
+
+  能不能把 DCloud 的 uni-ad 广告 SDK 剔除？
+  → 靠改项目配置剔不干净。
+
+  会不会影响 Taku 广告和 App 使用？
+  → 不会影响 Taku。两者是独立体系。
+
+  ---
+  为什么我说「剔不干净」
+
+  我核对了你仓库里的关键文件：
+
+  1. manifest.json 里本来就没有启用 uni-ad
+
+  manifest.json:22-27：
+  "modules" : {
+      "VideoPlayer" : {},
+      "OAuth" : {},
+      "Payment" : {},
+      "Share" : {}
+  },
+
+  广告模块一个都没勾。所以不存在「从 manifest 去掉
+  uni-ad」这件事——你早就去掉了。
+
+  2. Taku 是独立原生插件
+
+  manifest.json:29-31：
+  "nativePlugins" : {
+      "TakuAdsNativePlugin" : {}
+  },
+
+  Taku 走的是 nativeplugins/TakuAdsNativePlugin/，JS 层通过
+  uni.requireNativePlugin('TakuAdBridge') 调用，组件是 <taku-native-ad> 和
+  <taku-banner>。它依赖的是自己 libs 下的 aar：
+
+  - anythink_core_6.6.22.aar
+  - anythink_network_csj_*.aar（穿山甲）
+  - anythink_network_gdt_*.aar（优量汇）
+  - anythink_network_baidu_*.aar（百度联盟）
+  - 等等
+
+  和 DCloud uni-ad 没有依赖关系。 所以即使 uni-ad 被移除，Taku 也不受影响。
+
+  3. 真正的问题：uni-ad 代码嵌在基座 AAR 里
+
+  你的离线打包脚本指向：
+
+  SDK_DIR="D:/data/liuyueliu/Android-SDK@5.24.82669_20260813"
+
+  这个离线 SDK 里的 lib.5plus.base-release.aar 已经内置了 
+  io.dcloud.feature.gg（uni-ad 模块）。即使 manifest.json
+  不声明，基座启动时仍然会执行 ba_pull → ADHandler.pull →
+  MdidSdkHelper.InitSdk。
+
+  这就是为什么：
+  - 你没接 uni-ad，却弹 -9001/-9002
+  - 隐私框还没点同意，OAID 已经被采集
+
+  ---
+  通俗总结
+
+  ┌─────────────────┬──────────────────────┬────────────────────────────────┐
+  │      操作       │       能不能做       │              效果              │
+  ├─────────────────┼──────────────────────┼────────────────────────────────┤
+  │ 从              │                      │ 对 -9001/-9002 和 OAID         │
+  │ manifest.json   │ 已经去掉了           │ 问题基本无效                   │
+  │ 去掉 uni-ad     │                      │                                │
+  ├─────────────────┼──────────────────────┼────────────────────────────────┤
+  │ 去掉 Taku       │ 能做                 │ Taku 广告全废，但和 uni-ad     │
+  │ 原生插件        │                      │ 无关                           │
+  ├─────────────────┼──────────────────────┼────────────────────────────────┤
+  │ 从基座 AAR      │ 理论上能，实际上极难 │ 需要 DCloud 提供无 uni-ad      │
+  │ 里抠掉 uni-ad   │                      │ 的基座，或自己改 AAR，风险高   │
+  ├─────────────────┼──────────────────────┼────────────────────────────────┤
+  │ 在 uni-ad       │                      │ -9001/-9002                    │
+  │ 后台开通业务    │ 能做                 │ 弹窗消失，但不解决同意前采     │
+  │                 │                      │ OAID                           │
+  ├─────────────────┼──────────────────────┼────────────────────────────────┤
+  │ 等 DCloud 补丁  │ 推荐                 │ 能同时治 -9001/-9002 和        │
+  │ / 新 SDK        │                      │ ba_pull 时序问题               │
+  └─────────────────┴──────────────────────┴────────────────────────────────┘
+
+  ---
+  我的建议
+
+  既然你的广告业务全部是 Taku，而 uni-ad 只是被基座强行带进来的：
+
+  1. 不要试图自己从 AAR 里剔除 uni-ad。社区里有人试过
+  R8/shrink，官方明确不建议，因为 io.dcloud.feature.gg 和 lib.5plus.base
+  耦合很深，容易把基座搞崩。
+  2. 继续推进 DCloud 工单，核心诉求改成：
+  ▎ 「我们项目没有使用 uni-ad 模块，但离线 SDK 5.24.82669_20260813 的基座 AAR 
+  仍内置 uni-ad 并触发 ba_pull 提前采集 OAID。请提供不包含 uni-ad 
+  初始化逻辑的基座 patch，或修复 ba_pull 在隐私同意前执行的时序问题。」
+  3. 同步开通 uni-ad 后台（你项目记忆第 5 步），作为临时止血，让 -9001/-9002
+  弹窗先消失，给用户一个干净的启动体验。
+  4. Taku 广告照常运行，不用动。
+
+  如果你需要，我可以帮你把这份结论整理成给 DCloud 的工单正文，或者更新
+  [[privacy-template-oaid-fix]] 里关于「uni-ad 与 Taku 关系」的说明。
+✻ Baked for 2m 49s
+
+❯ SDK 5.24.82669_20260813 能不能我自己去下载，是不是找最新的SDK                 
+
+  Thought for 13s (ctrl+o to expand)
+
+● Web Search(""Android 离线SDK" "正式版" "dcloud" "下载" "5.24" "最新"")
+  ⎿  Did 1 search in 38s
+
+● Web Search(""nativesupport.dcloud.net.cn" "AppDocs/download/android.html"
+            "离线SDK" "正式版"")
+  ⎿  Did 1 search in 31s
+
+● Web Search(""uni-app" "离线打包" "SDK版本" "AppKey" "重新获取" "更新"")
+  ⎿  Did 1 search in 40s
+
+  Thought for 19s (ctrl+o to expand)
+
+● Web Search(""HBuilderX" "5.24" "下载" "正式版" "20260813" "dcloud"")
+  ⎿  Did 1 search in 23s
+
+● Web Search(""5.24.82669_20260813" "HBuilderX" "Android离线SDK" "下载"")
+  ⎿  Did 1 search in 35s
+
+  Thought for 15s (ctrl+o to expand)
+
+● 可以，但有几个关键点必须注意。
+
+  ---
+  一、官方下载地址
+
+  Android 离线 SDK 官方下载页：
+
+  https://nativesupport.dcloud.net.cn/AppDocs/download/android.html
+
+  这个页面提供：
+  - 正式版（推荐用于生产发版）
+  - Alpha 版（预览版，可能有新功能但不稳定）
+  - 百度云、和彩云两种下载方式
+
+  HBuilderX 本体下载页：
+
+  https://www.dcloud.io/hbuilderx.html
+
+  ---
+  二、你当前版本是什么
+
+  你当前用的离线 SDK 是：
+
+  Android-SDK@5.24.82669_20260813
+
+  这个版本对应 HBuilderX 5.24.2026081301 正式版（2026-08-13 发布）。其中：
+  - 5.24 = 大版本
+  - 82669 = SDK 内部构建号
+  - 20260813 = 构建日期
+
+  也就是说，你手里的已经是 2026-08-13 的 5.24 正式版。
+
+  ---
+  三、是不是该找最新 SDK
+
+  原则：离线 SDK 版本必须和 HBuilderX 版本严格一致。
+
+  所以你要不要更新，取决于你电脑上 HBuilderX 的版本：
+
+  ┌───────────────┬───────────────────────────┬─────────────────────────────┐
+  │     你的      │                           │                             │
+  │  HBuilderX    │     该用什么离线 SDK      │            建议             │
+  │     版本      │                           │                             │
+  ├───────────────┼───────────────────────────┼─────────────────────────────┤
+  │ 5.24.20260813 │ Android-SDK@5.24.xxx_2026 │ 保持当前，或去官网看有没有  │
+  │ 01            │ 0813                      │ 更新的 5.24 小版本          │
+  ├───────────────┼───────────────────────────┼─────────────────────────────┤
+  │ 5.23.xxx      │ Android-SDK@5.23.xxx_2026 │ 不要升到                    │
+  │               │ 080x                      │ 5.24，会报版本不一致        │
+  ├───────────────┼───────────────────────────┼─────────────────────────────┤
+  │ 想升到最新    │ 同时升级 HBuilderX + 离线 │ 可以，但要重新验证          │
+  │               │  SDK                      │                             │
+  └───────────────┴───────────────────────────┴─────────────────────────────┘
+
+  今天是 2026-08-28，距离 5.24 发布已经 15 天。建议你先上官网看看：
+  1. 正式版列表里有没有 比 20260813 更新的 5.24 小版本
+  2. 如果有，那个版本是否修复了 ba_pull 提前采 OAID 的问题
+
+  ---
+  四、下载后怎么替换
+
+  如果你决定更新，需要改这几个地方：
+
+  1. 下载并解压到新目录
+
+  比如原来的在：
+  D:/data/liuyueliu/Android-SDK@5.24.82669_20260813
+
+  新版可以放到：
+  D:/data/liuyueliu/Android-SDK@5.24.xxxxx_202608xx
+
+  2. 改三个脚本的 SDK_DIR
+
+  这三个文件里都有 SDK_DIR="D:/data/liuyueliu/Android-SDK@5.24.82669_20260813"：
+
+  - scripts/sync-plugin-to-offline.sh:10
+  - scripts/build-offline-apk.sh:9
+  - scripts/install-and-run.sh:9
+
+  全部改成新路径。
+
+  3. 用对应版本的 HBuilderX 重新生成本地打包资源
+
+  这一步非常关键。如果 HBuilderX 是 5.24，离线 SDK 也必须是
+  5.24；否则启动可能白屏或弹版本不一致提示。
+
+  操作路径：
+  HBuilderX → 发行 → 原生 App-本地打包 → 生成本地打包 App 资源
+
+  生成后资源会在：
+  unpackage/resources/__UNI__8969615/www
+
+  4. 检查 AppKey
+
+  如果新 SDK 的离线工程结构没变、包名和签名证书也没变，原来的 dcloud_appkey
+  通常还能用。
+
+  但如果你换了证书或包名，必须去 DCloud 开发者后台重新申请离线
+  Key，并更新离线工程的 AndroidManifest.xml 里的 dcloud_appkey。
+
+  5. 重新同步、编译、测试
+
+  bash scripts/sync-plugin-to-offline.sh
+  bash scripts/build-offline-apk.sh debug
+  bash scripts/install-and-run.sh debug
+
+  ---
+  五、一个重要提醒：换 SDK 不一定能修 ba_pull
+
+  从你之前的 bug 反馈和社区资料看，ba_pull 提前触发 MSA InitSdk 是 5.24 
+  基座层时序问题。即使你重新下载同一个 5.24 版本，问题也还在。
+
+  所以下载/更新 SDK 的策略应该是：
+
+  1. 先上官网确认有没有 5.24 的更新小版本（比如 20260820、20260825
+  之后），看更新日志是否提到修复了 OAID/隐私弹窗/广告初始化时序。
+  2. 如果有，直接升级，这是最有希望的方案。
+  3. 如果没有比 20260813 
+  更新的版本，那重新下载一遍当前版本意义不大，应该继续推进 DCloud 工单要 patch。
+  4. 更新后一定要用应用宝合规检测或 logcat 验证，确认 MdidSdkHelper.InitSdk
+  是否还出现在隐私同意之前。
+
+  ---
+  六、我的建议
+
+  现在最省事的动作：
+
+  1. 打开 https://nativesupport.dcloud.net.cn/AppDocs/download/android.html 
+  看最新正式版
+  2. 如果最新正式版日期 > 2026-08-13，下载并升级
+  3. 如果最新还是 2026-08-13 或更早，不要折腾 SDK，优先等 DCloud 补丁
+  4. 同步在 uni-ad 后台开通业务，先消掉 -9001/-9002 弹窗
+
+  需要我帮你写一个「离线 SDK 升级检查清单」或者更新 scripts/ 里的版本号吗？
+
+✻ Churned for 2m 55s

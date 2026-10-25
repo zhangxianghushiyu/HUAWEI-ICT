@@ -1,0 +1,537 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/articel/index",
+			"style": {
+				"navigationBarTitleText": "欢乐吧"
+			},
+			"options": {
+				"lazyLoad": false
+			}
+		},
+		{
+			"path": "pages/look-at/index",
+			"style": {
+				"navigationBarTitleText": "看看",
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+			},
+			"options": {
+				"lazyLoad": false
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/index/buy-drama",
+			"style": {
+				"navigationBarTitleText": "购买短剧"
+			}
+		},
+		{
+			"path": "pages/index/selectedWorks",
+			"style": {
+				"navigationBarTitleText": "选集"
+			}
+		},
+		{
+			"path": "pages/index/query",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/benefit/index",
+			"style": {
+				"navigationBarTitleText": "福利",
+				"navigationStyle": "custom"
+			}
+		},
+
+		{
+			"path": "pages/benefit/withdrawal",
+			"style": {
+				"navigationBarTitleText": "提现"
+			}
+		},
+		{
+			"path": "pages/benefit/withdrawal-detail",
+			"style": {
+				"navigationBarTitleText": "账户明细",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/settings",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		},
+		{
+			"path": "pages/mine/about-us",
+			"style": {
+				"navigationBarTitleText": "关于我们"
+			}
+		},
+		{
+			"path": "pages/mine/edit-user",
+			"style": {
+				"navigationBarTitleText": "用户信息"
+			}
+		},
+		{
+			"path": "pages/mine/browse-records",
+			"style": {
+				"navigationBarTitleText": "浏览记录"
+			}
+		},
+		{
+			"path": "pages/mine/login",
+			"style": {
+				"navigationBarTitleText": "", //登录
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/register-account",
+			"style": {
+				"navigationBarTitleText": "注册账号" //登录
+			}
+		},
+		{
+			"path": "pages/mine/edit-account",
+			"style": {
+				"navigationBarTitleText": "重置密码" //登录
+			}
+		},
+		{
+			"path": "pages/mine/code",
+			"style": {
+				"navigationBarTitleText": "" //验证码
+			}
+		},
+		{
+			"path": "pages/mine/createVip",
+			"style": {
+				"navigationBarTitleText": "开通会员",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/helpAndFeedback",
+			"style": {
+				"navigationBarTitleText": "帮助与反馈",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/inviteFriend",
+			"style": {
+				"navigationBarTitleText": "邀请好友",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/my-like",
+			"style": {
+				"navigationBarTitleText": "我的点赞"
+			}
+		},
+		{
+			"path": "pages/mine/my-collection",
+			"style": {
+				"navigationBarTitleText": "我的收藏"
+			}
+		},
+		{
+			"path": "pages/mine/customer",
+			"style": {
+				"navigationBarTitleText": "联系客服",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/recharge-record",
+			"style": {
+				"navigationBarTitleText": "充值记录"
+			}
+		},
+		{
+			"path": "pages/mine/policy",
+			"style": {
+				"navigationBarTitleText": "政策"
+			}
+		},
+		{
+			"path": "pages/mine/more",
+			"style": {
+				"navigationBarTitleText": "更多福利"
+			}
+		},
+		{
+			"path": "pages/mine/proxyApplication",
+			"style": {
+				"navigationBarTitleText": "代理申请"
+			}
+		},
+		{
+			"path": "pages/mine/proxyWithdrawal",
+			"style": {
+				"navigationBarTitleText": "代理申请提现"
+			}
+		},
+		{
+			"path": "pages/mine/address",
+			"style": {
+				"navigationBarTitleText": "地址管理"
+			}
+		},
+		{
+			"path": "pages/mine/addAddress",
+			"style": {
+				"navigationBarTitleText": "地址编辑"
+			}
+		},
+		{
+			"path": "pages/mine/shop",
+			"style": {
+				"navigationBarTitleText": "金币商城",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/shop-order",
+			"style": {
+				"navigationBarTitleText": "我的订单"
+			}
+		},
+		{
+			"path": "pages/mine/shop-record",
+			"style": {
+				"navigationBarTitleText": "金币记录"
+			}
+		},
+		{
+			"path": "pages/game/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/game/weChat",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/turntable",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/promotion/index",
+			"style": {
+				"navigationBarTitleText": "我的推广",
+				"navigationBarBackgroundColor": "#FDF4E9"
+			}
+		},
+		{
+			"path": "pages/promotion/index2",
+			"style": {
+				"navigationBarTitleText": "我的推广",
+				"navigationBarBackgroundColor": "#FDF4E9"
+			}
+		},
+		{
+			"path": "pages/promotion/index3",
+			"style": {
+				"navigationBarTitleText": "我的推广",
+				"navigationBarBackgroundColor": "#FDF4E9"
+			}
+		},
+		{
+			"path": "pages/promotion/teamMembers",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/promotion/applyForAgent",
+			"style": {
+				"navigationBarTitleText": "申请代理商",
+				"navigationBarBackgroundColor": "#fff"
+			}
+		},
+		{
+			"path": "pages/promotion/inviteCommander",
+			"style": {
+				"navigationBarTitleText": "邀请团长",
+				"navigationBarBackgroundColor": "#fff"
+			}
+		},
+		{
+			"path": "pages/promotion/dataStatistics",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/promotion/teamManagement",
+			"style": {
+				"navigationBarTitleText": "团队管理",
+				"navigationBarBackgroundColor": "#fff"
+			}
+		},
+		{
+			"path": "pages/promotion/bindingCode",
+			"style": {
+				"navigationBarTitleText": "绑定邀请码",
+				"navigationBarBackgroundColor": "#fff"
+			}
+		},
+		{
+			"path": "pages/promotion/transactionRecord",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/promotion/inviteFriends",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/promotion/fillInAgent",
+			"style": {
+				"navigationBarTitleText": "申请代理商",
+				"navigationBarBackgroundColor": "#F6F6F6"
+			}
+		},
+		{
+			"path": "pages/articel/articleDetail",
+			"style": {
+				"navigationBarTitleText": "文章"
+			}
+		},
+		{
+			"path": "pages/travel/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/vote/list",
+			"style": {
+				"navigationBarTitleText": "投票中心",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/vote/detail",
+			"style": {
+				"navigationBarTitleText": "投票详情",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/articel/articellist",
+			"style": {
+				"navigationBarTitleText": "全部贴吧"
+			}
+		},
+		{
+			"path": "pages/travel/gonglue",
+			"style": {
+				"navigationBarTitleText": "攻略游记"
+			}
+		},
+		{
+			"path": "pages/travel/jiuwenhua",
+			"style": {
+				"navigationBarTitleText": "商品"
+			}
+		},
+		{
+			"path": "pages/travel/canying",
+			"style": {
+				"navigationBarTitleText": "餐饮"
+			}
+		},
+		{
+			"path": "pages/travel/ty",
+			"style": {
+				"navigationBarTitleText": "田园"
+			}
+		},
+		{
+			"path": "pages/travel/zb",
+			"style": {
+				"navigationBarTitleText": "周边"
+			}
+		},
+		{
+			"path": "pages/travel/detail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		},
+
+		{
+			"path": "pages/activity/list",
+			"style": {
+				"navigationBarTitleText": "活动报名"
+			}
+		},
+		{
+			"path": "pages/activity/detail",
+			"style": {
+				"navigationBarTitleText": "活动详情"
+			}
+		},
+		{
+			"path": "pages/activity/mySignup",
+			"style": {
+				"navigationBarTitleText": "我的报名"
+			}
+		},
+        {
+            "path": "components/global-toast",
+            "style": {
+                "navigationBarTitleText": ""
+            }
+        },
+		{
+			"path": "pages/player/ent-list",
+			"style": {
+				"navigationBarTitleText": "娱乐",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/player/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white",
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/player/drama",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white",
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/player/series-list",
+			"style": {
+				"navigationBarTitleText": "娱乐",
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white",
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/player/series",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white",
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/player/collect-list",
+			"style": {
+				"navigationBarTitleText": "合集",
+				"enablePullDownRefresh": true
+			}
+		}
+	],
+	"tabBar": {
+		// 默认颜色
+		"color": "#333333",
+		"selectedColor": "#333333",
+		// 选中颜色
+		"backgroundColor": "#fff",
+		// // #ifdef APP-PLUS
+		// "fontSize": "15px",
+		// // #endif
+		"list": [
+			// {
+			// 	"pagePath": "pages/index/index",
+			// 	"text": "首页",
+			// 	"iconPath": "static/images/menu/Menu1.png",
+			// 	"selectedIconPath": "static/images/menu/Menu1Click.png"
+			// },
+			{
+				"pagePath": "pages/travel/index",
+				"text": "首页",
+				"iconPath": "static/images/menu/Menu1.png",
+				"selectedIconPath": "static/images/menu/Menu1Click.png"
+			},
+			{
+
+				"iconPath": "static/images/menu/Menu6.png",
+				"text": "欢乐吧",
+				"selectedIconPath": "static/images/menu/Menu6Click.png",
+				"pagePath": "pages/articel/index"
+			}, {
+
+				"iconPath": "static/images/menu/Menu7.png",
+				"text": "娱乐",
+				"selectedIconPath": "static/images/menu/Menu7Click.png",
+				// "pagePath": "pages/look-at/index"
+				"pagePath": "pages/player/series-list"
+			},{
+
+				"iconPath": "/static/images/menu/abcd.png",
+				"text": "合集",
+				"selectedIconPath": "/static/images/menu/abc.png",
+				// "pagePath": "pages/look-at/index"
+				// "pagePath": "pages/player/index"
+				"pagePath": "pages/player/collect-list"
+			},
+
+			{
+				"pagePath": "pages/mine/shop",
+				"text": "商城",
+				"iconPath": "static/images/menu/Menu3.png",
+				"selectedIconPath": "static/images/menu/Menu3Click.png"
+			},
+			{
+				"pagePath": "pages/mine/index",
+				"text": "我的",
+				"iconPath": "static/images/menu/Menu5.png",
+				"selectedIconPath": "static/images/menu/Menu5Click.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "App",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

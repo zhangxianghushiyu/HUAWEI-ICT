@@ -1,0 +1,17 @@
+{
+	"version": "2",
+	"prompt": "template",
+	"title": "用户协议和隐私政策",
+	"message": "　　感谢您使用众合星野APP。请您在使用本应用前审慎阅读并充分理解<a href=\"https://liuyueliu.cloud/privacy-policy.html\">《隐私政策》</a>全部内容。<br/><br/>1. 本应用基于 DCloud（数字天堂）uni-app 5+ App 离线框架构建，其内置的 uni-ad 基座模块会在启动阶段自动初始化，通过 MSA SDK 获取匿名设备标识 OAID/CAID，用于反作弊与广告去重，此过程与您的同意与否无关；详见《隐私政策》「启动初始化与 SDK 运行阶段说明」。<br/>2. 我们仅在您点击「同意」后，才会初始化 Taku、优量汇、百度广告、穿山甲、百度移动统计、火山引擎等其他第三方 SDK 并允许其收集信息。<br/>3. 我们不会主动收集通讯录、短信、通话记录、精准位置等信息。<br/><br/>如您同意上述条款，请点击「同意」；如您不同意，请点击「拒绝」并关闭本应用。",
+	"buttonAccept": "同意",
+	"buttonRefuse": "拒绝",
+	"second": {
+		"title": "确认提示",
+		"message": "　　进入应用前，您需先同意<a href=\"https://liuyueliu.cloud/privacy-policy.html\">《隐私政策》</a>；如仍不同意，本应用将退出。",
+		"buttonAccept": "同意并继续",
+		"buttonRefuse": "退出应用"
+	},
+	"disagreeMode": {
+		"support": false
+	}
+}

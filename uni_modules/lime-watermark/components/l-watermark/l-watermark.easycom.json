@@ -1,0 +1,62 @@
+{
+  "name": "",
+  "description": "用于配置水印的显示内容、样式和布局方式\r\n<br> 插件类型：LWatermarkComponentPublicInstance",
+  "tutorial": "https://ext.dcloud.net.cn/plugin?name=lime-watermark",
+  "attributes": [
+    {
+      "name": "zIndex",
+      "description": "水印的z-index层级，控制水印在页面中的堆叠顺序",
+      "type": "number"
+    },
+    {
+      "name": "rotate",
+      "description": "水印旋转角度",
+      "type": "number"
+    },
+    {
+      "name": "width",
+      "description": "单个水印的宽度",
+      "type": "number"
+    },
+    {
+      "name": "height",
+      "description": "单个水印的高度",
+      "type": "number"
+    },
+    {
+      "name": "image",
+      "description": "图片水印的URL地址",
+      "type": "string"
+    },
+    {
+      "name": "content",
+      "description": "文字水印内容，支持多行文字（数组的每个元素代表一行）",
+      "type": "string[]"
+    },
+    {
+      "name": "font",
+      "description": "文字水印的字体样式配置",
+      "type": "WatermarkFont"
+    },
+    {
+      "name": "gap",
+      "description": "水印之间的间距，格式为[水平间距, 垂直间距]",
+      "type": "number[]"
+    },
+    {
+      "name": "offset",
+      "description": "水印的整体偏移量，格式为[水平偏移, 垂直偏移]",
+      "type": "number[]"
+    },
+    {
+      "name": "fontGap",
+      "description": "文字行间距，仅当content为多行时有效",
+      "type": "number"
+    },
+    {
+      "name": "baseSize",
+      "description": "基础尺寸（内部计算使用，开发者无需设置）",
+      "type": "number"
+    }
+  ]
+}

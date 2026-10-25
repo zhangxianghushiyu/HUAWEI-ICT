@@ -1,0 +1,33 @@
+--------- beginning of main
+06-25 16:43:30.354 I/TakuAdBridge( 5890): onAdDismiss, placementId=b6a2769587c201
+06-25 16:44:00.810 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 16:45:25.984 I/chromium( 7862): [0625/164525.984875:INFO:android_webview/browser/variations/variations_seed_loader.cc:67] Failed to open file for reading.: No such file or directory (2)
+06-25 16:45:26.306 W/chromium( 7862): [WARNING:android_webview/browser/network_service/net_helpers.cc:143] HTTP Cache size is: 335544320
+06-25 16:45:26.465 W/chromium( 8004): [WARNING:content/app/android/content_main_android.cc:82] android_setCpu already initialized
+06-25 16:45:26.476 W/chromium( 8004): [WARNING:content/child/runtime_features.cc:561] Fenced frames cannot be enabled in this configuration. Use --enable-features=FencedFrames instead.
+06-25 16:45:26.476 W/chromium( 8004): [WARNING:content/child/runtime_features.cc:586] Topics cannot be enabled in this configuration. Use --enable-features=BrowsingTopics in addition.
+06-25 16:45:26.476 W/chromium( 8004): [WARNING:content/child/runtime_features.cc:607] SharedStorage cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI in addition.
+06-25 16:45:26.625 I/TakuAdBridge( 7862): Initializing Taku SDK, appId=a6a2768f6227eb
+06-25 16:45:26.712 I/TakuAdBridge( 7862): Loading splash ad, placementId=b6a2769587c201
+06-25 16:45:27.023 I/chromium( 7862): [0625/164527.023560:INFO:tnet_request_common.cc(192)] Front request create: 0xb400007d31af5790, delegate: 0xb400007d51abe6d0
+06-25 16:45:27.023 I/chromium( 7862): [0625/164527.023652:INFO:tnet_quic_adapter.cc(43)] Create tnet adapter, this: 0xb400007d51abe6d0
+06-25 16:45:27.175 I/chromium( 7862): [0625/164527.175744:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51abe6d0
+06-25 16:45:27.176 I/chromium( 7862): [0625/164527.176006:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51abe6d0
+06-25 16:45:27.176 I/chromium( 7862): [0625/164527.176171:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51abe6d0
+06-25 16:45:27.176 I/chromium( 7862): [0625/164527.176350:INFO:tnet_quic_adapter.cc(110)] TnetAdapter add header, this: 0xb400007d51abe6d0
+06-25 16:45:27.176 I/chromium( 7862): [0625/164527.176602:INFO:tnet_quic_adapter.cc(136)] TnetAdapter send request, this: 0xb400007d51abe6d0
+06-25 16:45:27.176 I/chromium( 7862): [0625/164527.176767:INFO:tnet_quic_adapter.cc(145)] Type: 0 send request
+06-25 16:45:27.556 I/chromium( 7862): [0625/164527.556342:INFO:tnet_quic_adapter.cc(48)] Destroy tnet adapter, this: 0xb400007d51abe6d0
+06-25 16:45:27.556 I/chromium( 7862): [0625/164527.556442:INFO:tnet_quic_request.cc(49)] TnetQuicRequest destroy, set delegate nullptr
+06-25 16:45:27.556 I/chromium( 7862): [0625/164527.556498:INFO:tnet_quic_adapter.cc(50)] request has been delete
+06-25 16:45:27.562 I/chromium( 7862): [0625/164527.562432:INFO:tnet_request_common.cc(198)] Front request destroy: 0xb400007d31af5790
+06-25 16:45:28.297 I/TakuAdBridge( 7862): onAdLoaded, placementId=b6a2769587c201, isCached=false
+06-25 16:45:28.301 I/TakuAdBridge( 7862): Showing splash ad, placementId=b6a2769587c201
+06-25 16:45:28.471 I/TakuAdBridge( 7862): onAdShow, placementId=b6a2769587c201, network=kuying
+06-25 16:45:30.822 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 16:45:33.359 I/TakuAdBridge( 7862): onAdDismiss, placementId=b6a2769587c201
+06-25 16:45:35.215 E/chromium( 8004): [ERROR:cc/tiles/tile_manager.cc:998] WARNING: tile memory limits exceeded, some content may not draw
+06-25 16:45:35.215 E/chromium( 8004): [ERROR:cc/tiles/tile_manager.cc:998] WARNING: tile memory limits exceeded, some content may not draw
+06-25 16:47:00.829 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 16:48:30.838 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager
+06-25 16:50:00.847 W/chromium(30570): [WARNING:cookie_manager.cc(548)] SetCanonicalCookie for incognitoMojoCookieManager

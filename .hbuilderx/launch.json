@@ -1,0 +1,12 @@
+{
+    "version" : "1.0",
+    "configurations" : [
+        {
+            "customPlaygroundType" : "local",
+            "localRepoPath" : "D:/data/liuyueliu/hoshino/hoshino/unpackage/release/apk",
+            "packageName" : "com.xingye.hoshino",
+            "playground" : "custom",
+            "type" : "uni-app:app-android"
+        }
+    ]
+}
