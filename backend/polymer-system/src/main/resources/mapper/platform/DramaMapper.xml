@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.DramaMapper">
+
+    <resultMap type="Drama" id="DramaResult">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="titleImg" column="title_img"/>
+        <result property="isRecommend" column="is_recommend"/>
+        <result property="classifyId" column="classify_id"/>
+        <result property="details" column="details"/>
+        <result property="delStatus" column="del_status"/>
+        <result property="status" column="status"/>
+        <result property="playCount" column="play_count"/>
+        <result property="likeCount" column="like_count"/>
+        <result property="isPrice" column="is_price"/>
+        <result property="isEnd" column="is_end"/>
+        <result property="createTime" column="create_time"/>
+        <result property="upTime" column="up_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="selectDramaVo">
+        select id,
+               title,
+               title_img,
+               is_recommend,
+               classify_id,
+               details,
+               del_status,
+               status,
+               play_count,
+               like_count,
+               is_price,
+               is_end,
+               create_time,
+               up_time,
+               update_time
+        from t_drama
+    </sql>
+
+    <select id="selectDramaList" parameterType="Drama" resultType="com.ruoyi.platform.domain.Drama">
+        select td.id, td.title, td.title_img titleImg,  td.is_recommend isRecommend,
+        td.classify_id classifyId,
+        td.details, td.del_status delStatus, td.status, td.play_count playCount,
+        td.like_count likeCount,  td.is_price isPrice,td.is_end isEnd, td.create_time createTime,
+        td.up_time upTime, td.update_time updateTime,tdc.name className
+        from t_drama td
+        left join t_drama_category tdc on tdc.id=td.classify_id
+        where td.del_status=1
+        <if test="title != null  and title != ''">and td.title like concat('%', #{title}, '%')</if>
+        <if test="titleImg != null  and titleImg != ''">and td.title_img = #{titleImg}</if>
+        <if test="isRecommend != null ">and td.is_recommend = #{isRecommend}</if>
+        <if test="classifyId != null ">and td.classify_id = #{classifyId}</if>
+        <if test="details != null  and details != ''">and td.details = #{details}</if>
+        <if test="delStatus != null ">and td.del_status = #{delStatus}</if>
+        <if test="status != null ">and td.status = #{status}</if>
+        <if test="playCount != null ">and td.play_count = #{playCount}</if>
+        <if test="likeCount != null ">and td.like_count = #{likeCount}</if>
+        <if test="isPrice != null ">and td.is_price = #{isPrice}</if>
+        <if test="isEnd != null ">and td.is_end = #{isEnd}</if>
+        <if test="upTime != null ">and td.up_time = #{upTime}</if>
+        order by td.create_time desc
+    </select>
+
+    <select id="selectDramaById" parameterType="Long" resultMap="DramaResult">
+        <include refid="selectDramaVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertDrama" parameterType="Drama" useGeneratedKeys="true" keyProperty="id">
+        insert into t_drama
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null">title,</if>
+            <if test="titleImg != null">title_img,</if>
+            <if test="isRecommend != null">is_recommend,</if>
+            <if test="classifyId != null">classify_id,</if>
+            <if test="details != null">details,</if>
+            <if test="delStatus != null">del_status,</if>
+            <if test="status != null">status,</if>
+            <if test="playCount != null">play_count,</if>
+            <if test="likeCount != null">like_count,</if>
+            <if test="isPrice != null">is_price,</if>
+            <if test="isEnd != null">is_end,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="upTime != null">up_time,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null">#{title},</if>
+            <if test="titleImg != null">#{titleImg},</if>
+            <if test="isRecommend != null">#{isRecommend},</if>
+            <if test="classifyId != null">#{classifyId},</if>
+            <if test="details != null">#{details},</if>
+            <if test="delStatus != null">#{delStatus},</if>
+            <if test="status != null">#{status},</if>
+            <if test="playCount != null">#{playCount},</if>
+            <if test="likeCount != null">#{likeCount},</if>
+            <if test="isPrice != null">#{isPrice},</if>
+            <if test="isEnd != null">#{isEnd},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="upTime != null">#{upTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateDrama" parameterType="Drama">
+        update t_drama
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="title != null">title = #{title},</if>
+            <if test="titleImg != null">title_img = #{titleImg},</if>
+            <if test="isRecommend != null">is_recommend = #{isRecommend},</if>
+            <if test="classifyId != null">classify_id = #{classifyId},</if>
+            <if test="details != null">details = #{details},</if>
+            <if test="delStatus != null">del_status = #{delStatus},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="playCount != null">play_count = #{playCount},</if>
+            <if test="likeCount != null">like_count = #{likeCount},</if>
+            <if test="isPrice != null">is_price = #{isPrice},</if>
+            <if test="isEnd != null">is_end = #{isEnd},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="upTime != null">up_time = #{upTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDramaById" parameterType="Long">
+        delete
+        from t_drama
+        where id = #{id}
+    </delete>
+
+    <update id="deleteDramaByIds" parameterType="String">
+        update t_drama set del_status=0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+
+    <select id="selectCountByClassifyId" resultType="java.lang.Integer">
+        select count(1)
+        from t_drama
+        where classify_id = #{classifyId}
+          and del_status = 1
+    </select>
+
+
+    <update id="undercarriage" parameterType="String">
+        update t_drama set `status` = 0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <update id="grounding" parameterType="String">
+        update t_drama set `status` = 1 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+
+    <select id="selectDramaInfo" resultType="com.ruoyi.platform.domain.Drama">
+        select td.id,
+               td.title,
+               td.title_img    titleImg,
+               td.is_recommend isRecommend,
+               td.classify_id  classifyId,
+               td.details,
+               td.del_status   delStatus,
+               td.status,
+               td.play_count   playCount,
+               td.like_count   likeCount,
+               td.is_price     isPrice,
+               td.is_end       isEnd,
+               td.create_time  createTime,
+               td.up_time      upTime,
+               td.update_time  updateTime,
+               tdc.name        className
+        from t_drama td
+                 left join t_drama_category tdc on tdc.id = td.classify_id
+        where td.del_status = 1
+          and td.status = 1
+        order by td.create_time desc
+    </select>
+</mapper>

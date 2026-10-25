@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.ArticleMapper">
+
+    <resultMap type="Article" id="ArticleResult">
+        <result property="id"    column="id"    />
+        <result property="articleName"    column="article_name"    />
+        <result property="articleTitle"    column="article_title"    />
+        <result property="articleImg"    column="article_img"    />
+        <result property="articleContent"    column="article_content"    />
+        <result property="browseSum"    column="browse_sum"    />
+        <result property="likeSum"    column="like_sum"    />
+        <result property="commentSum"    column="comment_sum"    />
+        <result property="createTime"    column="create_time"    />
+    </resultMap>
+
+    <sql id="selectArticleVo">
+        select id, article_name, article_title, article_img, article_content, browse_sum, like_sum, comment_sum, create_time from t_article
+    </sql>
+
+    <select id="selectArticleList" parameterType="Article" resultMap="ArticleResult">
+        <include refid="selectArticleVo"/>
+        <where>
+            <if test="articleName != null  and articleName != ''"> and article_name like concat('%', #{articleName}, '%')</if>
+            <if test="articleTitle != null  and articleTitle != ''"> and article_title like concat('%', #{articleTitle}, '%')</if>
+            <if test="params.beginCreateTime != null and params.beginCreateTime != '' and params.endCreateTime != null and params.endCreateTime != ''"> and create_time between #{params.beginCreateTime} and #{params.endCreateTime}</if>
+        </where>
+    </select>
+
+    <select id="selectArticleById" parameterType="Integer" resultMap="ArticleResult">
+        <include refid="selectArticleVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertArticle" parameterType="Article" useGeneratedKeys="true" keyProperty="id">
+        insert into t_article
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="articleName != null">article_name,</if>
+            <if test="articleTitle != null">article_title,</if>
+            <if test="articleImg != null">article_img,</if>
+            <if test="articleContent != null">article_content,</if>
+            <if test="browseSum != null">browse_sum,</if>
+            <if test="likeSum != null">like_sum,</if>
+            <if test="commentSum != null">comment_sum,</if>
+            <if test="createTime != null">create_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="articleName != null">#{articleName},</if>
+            <if test="articleTitle != null">#{articleTitle},</if>
+            <if test="articleImg != null">#{articleImg},</if>
+            <if test="articleContent != null">#{articleContent},</if>
+            <if test="browseSum != null">#{browseSum},</if>
+            <if test="likeSum != null">#{likeSum},</if>
+            <if test="commentSum != null">#{commentSum},</if>
+            <if test="createTime != null">#{createTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateArticle" parameterType="Article">
+        update t_article
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="articleName != null">article_name = #{articleName},</if>
+            <if test="articleTitle != null">article_title = #{articleTitle},</if>
+            <if test="articleImg != null">article_img = #{articleImg},</if>
+            <if test="articleContent != null">article_content = #{articleContent},</if>
+            <if test="browseSum != null">browse_sum = #{browseSum},</if>
+            <if test="likeSum != null">like_sum = #{likeSum},</if>
+            <if test="commentSum != null">comment_sum = #{commentSum},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteArticleById" parameterType="Integer">
+        delete from t_article where id = #{id}
+    </delete>
+
+    <delete id="deleteArticleByIds" parameterType="String">
+        delete from t_article where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

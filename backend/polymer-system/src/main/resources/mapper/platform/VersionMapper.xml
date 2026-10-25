@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VersionMapper">
+    
+    <resultMap type="Version" id="VersionResult">
+        <result property="id"    column="id"    />
+        <result property="versionNo"    column="version_no"    />
+        <result property="releaseNote"    column="release_note"    />
+        <result property="appUrl"    column="app_url"    />
+        <result property="url"    column="url"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectVersionVo">
+        select id, version_no, release_note, app_url, url,create_time, update_time from t_version
+    </sql>
+
+    <select id="selectVersionList" parameterType="Version" resultMap="VersionResult">
+        <include refid="selectVersionVo"/>
+        <where>  
+            <if test="versionNo != null  and versionNo != ''"> and version_no = #{versionNo}</if>
+            <if test="releaseNote != null  and releaseNote != ''"> and release_note = #{releaseNote}</if>
+            <if test="appUrl != null  and appUrl != ''"> and app_url = #{appUrl}</if>
+        </where>
+    </select>
+    
+    <select id="selectVersionById" parameterType="Long" resultMap="VersionResult">
+        <include refid="selectVersionVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertVersion" parameterType="Version">
+        insert into t_version
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="versionNo != null">version_no,</if>
+            <if test="releaseNote != null">release_note,</if>
+            <if test="appUrl != null">app_url,</if>
+            <if test="url != null">url,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="versionNo != null">#{versionNo},</if>
+            <if test="releaseNote != null">#{releaseNote},</if>
+            <if test="appUrl != null">#{appUrl},</if>
+            <if test="url != null">#{url},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateVersion" parameterType="Version">
+        update t_version
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="versionNo != null">version_no = #{versionNo},</if>
+            <if test="releaseNote != null">release_note = #{releaseNote},</if>
+            <if test="appUrl != null">app_url = #{appUrl},</if>
+            <if test="url != null">url = #{url},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteVersionById" parameterType="Long">
+        delete from t_version where id = #{id}
+    </delete>
+
+    <delete id="deleteVersionByIds" parameterType="String">
+        delete from t_version where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

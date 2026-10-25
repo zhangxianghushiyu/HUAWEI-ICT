@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.BillCashDao">
+    <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.BillCash">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="method" jdbcType="INTEGER" property="method"/>
+        <result column="type" jdbcType="INTEGER" property="type"/>
+        <result column="order_no" jdbcType="VARCHAR" property="orderNo"/>
+        <result column="failure_reason" jdbcType="VARCHAR" property="failureReason"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="scene" jdbcType="INTEGER" property="scene"/>
+        <result column="describe" jdbcType="VARCHAR" property="describe"/>
+        <result column="package_info" jdbcType="VARCHAR" property="packageInfo"/>
+        <result column="zfb_name" jdbcType="VARCHAR" property="zfbName"/>
+        <result column="zfb_user_name" jdbcType="VARCHAR" property="zfbUserName"/>
+        <result column="money" jdbcType="DECIMAL" property="money"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="withdrawal_tab_id" jdbcType="INTEGER" property="withdrawalTabId"/>
+        <result column="auto_account" jdbcType="INTEGER" property="autoAccount"/>
+        <result column="take" jdbcType="INTEGER" property="take"/>
+        <result column="pay_time" jdbcType="TIMESTAMP" property="payTime"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id
+        , `method`,`type`, order_no, failure_reason, user_id, scene, `describe`,package_info, money, `status`,
+        zfb_name,zfb_user_name,
+    withdrawal_tab_id, auto_account, take,pay_time, create_time, update_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_bill_cash
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from t_bill_cash
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.BillCash"
+            useGeneratedKeys="true">
+        insert into t_bill_cash (`method`, `type`, order_no, failure_reason,
+                                 user_id, scene, `describe`,package_info,zfb_name,zfb_user_name,
+                                 money, `status`, withdrawal_tab_id,
+                                 auto_account, take, pay_time, create_time,
+                                 update_time)
+        values (#{method,jdbcType=INTEGER}, #{type}, #{orderNo,jdbcType=VARCHAR}, #{failureReason,jdbcType=VARCHAR},
+                #{userId,jdbcType=INTEGER}, #{scene,jdbcType=INTEGER}, #{describe,jdbcType=VARCHAR},
+                #{packageInfo},#{zfbName},#{zfbUserName},
+                #{money,jdbcType=DECIMAL}, #{status,jdbcType=INTEGER}, #{withdrawalTabId,jdbcType=INTEGER},
+                #{autoAccount,jdbcType=INTEGER}, #{take}, #{payTime,jdbcType=TIMESTAMP},
+                #{createTime,jdbcType=TIMESTAMP},
+                #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.BillCash"
+            useGeneratedKeys="true">
+        insert into t_bill_cash
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="method != null">
+                `method`,
+            </if>
+            <if test="type != null">
+                `type`,
+            </if>
+            <if test="orderNo != null">
+                order_no,
+            </if>
+            <if test="failureReason != null">
+                failure_reason,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="scene != null">
+                scene,
+            </if>
+            <if test="describe != null">
+                `describe`,
+            </if>
+            <if test="packageInfo != null">
+                `package_info`,
+            </if>
+            <if test="zfbName != null">
+                zfb_name,
+            </if>
+            <if test="zfbUserName != null">
+                zfb_user_name,
+            </if>
+            <if test="money != null">
+                money,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="withdrawalTabId != null">
+                withdrawal_tab_id,
+            </if>
+            <if test="autoAccount != null">
+                auto_account,
+            </if>
+            <if test="take != null">
+                take,
+            </if>
+            <if test="payTime != null">
+                pay_time,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="method != null">
+                #{method,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                #{type},
+            </if>
+            <if test="orderNo != null">
+                #{orderNo,jdbcType=VARCHAR},
+            </if>
+            <if test="failureReason != null">
+                #{failureReason,jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="scene != null">
+                #{scene,jdbcType=INTEGER},
+            </if>
+            <if test="describe != null">
+                #{describe,jdbcType=VARCHAR},
+            </if>
+            <if test="packageInfo != null">
+                #{packageInfo,jdbcType=VARCHAR},
+            </if>
+            <if test="zfbName != null">
+                #{zfbName},
+            </if>
+            <if test="zfbUserName != null">
+                #{zfbUserName},
+            </if>
+            <if test="money != null">
+                #{money,jdbcType=DECIMAL},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="withdrawalTabId != null">
+                #{withdrawalTabId,jdbcType=INTEGER},
+            </if>
+            <if test="autoAccount != null">
+                #{autoAccount,jdbcType=INTEGER},
+            </if>
+            <if test="take != null">
+                #{take},
+            </if>
+            <if test="payTime != null">
+                #{payTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.BillCash">
+        update t_bill_cash
+        <set>
+            <if test="method != null">
+                `method` = #{method,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                `type` = #{type},
+            </if>
+            <if test="orderNo != null">
+                order_no = #{orderNo,jdbcType=VARCHAR},
+            </if>
+            <if test="failureReason != null">
+                failure_reason = #{failureReason,jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="scene != null">
+                scene = #{scene,jdbcType=INTEGER},
+            </if>
+            <if test="describe != null">
+                `describe` = #{describe,jdbcType=VARCHAR},
+            </if>
+            <if test="packageInfo != null">
+                `package_info` = #{packageInfo},
+            </if>
+            <if test="zfbName != null">
+                zfb_name = #{zfbName},
+            </if>
+            <if test="zfbUserName != null">
+                zfb_user_name = #{zfbUserName},
+            </if>
+            <if test="money != null">
+                money = #{money,jdbcType=DECIMAL},
+            </if>
+            <if test="status != null">
+                `status` = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="withdrawalTabId != null">
+                withdrawal_tab_id = #{withdrawalTabId,jdbcType=INTEGER},
+            </if>
+            <if test="autoAccount != null">
+                auto_account = #{autoAccount,jdbcType=INTEGER},
+            </if>
+            <if test="take != null">
+                take = #{take},
+            </if>
+            <if test="payTime != null">
+                pay_time = #{payTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.BillCash">
+        update t_bill_cash
+        set
+            `method`          = #{method,jdbcType=INTEGER},
+            `type`          = #{type},
+            order_no          = #{orderNo,jdbcType=VARCHAR},
+            failure_reason    = #{failureReason,jdbcType=VARCHAR},
+            user_id           = #{userId,jdbcType=INTEGER},
+            scene             = #{scene,jdbcType=INTEGER},
+            `describe`        = #{describe,jdbcType=VARCHAR},
+            `package_info`        = #{packageInfo,jdbcType=VARCHAR},
+            zfb_name = #{zfbName},
+            zfb_user_name = #{zfbUserName},
+            money             = #{money,jdbcType=DECIMAL},
+            `status`          = #{status,jdbcType=INTEGER},
+            withdrawal_tab_id = #{withdrawalTabId,jdbcType=INTEGER},
+            auto_account      = #{autoAccount,jdbcType=INTEGER},
+            take              = #{take},
+            pay_time          = #{payTime,jdbcType=TIMESTAMP},
+            create_time       = #{createTime,jdbcType=TIMESTAMP},
+            update_time       = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="selectBillCashByOrderNo" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_bill_cash
+        where order_no = #{orderNo} limit 1
+    </select>
+
+
+    <select id="selectMyBillCashListVO" resultType="com.ruoyi.platform.vo.BillCashListVO">
+        SELECT id,method, scene,type, `describe`, money,package_info packageInfo, create_time createTime, `status`, take
+        from t_bill_cash
+        where user_id = #{userId}
+        order by create_time desc
+    </select>
+
+
+    <select id="selectRecentlyBillCash"  resultType="java.lang.Integer">
+        select count(1)
+        from t_bill_cash
+        where user_id = #{userId}
+          and `type` = 2
+          and create_time >= CURDATE()
+          AND create_time &lt;
+              CURDATE() +
+            INTERVAL 1 DAY
+    </select>
+</mapper>

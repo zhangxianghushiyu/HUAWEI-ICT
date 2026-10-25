@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.UserMapper">
+
+    <resultMap type="User" id="UserResult">
+        <result property="id" column="id"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="userName" column="user_name"/>
+        <result property="zfbName"    column="zfb_name"    />
+        <result property="zfbUserName"    column="zfb_user_name"    />
+        <result property="wxOpenId"    column="wx_open_id"    />
+        <result property="wxAvatar"    column="wx_avatar"    />
+        <result property="wxNickName"    column="wx_nick_name"    />
+        <result property="wxUnionId"    column="wx_union_id"    />
+        <result property="phone" column="phone"/>
+        <result property="avatar" column="avatar"/>
+        <result property="password" column="password"/>
+        <result property="salt" column="salt"/>
+        <result property="invitationCode" column="invitation_code"/>
+        <result property="qrUrl" column="qr_url" />
+        <result property="qrCode" column="qr_code" />
+        <result property="isVip" column="is_vip"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="invitationTime" column="invitation_time"/>
+        <result property="delStatus" column="del_status"/>
+        <result property="status" column="status"/>
+        <result property="roleId" column="role_id"/>
+        <result property="grade" column="grade"/>
+        <result property="barrier" column="barrier"/>
+        <result property="commander" column="commander"/>
+        <result property="getType" column="get_type"/>
+        <result property="goldMin" column="gold_min"/>
+        <result property="goldMax" column="gold_max"/>
+        <result property="juniorGetType" column="junior_get_type"/>
+        <result property="juniorGoldMin" column="junior_gold_min"/>
+        <result property="juniorGoldMax" column="junior_gold_max"/>
+        <result property="commanderRatio" column="commander_ratio"/>
+        <result property="haveManagerRatio" column="have_manager_ratio"/>
+        <result property="noManagerRatio" column="no_manager_ratio"/>
+        <result property="goldCoin" column="gold_coin"/>
+        <result property="cash" column="cash"/>
+        <result property="destroyTime" column="destroy_time"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="selectUserVo">
+        select id,
+               nick_name,
+               user_name,zfb_name,zfb_user_name,
+               wx_open_id,wx_avatar,wx_nick_name,wx_union_id,
+               phone,
+               avatar,
+               password,
+               salt,
+               invitation_code,
+               is_vip,
+               parent_id,
+               invitation_time,
+               del_status,
+               status,
+               role_id,
+               grade,
+               barrier,
+               commander,
+               get_type,
+               gold_min,
+               gold_max,
+               junior_get_type,
+               junior_gold_min,
+               junior_gold_max,
+               commander_ratio,
+               have_manager_ratio,
+               no_manager_ratio,
+               gold_coin,
+               cash,
+               destroy_time,
+               create_time,
+               update_time
+        from t_user
+    </sql>
+
+    <select id="selectUserList" parameterType="User" resultType="com.ruoyi.platform.domain.User">
+        select tu.id,
+        tu.nick_name nickName,
+        tu.user_name userName,
+        tu.zfb_name zfbName,
+        tu.zfb_user_name zfbUserName,
+        tu.wx_open_id wxOpenId,
+        tu.wx_avatar wxAvatar,
+        tu.wx_nick_name wxNickName,
+        tu.wx_union_id wxUnionId,
+        tu.phone,
+        tu.avatar,
+        tu.password,
+        tu.salt,
+        tu.invitation_code invitationCode,
+        tu.qr_url qrUrl,
+        tu.qr_code qrCode,
+        tu.is_vip isVip,
+        tu.parent_id parentId,
+        tu.invitation_time invitationTime,
+        tu.del_status delStatus,
+        tu.status,
+        tu.role_id roleId,
+        tu.grade,
+        tu.barrier,
+        tu.commander,
+        tu.get_type getType,
+        tu.gold_min goldMin,
+        tu.gold_max goldMax,
+        tu.junior_get_type juniorGetType,
+        tu.junior_gold_min juniorGoldMin,
+        tu.junior_gold_max juniorGoldMax,
+        tu.commander_ratio commanderRatio,
+        tu.have_manager_ratio haveManagerRatio,
+        tu.no_manager_ratio noManagerRatio,
+        tu.gold_coin goldCoin,
+        tu.cash,
+        tu.destroy_time destroyTime,
+        tu.create_time createTime,
+        tu.update_time updateTime,tu2.nick_name commanderUserName
+        from t_user tu
+        left JOIN t_user tu2 on tu2.id=tu.parent_id
+        where 1=1
+        <if test="nickName != null  and nickName != ''">and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="userName != null  and userName != ''">and tu.user_name like concat('%', #{userName}, '%')</if>
+        <if test="phone != null  and phone != ''">and tu.phone like concat('%', #{phone}, '%')</if>
+        <if test="avatar != null  and avatar != ''">and tu.avatar = #{avatar}</if>
+        <if test="password != null  and password != ''">and tu.password = #{password}</if>
+        <if test="salt != null  and salt != ''">and tu.salt = #{salt}</if>
+        <if test="invitationCode != null  and invitationCode != ''">and tu.invitation_code = #{invitationCode}</if>
+        <if test="isVip != null ">and tu.is_vip = #{isVip}</if>
+        <if test="parentId != null ">and tu.parent_id = #{parentId}</if>
+        <if test="invitationTime != null ">and tu.invitation_time = #{invitationTime}</if>
+        <if test="delStatus != null ">and tu.del_status = #{delStatus}</if>
+        <if test="status != null ">and tu.status = #{status}</if>
+        <if test="roleId != null ">and tu.role_id = #{roleId}</if>
+        <if test="commander != null ">and tu.commander = #{commander}</if>
+        <if test="commanderRatio != null ">and tu.commander_ratio = #{commanderRatio}</if>
+        <if test="haveManagerRatio != null ">and tu.have_manager_ratio = #{haveManagerRatio}</if>
+        <if test="noManagerRatio != null ">and tu.no_manager_ratio = #{noManagerRatio}</if>
+        <if test="goldCoin != null ">and tu.gold_coin = #{goldCoin}</if>
+        <if test="cash != null ">and tu.cash = #{cash}</if>
+        <if test="destroyTime != null ">and tu.destroy_time = #{destroyTime}</if>
+        <if test="commanderUserName != null and commanderUserName!=''">and tu2.nick_name like concat('%', #{commanderUserName}, '%')</if>
+        order by tu.create_time desc
+    </select>
+
+    <select id="selectUserListJunior" parameterType="User" resultType="com.ruoyi.platform.domain.User">
+        select tu.id,
+        tu.nick_name nickName,
+        tu.user_name userName,
+        tu.zfb_name zfbName,
+        tu.zfb_user_name zfbUserName,
+        tu.wx_open_id wxOpenId,
+        tu.wx_avatar wxAvatar,
+        tu.wx_nick_name wxNickName,
+        tu.wx_union_id wxUnionId,
+        tu.phone,
+        tu.avatar,
+        tu.password,
+        tu.salt,
+        tu.invitation_code invitationCode,
+        tu.is_vip isVip,
+        tu.parent_id parentId,
+        tu.invitation_time invitationTime,
+        tu.del_status delStatus,
+        tu.status,
+        tu.role_id roleId,
+        tu.grade,
+        tu.barrier,
+        tu.commander,
+        tu.get_type getType,
+        tu.gold_min goldMin,
+        tu.gold_max goldMax,
+        tu.junior_get_type juniorGetType,
+        tu.junior_gold_min juniorGoldMin,
+        tu.junior_gold_max juniorGoldMax,
+        tu.commander_ratio commanderRatio,
+        tu.have_manager_ratio haveManagerRatio,
+        tu.no_manager_ratio noManagerRatio,
+        tu.gold_coin goldCoin,
+        tu.cash,
+        tu.destroy_time destroyTime,
+        tu.create_time createTime,
+        tu.update_time updateTime,tu2.nick_name commanderUserName
+        from t_user tu
+        left JOIN t_user tu2 on tu2.id=tu.parent_id
+        where tu.parent_id=#{parentId}
+        <if test="nickName != null  and nickName != ''">and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="userName != null  and userName != ''">and tu.user_name like concat('%', #{userName}, '%')</if>
+        <if test="phone != null  and phone != ''">and tu.phone like concat('%', #{phone}, '%')</if>
+        <if test="avatar != null  and avatar != ''">and tu.avatar = #{avatar}</if>
+        <if test="password != null  and password != ''">and tu.password = #{password}</if>
+        <if test="salt != null  and salt != ''">and tu.salt = #{salt}</if>
+        <if test="invitationCode != null  and invitationCode != ''">and tu.invitation_code = #{invitationCode}</if>
+        <if test="isVip != null ">and tu.is_vip = #{isVip}</if>
+        <if test="parentId != null ">and tu.parent_id = #{parentId}</if>
+        <if test="invitationTime != null ">and tu.invitation_time = #{invitationTime}</if>
+        <if test="delStatus != null ">and tu.del_status = #{delStatus}</if>
+        <if test="status != null ">and tu.status = #{status}</if>
+        <if test="roleId != null ">and tu.role_id = #{roleId}</if>
+        <if test="commander != null ">and tu.commander = #{commander}</if>
+        <if test="commanderRatio != null ">and tu.commander_ratio = #{commanderRatio}</if>
+        <if test="haveManagerRatio != null ">and tu.have_manager_ratio = #{haveManagerRatio}</if>
+        <if test="noManagerRatio != null ">and tu.no_manager_ratio = #{noManagerRatio}</if>
+        <if test="goldCoin != null ">and tu.gold_coin = #{goldCoin}</if>
+        <if test="cash != null ">and tu.cash = #{cash}</if>
+        <if test="destroyTime != null ">and tu.destroy_time = #{destroyTime}</if>
+        <if test="commanderUserName != null and commanderUserName!=''">and tu2.nick_name like concat('%', #{commanderUserName}, '%')</if>
+        order by tu.create_time desc
+    </select>
+
+
+    <select id="selectUserById" parameterType="Long" resultMap="UserResult">
+        <include refid="selectUserVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="nickName != null">nick_name,</if>
+            <if test="userName != null">user_name,</if>
+            <if test="zfbName != null">zfb_name,</if>
+            <if test="zfbUserName != null">zfb_user_name,</if>
+            <if test="phone != null">phone,</if>
+            <if test="avatar != null">avatar,</if>
+            <if test="password != null">password,</if>
+            <if test="salt != null">salt,</if>
+            <if test="invitationCode != null">invitation_code,</if>
+            <if test="isVip != null">is_vip,</if>
+            <if test="parentId != null">parent_id,</if>
+            <if test="invitationTime != null">invitation_time,</if>
+            <if test="delStatus != null">del_status,</if>
+            <if test="status != null">status,</if>
+            <if test="roleId != null">role_id,</if>
+            <if test="grade != null">grade,</if>
+            <if test="barrier != null">barrier,</if>
+            <if test="commander != null">commander,</if>
+            <if test="getType != null">get_type,</if>
+            <if test="goldMin != null">gold_min,</if>
+            <if test="goldMax != null">gold_max,</if>
+            <if test="juniorGetType != null">junior_get_type,</if>
+            <if test="juniorGoldMin != null">junior_gold_min,</if>
+            <if test="juniorGoldMax != null">junior_gold_max,</if>
+            <if test="commanderRatio != null">commander_ratio,</if>
+            <if test="haveManagerRatio != null">have_manager_ratio,</if>
+            <if test="noManagerRatio != null">no_manager_ratio,</if>
+            <if test="goldCoin != null">gold_coin,</if>
+            <if test="cash != null">cash,</if>
+            <if test="destroyTime != null">destroy_time,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="nickName != null">#{nickName},</if>
+            <if test="userName != null">#{userName},</if>
+            <if test="zfbName != null">#{zfbName},</if>
+            <if test="zfbUserName != null">#{zfbUserName},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="avatar != null">#{avatar},</if>
+            <if test="password != null">#{password},</if>
+            <if test="salt != null">#{salt},</if>
+            <if test="invitationCode != null">#{invitationCode},</if>
+            <if test="isVip != null">#{isVip},</if>
+            <if test="parentId != null">#{parentId},</if>
+            <if test="invitationTime != null">#{invitationTime},</if>
+            <if test="delStatus != null">#{delStatus},</if>
+            <if test="status != null">#{status},</if>
+            <if test="roleId != null">#{roleId},</if>
+            <if test="grade != null">#{grade},</if>
+            <if test="barrier != null">#{barrier},</if>
+            <if test="commander != null">#{commander},</if>
+            <if test="getType != null">#{getType},</if>
+            <if test="goldMin != null">#{goldMin},</if>
+            <if test="goldMax != null">#{goldMax},</if>
+            <if test="juniorGetType != null">#{juniorGetType},</if>
+            <if test="juniorGoldMin != null">#{juniorGoldMin},</if>
+            <if test="juniorGoldMax != null">#{juniorGoldMax},</if>
+            <if test="commanderRatio != null">#{commanderRatio},</if>
+            <if test="haveManagerRatio != null">#{haveManagerRatio},</if>
+            <if test="noManagerRatio != null">#{noManagerRatio},</if>
+            <if test="goldCoin != null">#{goldCoin},</if>
+            <if test="cash != null">#{cash},</if>
+            <if test="destroyTime != null">#{destroyTime},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateUser" parameterType="User">
+        update t_user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="nickName != null">nick_name = #{nickName},</if>
+            <if test="userName != null">user_name = #{userName},</if>
+            <if test="zfbName != null">zfb_name = #{zfbName},</if>
+            <if test="zfbUserName != null">zfb_user_name = #{zfbUserName},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="avatar != null">avatar = #{avatar},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="salt != null">salt = #{salt},</if>
+            <if test="invitationCode != null">invitation_code = #{invitationCode},</if>
+            <if test="isVip != null">is_vip = #{isVip},</if>
+            <if test="parentId != null">parent_id = #{parentId},</if>
+            <if test="invitationTime != null">invitation_time = #{invitationTime},</if>
+            <if test="delStatus != null">del_status = #{delStatus},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="roleId != null">role_id = #{roleId},</if>
+            <if test="grade != null">grade = #{grade},</if>
+            <if test="barrier != null">barrier = #{barrier},</if>
+            <if test="commander != null">commander = #{commander},</if>
+            <if test="getType != null">get_type = #{getType},</if>
+            <if test="goldMin != null">gold_min = #{goldMin},</if>
+            <if test="goldMax != null">gold_max = #{goldMax},</if>
+            <if test="juniorGetType != null">junior_get_type = #{juniorGetType},</if>
+            <if test="juniorGoldMin != null">junior_gold_min = #{juniorGoldMin},</if>
+            <if test="juniorGoldMax != null">junior_gold_max = #{juniorGoldMax},</if>
+            <if test="commanderRatio != null">commander_ratio = #{commanderRatio},</if>
+            <if test="haveManagerRatio != null">have_manager_ratio = #{haveManagerRatio},</if>
+            <if test="noManagerRatio != null">no_manager_ratio = #{noManagerRatio},</if>
+            <if test="goldCoin != null">gold_coin = #{goldCoin},</if>
+            <if test="cash != null">cash = #{cash},</if>
+            <if test="destroyTime != null">destroy_time = #{destroyTime},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteUserById" parameterType="Integer">
+        delete
+        from t_user
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteUserByIds" parameterType="String">
+        delete from t_user where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <update id="updateUserStatus">
+        update t_user
+        set status=#{status}
+        where id = #{userId}
+    </update>
+
+
+    <select id="myInvitation" parameterType="User" resultMap="UserResult">
+        <include refid="selectUserVo"/>
+        <where>
+            <if test="nickName != null  and nickName != ''">and nick_name like concat('%', #{nickName}, '%')</if>
+            <if test="userName != null  and userName != ''">and user_name like concat('%', #{userName}, '%')</if>
+            <if test="phone != null  and phone != ''">and phone like concat('%', #{phone}, '%')</if>
+            <if test="avatar != null  and avatar != ''">and avatar = #{avatar}</if>
+            <if test="password != null  and password != ''">and password = #{password}</if>
+            <if test="salt != null  and salt != ''">and salt = #{salt}</if>
+            <if test="invitationCode != null  and invitationCode != ''">and invitation_code = #{invitationCode}</if>
+            <if test="isVip != null ">and is_vip = #{isVip}</if>
+            <if test="parentId != null ">and parent_id = #{parentId}</if>
+            <if test="invitationTime != null ">and invitation_time = #{invitationTime}</if>
+            <if test="delStatus != null ">and del_status = #{delStatus}</if>
+            <if test="status != null ">and status = #{status}</if>
+            <if test="roleId != null ">and role_id = #{roleId}</if>
+            <if test="commander != null ">and commander = #{commander}</if>
+            <if test="commanderRatio != null ">and commander_ratio = #{commanderRatio}</if>
+            <if test="haveManagerRatio != null ">and have_manager_ratio = #{haveManagerRatio}</if>
+            <if test="noManagerRatio != null ">and no_manager_ratio = #{noManagerRatio}</if>
+            <if test="goldCoin != null ">and gold_coin = #{goldCoin}</if>
+            <if test="cash != null ">and cash = #{cash}</if>
+        </where>
+        order by invitation_time desc
+    </select>
+
+
+    <update id="updateUserVip">
+        update t_user
+        set is_vip=0
+        where id = #{id}
+    </update>
+
+
+    <update id="addUserCash">
+        update t_user
+        set cash=cash + #{money}
+        where id = #{id}
+    </update>
+
+
+    <update id="subGoldCoin">
+        update t_user
+        set gold_coin=gold_coin - #{money}
+        where id = #{id}
+    </update>
+
+
+    <update id="modifyRestore">
+        update t_user
+        set status=1,
+            destroy_time=null
+        where id = #{id}
+    </update>
+
+
+    <select id="selectUserByInvitationCode" resultMap="UserResult">
+        <include refid="selectUserVo"/>
+        where invitation_code = #{invitationCode} and status in (0,1) limit 1
+    </select>
+
+
+    <select id="selectUserByUserNameNoUnsubscribe" resultMap="UserResult">
+        <include refid="selectUserVo"/>
+        where user_name = #{userName} and status in (0,1) limit 1
+    </select>
+
+
+    <select id="selectAutoToCashInfo" resultMap="UserResult">
+        <include refid="selectUserVo"/>
+        where del_status=1 and status in(0,1) and gold_coin>=(SELECT ratio from t_convert_ratio)
+    </select>
+
+
+    <update id="updateNoCommander">
+        update t_user
+        set parent_id=null,
+            invitation_time=null
+        where id = #{id}
+    </update>
+
+    <update id="updateUserStatusByTask">
+        update t_user
+        set status = 1
+        where status = 0
+    </update>
+</mapper>

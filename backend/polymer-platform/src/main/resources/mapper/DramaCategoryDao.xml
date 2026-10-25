@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.DramaCategoryDao">
+    <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.DramaCategory">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="sort" jdbcType="INTEGER" property="sort"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="del_status" jdbcType="INTEGER" property="delStatus"/>
+        <result column="parent_id" jdbcType="INTEGER" property="parentId"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <resultMap type="com.ruoyi.platform.domain.DramaCategory" id="DramaCategoryResult">
+        <result property="id"    column="id"    />
+        <result property="sort"    column="sort"    />
+        <result property="name"    column="name"    />
+        <result property="parentId"    column="parent_id"    />
+        <result property="delStatus"    column="del_status"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectDramaCategoryVo">
+        select id, sort, name, del_status,parent_id, create_time, update_time from t_drama_category
+    </sql>
+
+    <select id="selectDramaCategoryList" parameterType="com.ruoyi.platform.domain.DramaCategory" resultMap="DramaCategoryResult">
+        <include refid="selectDramaCategoryVo"/>
+        where del_status=1
+        <if test="sort != null ">
+            and sort = #{sort}
+        </if>
+        <if test="name != null  and name != ''">
+            and name like concat('%', #{name}, '%')
+        </if>
+        <if test="delStatus != null ">
+            and del_status = #{delStatus}
+        </if>
+        <if test="parentId != null ">
+            and parent_id = #{parentId}
+        </if>
+        order by sort asc,create_time desc
+    </select>
+    <sql id="Base_Column_List">
+        id
+        , sort, `name`, del_status, parent_id,create_time, update_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_drama_category
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from t_drama_category
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.DramaCategory"
+            useGeneratedKeys="true">
+        insert into t_drama_category (sort, `name`, del_status,
+                                      parent_id,
+                                      create_time, update_time)
+        values (#{sort,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{delStatus,jdbcType=INTEGER},
+                #{parentId,jdbcType=INTEGER},
+                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.DramaCategory"
+            useGeneratedKeys="true">
+        insert into t_drama_category
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="sort != null">
+                sort,
+            </if>
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="delStatus != null">
+                del_status,
+            </if>
+            <if test="parentId != null">
+                parent_id,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="sort != null">
+                #{sort,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="delStatus != null">
+                #{delStatus,jdbcType=INTEGER},
+            </if>
+            <if test="parentId != null">
+                #{parentId,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.DramaCategory">
+        update t_drama_category
+        <set>
+            <if test="sort != null">
+                sort = #{sort,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                `name` = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="delStatus != null">
+                del_status = #{delStatus,jdbcType=INTEGER},
+            </if>
+            <if test="parentId != null">
+                parent_id = #{parentId,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.DramaCategory">
+        update t_drama_category
+        set sort        = #{sort,jdbcType=INTEGER},
+            `name`      = #{name,jdbcType=VARCHAR},
+            del_status  = #{delStatus,jdbcType=INTEGER},
+            parent_id  = #{parentId,jdbcType=INTEGER},
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+
+    <select id="selectDramaCategoryVO" resultType="com.ruoyi.platform.vo.DramaCategoryVO">
+        select id classifyId, `name`
+        from t_drama_category
+        where del_status = 1
+        order by sort asc
+    </select>
+</mapper>

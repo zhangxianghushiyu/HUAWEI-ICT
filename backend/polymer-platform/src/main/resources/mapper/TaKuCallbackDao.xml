@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.TaKuCallbackDao">
+  <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.TaKuCallback">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="scene" jdbcType="INTEGER" property="scene" />
+    <result column="money" jdbcType="DECIMAL" property="money" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="unlock" jdbcType="INTEGER" property="unlock" />
+    <result column="publisher_revenue" jdbcType="VARCHAR" property="publisherRevenue" />
+    <result column="adsource_price" jdbcType="VARCHAR" property="adsourcePrice" />
+    <result column="extra_data" jdbcType="VARCHAR" property="extraData" />
+    <result column="trans_id" jdbcType="VARCHAR" property="transId" />
+    <result column="req_id" jdbcType="VARCHAR" property="reqId" />
+    <result column="reward_name" jdbcType="VARCHAR" property="rewardName" />
+    <result column="reward_amount" jdbcType="VARCHAR" property="rewardAmount" />
+    <result column="placement_id" jdbcType="VARCHAR" property="placementId" />
+    <result column="network_firm_id" jdbcType="VARCHAR" property="networkFirmId" />
+    <result column="scenario_id" jdbcType="VARCHAR" property="scenarioId" />
+    <result column="package_name" jdbcType="VARCHAR" property="packageName" />
+    <result column="platform" jdbcType="VARCHAR" property="platform" />
+    <result column="ilrd" jdbcType="VARCHAR" property="ilrd" />
+    <result column="sign" jdbcType="VARCHAR" property="sign" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, scene, money, user_id,`unlock`, publisher_revenue,adsource_price,extra_data, trans_id, req_id, reward_name, reward_amount,
+    placement_id, network_firm_id, scenario_id, package_name, platform, ilrd, sign, remarks, 
+    create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_ta_ku_callback
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_ta_ku_callback
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.TaKuCallback" useGeneratedKeys="true">
+    insert into t_ta_ku_callback (scene, money, user_id,`unlock`,
+                                  publisher_revenue,adsource_price,
+      extra_data, trans_id, req_id, 
+      reward_name, reward_amount, placement_id, 
+      network_firm_id, scenario_id, package_name, 
+      platform, ilrd, sign, 
+      remarks, create_time, update_time
+      )
+    values (#{scene,jdbcType=INTEGER}, #{money,jdbcType=DECIMAL}, #{userId,jdbcType=INTEGER},#{unlock},
+            #{publisherRevenue},#{adsourcePrice},
+      #{extraData,jdbcType=VARCHAR}, #{transId,jdbcType=VARCHAR}, #{reqId,jdbcType=VARCHAR}, 
+      #{rewardName,jdbcType=VARCHAR}, #{rewardAmount,jdbcType=VARCHAR}, #{placementId,jdbcType=VARCHAR}, 
+      #{networkFirmId,jdbcType=VARCHAR}, #{scenarioId,jdbcType=VARCHAR}, #{packageName,jdbcType=VARCHAR}, 
+      #{platform,jdbcType=VARCHAR}, #{ilrd,jdbcType=VARCHAR}, #{sign,jdbcType=VARCHAR}, 
+      #{remarks,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.TaKuCallback" useGeneratedKeys="true">
+    insert into t_ta_ku_callback
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="scene != null">
+        scene,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="unlock != null">
+        `unlock`,
+      </if>
+      <if test="publisherRevenue != null">
+        publisher_revenue,
+      </if>
+      <if test="adsourcePrice != null">
+        adsource_price,
+      </if>
+      <if test="extraData != null">
+        extra_data,
+      </if>
+      <if test="transId != null">
+        trans_id,
+      </if>
+      <if test="reqId != null">
+        req_id,
+      </if>
+      <if test="rewardName != null">
+        reward_name,
+      </if>
+      <if test="rewardAmount != null">
+        reward_amount,
+      </if>
+      <if test="placementId != null">
+        placement_id,
+      </if>
+      <if test="networkFirmId != null">
+        network_firm_id,
+      </if>
+      <if test="scenarioId != null">
+        scenario_id,
+      </if>
+      <if test="packageName != null">
+        package_name,
+      </if>
+      <if test="platform != null">
+        platform,
+      </if>
+      <if test="ilrd != null">
+        ilrd,
+      </if>
+      <if test="sign != null">
+        sign,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="scene != null">
+        #{scene,jdbcType=INTEGER},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="unlock != null">
+        #{unlock},
+      </if>
+      <if test="publisherRevenue != null">
+        #{publisherRevenue},
+      </if>
+      <if test="adsourcePrice != null">
+        #{adsourcePrice},
+      </if>
+      <if test="extraData != null">
+        #{extraData,jdbcType=VARCHAR},
+      </if>
+      <if test="transId != null">
+        #{transId,jdbcType=VARCHAR},
+      </if>
+      <if test="reqId != null">
+        #{reqId,jdbcType=VARCHAR},
+      </if>
+      <if test="rewardName != null">
+        #{rewardName,jdbcType=VARCHAR},
+      </if>
+      <if test="rewardAmount != null">
+        #{rewardAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="placementId != null">
+        #{placementId,jdbcType=VARCHAR},
+      </if>
+      <if test="networkFirmId != null">
+        #{networkFirmId,jdbcType=VARCHAR},
+      </if>
+      <if test="scenarioId != null">
+        #{scenarioId,jdbcType=VARCHAR},
+      </if>
+      <if test="packageName != null">
+        #{packageName,jdbcType=VARCHAR},
+      </if>
+      <if test="platform != null">
+        #{platform,jdbcType=VARCHAR},
+      </if>
+      <if test="ilrd != null">
+        #{ilrd,jdbcType=VARCHAR},
+      </if>
+      <if test="sign != null">
+        #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.TaKuCallback">
+    update t_ta_ku_callback
+    <set>
+      <if test="scene != null">
+        scene = #{scene,jdbcType=INTEGER},
+      </if>
+      <if test="money != null">
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="unlock != null">
+        `unlock` = #{unlock},
+      </if>
+      <if test="extraData != null">
+        extra_data = #{extraData,jdbcType=VARCHAR},
+      </if>
+      <if test="transId != null">
+        trans_id = #{transId,jdbcType=VARCHAR},
+      </if>
+      <if test="reqId != null">
+        req_id = #{reqId,jdbcType=VARCHAR},
+      </if>
+      <if test="rewardName != null">
+        reward_name = #{rewardName,jdbcType=VARCHAR},
+      </if>
+      <if test="rewardAmount != null">
+        reward_amount = #{rewardAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="placementId != null">
+        placement_id = #{placementId,jdbcType=VARCHAR},
+      </if>
+      <if test="networkFirmId != null">
+        network_firm_id = #{networkFirmId,jdbcType=VARCHAR},
+      </if>
+      <if test="scenarioId != null">
+        scenario_id = #{scenarioId,jdbcType=VARCHAR},
+      </if>
+      <if test="packageName != null">
+        package_name = #{packageName,jdbcType=VARCHAR},
+      </if>
+      <if test="platform != null">
+        platform = #{platform,jdbcType=VARCHAR},
+      </if>
+      <if test="ilrd != null">
+        ilrd = #{ilrd,jdbcType=VARCHAR},
+      </if>
+      <if test="sign != null">
+        sign = #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.TaKuCallback">
+    update t_ta_ku_callback
+    set scene = #{scene,jdbcType=INTEGER},
+      money = #{money,jdbcType=DECIMAL},
+      user_id = #{userId,jdbcType=INTEGER},
+        `unlock` = #{unlock},
+      extra_data = #{extraData,jdbcType=VARCHAR},
+      trans_id = #{transId,jdbcType=VARCHAR},
+      req_id = #{reqId,jdbcType=VARCHAR},
+      reward_name = #{rewardName,jdbcType=VARCHAR},
+      reward_amount = #{rewardAmount,jdbcType=VARCHAR},
+      placement_id = #{placementId,jdbcType=VARCHAR},
+      network_firm_id = #{networkFirmId,jdbcType=VARCHAR},
+      scenario_id = #{scenarioId,jdbcType=VARCHAR},
+      package_name = #{packageName,jdbcType=VARCHAR},
+      platform = #{platform,jdbcType=VARCHAR},
+      ilrd = #{ilrd,jdbcType=VARCHAR},
+      sign = #{sign,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="selectTaKuCallbackByReqId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from t_ta_ku_callback
+    where trans_id = #{transId} order by create_time desc limit 1
+  </select>
+
+  <select id="selectTaKuCallbackCount" resultType="java.lang.Integer">
+    SELECT COUNT(1)
+    from t_ta_ku_callback
+    where user_id = #{userId} and DATE (create_time) = CURDATE();
+  </select>
+
+
+  <select id="selectTaKuCallbackRecently"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from t_ta_ku_callback
+    where user_id=#{userId} order by create_time desc limit 1
+  </select>
+
+
+  <select id="selectContinuousTaKuCallback"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from t_ta_ku_callback
+    where user_id=#{userId} order by create_time desc limit #{limit}
+  </select>
+</mapper>

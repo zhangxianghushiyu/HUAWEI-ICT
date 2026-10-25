@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.EbookCategoryInfoMapper">
+    
+    <resultMap type="EbookCategoryInfo" id="EbookCategoryInfoResult">
+        <result property="id"    column="id"    />
+        <result property="ebookId"    column="ebook_id"    />
+        <result property="categoryId"    column="category_id"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectEbookCategoryInfoVo">
+        select id, ebook_id, category_id, create_time, update_time from t_ebook_category_info
+    </sql>
+
+    <select id="selectEbookCategoryInfoList" parameterType="EbookCategoryInfo" resultType="com.ruoyi.platform.domain.EbookCategoryInfo">
+        select ci.id, ci.ebook_id ebookId, ci.category_id categoryId, ci.create_time createTime, ci.update_time ,
+        ec.name categoryName,tec.title ebookTitle,tec.url ebookUrl
+        from t_ebook_category_info ci
+        LEFT JOIN t_ebook_category ec on ec.id=ci.category_id
+        LEFT JOIN t_ebook tec on tec.id=ci.ebook_id
+        <where>
+            <if test="ebookId != null "> and ci.ebook_id = #{ebookId}</if>
+            <if test="categoryId != null "> and ci.category_id = #{categoryId}</if>
+            <if test="ebookTitle != null  and ebookTitle != ''">and tec.title like concat('%', #{ebookTitle}, '%')</if>
+            <if test="categoryName != null  and categoryName != ''">and ec.name like concat('%', #{categoryName}, '%')</if>
+        </where>
+        order by ci.create_time desc
+    </select>
+    
+    <select id="selectEbookCategoryInfoById" parameterType="Long" resultMap="EbookCategoryInfoResult">
+        <include refid="selectEbookCategoryInfoVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertEbookCategoryInfo" parameterType="EbookCategoryInfo" useGeneratedKeys="true" keyProperty="id">
+        insert into t_ebook_category_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="ebookId != null">ebook_id,</if>
+            <if test="categoryId != null">category_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="ebookId != null">#{ebookId},</if>
+            <if test="categoryId != null">#{categoryId},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateEbookCategoryInfo" parameterType="EbookCategoryInfo">
+        update t_ebook_category_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="ebookId != null">ebook_id = #{ebookId},</if>
+            <if test="categoryId != null">category_id = #{categoryId},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteEbookCategoryInfoById" parameterType="Long">
+        delete from t_ebook_category_info where id = #{id}
+    </delete>
+
+    <delete id="deleteEbookCategoryInfoByIds" parameterType="String">
+        delete from t_ebook_category_info where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

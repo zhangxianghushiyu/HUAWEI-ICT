@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.EbookDao">
+    <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.Ebook">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="words" jdbcType="BIGINT" property="words"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+        <result column="sort" jdbcType="INTEGER" property="sort"/>
+        <result column="fraction" jdbcType="DOUBLE" property="fraction"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="is_end" jdbcType="INTEGER" property="isEnd"/>
+        <result column="delicate" jdbcType="INTEGER" property="delicate"/>
+        <result column="author" jdbcType="VARCHAR" property="author"/>
+        <result column="introduce" jdbcType="VARCHAR" property="introduce"/>
+        <result column="del_status" jdbcType="INTEGER" property="delStatus"/>
+        <result column="up_status" jdbcType="INTEGER" property="upStatus"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id
+        , words, url, sort, fraction, title, is_end, delicate, author, introduce, del_status,
+    up_status, create_time, update_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_ebook
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from t_ebook
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.Ebook"
+            useGeneratedKeys="true">
+        insert into t_ebook (words, url, sort,
+                             fraction, title, is_end,
+                             delicate, author, introduce,
+                             del_status, up_status, create_time,
+                             update_time)
+        values (#{words,jdbcType=BIGINT}, #{url,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER},
+                #{fraction,jdbcType=DOUBLE}, #{title,jdbcType=VARCHAR}, #{isEnd,jdbcType=INTEGER},
+                #{delicate,jdbcType=INTEGER}, #{author,jdbcType=VARCHAR}, #{introduce,jdbcType=VARCHAR},
+                #{delStatus,jdbcType=INTEGER}, #{upStatus,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+                #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.Ebook"
+            useGeneratedKeys="true">
+        insert into t_ebook
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="words != null">
+                words,
+            </if>
+            <if test="url != null">
+                url,
+            </if>
+            <if test="sort != null">
+                sort,
+            </if>
+            <if test="fraction != null">
+                fraction,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="isEnd != null">
+                is_end,
+            </if>
+            <if test="delicate != null">
+                delicate,
+            </if>
+            <if test="author != null">
+                author,
+            </if>
+            <if test="introduce != null">
+                introduce,
+            </if>
+            <if test="delStatus != null">
+                del_status,
+            </if>
+            <if test="upStatus != null">
+                up_status,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="words != null">
+                #{words,jdbcType=BIGINT},
+            </if>
+            <if test="url != null">
+                #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="sort != null">
+                #{sort,jdbcType=INTEGER},
+            </if>
+            <if test="fraction != null">
+                #{fraction,jdbcType=DOUBLE},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="isEnd != null">
+                #{isEnd,jdbcType=INTEGER},
+            </if>
+            <if test="delicate != null">
+                #{delicate,jdbcType=INTEGER},
+            </if>
+            <if test="author != null">
+                #{author,jdbcType=VARCHAR},
+            </if>
+            <if test="introduce != null">
+                #{introduce,jdbcType=VARCHAR},
+            </if>
+            <if test="delStatus != null">
+                #{delStatus,jdbcType=INTEGER},
+            </if>
+            <if test="upStatus != null">
+                #{upStatus,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.Ebook">
+        update t_ebook
+        <set>
+            <if test="words != null">
+                words = #{words,jdbcType=BIGINT},
+            </if>
+            <if test="url != null">
+                url = #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="sort != null">
+                sort = #{sort,jdbcType=INTEGER},
+            </if>
+            <if test="fraction != null">
+                fraction = #{fraction,jdbcType=DOUBLE},
+            </if>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="isEnd != null">
+                is_end = #{isEnd,jdbcType=INTEGER},
+            </if>
+            <if test="delicate != null">
+                delicate = #{delicate,jdbcType=INTEGER},
+            </if>
+            <if test="author != null">
+                author = #{author,jdbcType=VARCHAR},
+            </if>
+            <if test="introduce != null">
+                introduce = #{introduce,jdbcType=VARCHAR},
+            </if>
+            <if test="delStatus != null">
+                del_status = #{delStatus,jdbcType=INTEGER},
+            </if>
+            <if test="upStatus != null">
+                up_status = #{upStatus,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.Ebook">
+        update t_ebook
+        set words       = #{words,jdbcType=BIGINT},
+            url         = #{url,jdbcType=VARCHAR},
+            sort        = #{sort,jdbcType=INTEGER},
+            fraction    = #{fraction,jdbcType=DOUBLE},
+            title       = #{title,jdbcType=VARCHAR},
+            is_end      = #{isEnd,jdbcType=INTEGER},
+            delicate    = #{delicate,jdbcType=INTEGER},
+            author      = #{author,jdbcType=VARCHAR},
+            introduce   = #{introduce,jdbcType=VARCHAR},
+            del_status  = #{delStatus,jdbcType=INTEGER},
+            up_status   = #{upStatus,jdbcType=INTEGER},
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="selectEbookRecommendListVO" resultType="com.ruoyi.platform.vo.EbookRecommendListVO">
+        select id,
+               words,
+               url,
+               sort,
+               fraction,
+               title,
+               is_end,
+               delicate,
+               author,
+               introduce,
+               del_status,
+               up_status,
+               create_time,
+               update_time
+        from t_ebook
+        where up_status = 1
+          and del_status = 1
+        ORDER BY RAND() LIMIT 4;
+    </select>
+
+
+    <select id="selectEbookRecommendLikeListVO" resultType="com.ruoyi.platform.vo.EbookRecommendLikeListVO">
+        select id,
+               words,
+               url,
+               sort,
+               fraction,
+               title,
+               is_end isEnd,
+               delicate,
+               author,
+               introduce,
+               del_status,
+               up_status,
+               create_time,
+               update_time
+        from t_ebook
+        where up_status = 1
+          and del_status = 1
+        ORDER BY RAND() LIMIT 4;
+    </select>
+
+
+    <select id="selectEbookListVOPremiumProducts" resultType="com.ruoyi.platform.vo.EbookListVO">
+        select id,
+               words,
+               url,
+               sort,
+               fraction,
+               title,
+               is_end isEnd,
+               delicate,
+               author,
+               introduce,
+               del_status,
+               up_status,
+               create_time,
+               update_time
+        from t_ebook
+        where up_status = 1
+          and del_status = 1
+          and delicate = 1
+        order by sort asc, update_time desc
+    </select>
+
+    <select id="selectEbookListVOFree" resultType="com.ruoyi.platform.vo.EbookListVO">
+        select id,
+               words,
+               url,
+               sort,
+               fraction,
+               title,
+               is_end isEnd,
+               delicate,
+               author,
+               introduce,
+               del_status,
+               up_status,
+               create_time,
+               update_time
+        from t_ebook
+        where up_status = 1
+          and del_status = 1
+        order by sort asc, update_time desc
+    </select>
+
+    <select id="selectEbookQueryListVONoCategoryId" resultType="com.ruoyi.platform.vo.EbookQueryListVO">
+        select
+        id, words, url, sort, fraction, title, is_end isEnd, delicate, author, introduce, del_status,
+        up_status, create_time, update_time
+        from t_ebook
+        where up_status=1 and del_status=1
+        <if test="isEnd!=null and isEnd!=''">and is_end=#{isEnd}</if>
+        <if test="wordsType!=null and wordsType!=''">
+            <if test="wordsType==1">and words &lt; 500000</if>
+            <if test="wordsType==2">and words &gt;= 500000 and words &lt; 1000000</if>
+            <if test="wordsType==3">and words &gt;= 1000000 and words &lt; 2000000</if>
+            <if test="wordsType==4">and words &gt;= 2000000</if>
+        </if>
+        <if test="sortType==1">order by update_time desc,sort asc</if>
+        <if test="sortType==2">order by fraction desc,update_time desc</if>
+        <if test="sortType==3">order by words desc,update_time desc</if>
+        <if test="sortType==4">order by sort asc,update_time desc</if>
+    </select>
+
+
+    <select id="selectEbookQueryListVOHaveCategoryId" resultType="com.ruoyi.platform.vo.EbookQueryListVO">
+        SELECT e.id, e.words, e.url, e.sort, e.fraction, e.title, e.is_end isEnd, e.delicate, e.author, e.introduce,
+        e.del_status,
+        e.up_status, e.create_time, e.update_time
+        from t_ebook_category_info ci
+        INNER JOIN t_ebook e on e.id=ci.ebook_id
+        where e.up_status=1 and e.del_status=1
+        and ci.category_id=#{categoryId}
+        <if test="isEnd!=null and isEnd!=''">and e.is_end=#{isEnd}</if>
+        <if test="wordsType!=null and wordsType!=''">
+            <if test="wordsType==1">and e.words &lt; 500000</if>
+            <if test="wordsType==2">and e.words &gt;= 500000 and words &lt; 1000000</if>
+            <if test="wordsType==3">and e.words &gt;= 1000000 and words &lt; 2000000</if>
+            <if test="wordsType==4">and e.words &gt;= 2000000</if>
+        </if>
+        <if test="sortType==1">order by e.update_time desc,sort asc</if>
+        <if test="sortType==2">order by e.fraction desc,update_time desc</if>
+        <if test="sortType==3">order by e.words desc,update_time desc</if>
+        <if test="sortType==4">order by e.sort asc,update_time desc</if>
+    </select>
+
+    <sql id="selectEbookVo">
+        select id, words, url, sort, fraction, title, is_end, delicate, author, introduce, del_status, up_status, create_time, update_time from t_ebook
+    </sql>
+    <select id="selectEbookById" parameterType="int" resultMap="BaseResultMap">
+        <include refid="selectEbookVo"/>
+        where id = #{id}
+    </select>
+</mapper>

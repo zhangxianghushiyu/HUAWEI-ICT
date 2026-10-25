@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.TaskDailyAppointDramaCoinMapper">
+
+    <resultMap type="TaskDailyAppointDramaCoin" id="TaskDailyAppointDramaCoinResult">
+        <result property="id"    column="id"    />
+        <result property="dramaId"    column="drama_id"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectTaskDailyAppointDramaCoinVo">
+        select id, drama_id, create_time, update_time from t_task_daily_appoint_drama_coin
+    </sql>
+
+    <select id="selectTaskDailyAppointDramaCoinList" parameterType="TaskDailyAppointDramaCoin" resultMap="TaskDailyAppointDramaCoinResult">
+        <include refid="selectTaskDailyAppointDramaCoinVo"/>
+        <where>
+            <if test="dramaId != null "> and drama_id = #{dramaId}</if>
+        </where>
+    </select>
+
+    <select id="selectTaskDailyAppointDramaCoinById" parameterType="Long" resultMap="TaskDailyAppointDramaCoinResult">
+        <include refid="selectTaskDailyAppointDramaCoinVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertTaskDailyAppointDramaCoin" parameterType="TaskDailyAppointDramaCoin" useGeneratedKeys="true" keyProperty="id">
+        insert into t_task_daily_appoint_drama_coin
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="dramaId != null">drama_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="dramaId != null">#{dramaId},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTaskDailyAppointDramaCoin" parameterType="TaskDailyAppointDramaCoin">
+        update t_task_daily_appoint_drama_coin
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="dramaId != null">drama_id = #{dramaId},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTaskDailyAppointDramaCoinById" parameterType="Long">
+        delete from t_task_daily_appoint_drama_coin where id = #{id}
+    </delete>
+
+    <delete id="deleteTaskDailyAppointDramaCoinByIds" parameterType="String">
+        delete from t_task_daily_appoint_drama_coin where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <select id="selectTaskLinkDramaCoinList" parameterType="com.ruoyi.platform.dto.TaskLinkDramaListDTO"
+    resultType="com.ruoyi.platform.vo.TaskLinkDramaListVO">
+        SELECT dc.id,td.title,td.title_img titleImg,dc.create_time createTime
+        from
+            t_task_daily_appoint_drama_coin dc
+                INNER JOIN t_drama td on td.id=dc.drama_id
+        where td.del_status=1 and td.`status`=1
+        <if test="title!=null"> and td.title like concat('%', #{title}, '%')</if>
+        <if test="dramaId!=null"> and dc.drama_id=#{dramaId}</if>
+        ORDER BY dc.create_time DESC
+    </select>
+</mapper>

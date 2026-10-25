@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.ActivityRegistrationDao">
+    
+    <resultMap type="com.ruoyi.platform.vo.ActivityListVO" id="ActivityListVOResult">
+        <result property="id"    column="id"    />
+        <result property="title"    column="title"    />
+        <result property="description"    column="description"    />
+        <result property="coverImage"    column="cover_image"    />
+        <result property="startTime"    column="start_time"    />
+        <result property="endTime"    column="end_time"    />
+        <result property="status"    column="status"    />
+        <result property="location"    column="location"    />
+        <result property="organizer"    column="organizer"    />
+        <result property="contactPhone"    column="contact_phone"    />
+        <result property="signupCount"    column="signup_count"    />
+        <result property="createTime"    column="create_time"    />
+    </resultMap>
+
+    <sql id="selectActivityVo">
+        select ar.id, ar.title, ar.description, ar.cover_image, ar.start_time, ar.end_time, 
+               ar.status, ar.location, ar.organizer, ar.contact_phone, ar.create_time,
+               COUNT(asp.id) as signup_count
+        from t_activity_registration ar
+        left join t_activity_signup asp on ar.id = asp.activity_id and asp.status = 0
+    </sql>
+
+    <select id="selectActivityList" resultMap="ActivityListVOResult">
+        <include refid="selectActivityVo"/>
+        where ar.del_status = #{delStatus}
+        group by ar.id
+        order by ar.create_time desc
+    </select>
+    
+    <select id="selectByPrimaryKey" parameterType="Long" resultType="com.ruoyi.platform.domain.ActivityRegistration">
+        select id, title, description, cover_image, start_time, end_time, status, 
+               location, organizer, contact_phone, del_status, create_time, update_time
+        from t_activity_registration
+        where id = #{id}
+    </select>
+        
+</mapper>

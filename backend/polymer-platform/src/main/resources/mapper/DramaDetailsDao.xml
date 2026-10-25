@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.DramaDetailsDao">
+    <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.DramaDetails">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="drama_id" jdbcType="INTEGER" property="dramaId"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="video_url" jdbcType="VARCHAR" property="videoUrl"/>
+        <result column="title_img" jdbcType="VARCHAR" property="titleImg"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="like_count" jdbcType="INTEGER" property="likeCount"/>
+        <result column="play_count" jdbcType="INTEGER" property="playCount"/>
+        <result column="collect_count" jdbcType="INTEGER" property="collectCount"/>
+        <result column="del_status" jdbcType="INTEGER" property="delStatus"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="gather" jdbcType="INTEGER" property="gather"/>
+        <result column="is_price" jdbcType="INTEGER" property="isPrice"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id
+        , drama_id, `name`, video_url, title_img, content, like_count, play_count,collect_count, del_status,
+    `status`,gather,is_price,create_time, update_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_drama_details
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from t_drama_details
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.DramaDetails"
+            useGeneratedKeys="true">
+        insert into t_drama_details (drama_id, `name`, video_url,
+                                     title_img, content, like_count,
+                                     play_count, collect_count, del_status, `status`, gather, is_price,
+                                     create_time, update_time)
+        values (#{dramaId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{videoUrl,jdbcType=VARCHAR},
+                #{titleImg,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{likeCount,jdbcType=INTEGER},
+                #{playCount,jdbcType=INTEGER},
+                #{collectCount},
+                #{delStatus,jdbcType=INTEGER}, #{status,jdbcType=INTEGER},
+                #{gather},
+                #{isPrice},
+                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="com.ruoyi.platform.domain.DramaDetails" useGeneratedKeys="true">
+        insert into t_drama_details
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="dramaId != null">
+                drama_id,
+            </if>
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="videoUrl != null">
+                video_url,
+            </if>
+            <if test="titleImg != null">
+                title_img,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="likeCount != null">
+                like_count,
+            </if>
+            <if test="playCount != null">
+                play_count,
+            </if>
+            <if test="collectCount != null">
+                collect_count,
+            </if>
+            <if test="delStatus != null">
+                del_status,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="gather != null">
+                `gather`,
+            </if>
+            <if test="isPrice != null">
+                is_price,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="dramaId != null">
+                #{dramaId,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="videoUrl != null">
+                #{videoUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="titleImg != null">
+                #{titleImg,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="likeCount != null">
+                #{likeCount,jdbcType=INTEGER},
+            </if>
+            <if test="playCount != null">
+                #{playCount,jdbcType=INTEGER},
+            </if>
+            <if test="collectCount != null">
+                #{collectCount},
+            </if>
+            <if test="delStatus != null">
+                #{delStatus,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="gather != null">
+                #{gather},
+            </if>
+            <if test="isPrice != null">
+                #{isPrice},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.DramaDetails">
+        update t_drama_details
+        <set>
+            <if test="dramaId != null">
+                drama_id = #{dramaId,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                `name` = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="videoUrl != null">
+                video_url = #{videoUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="titleImg != null">
+                title_img = #{titleImg,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="likeCount != null">
+                like_count = #{likeCount,jdbcType=INTEGER},
+            </if>
+            <if test="playCount != null">
+                play_count = #{playCount,jdbcType=INTEGER},
+            </if>
+            <if test="collectCount != null">
+                collect_count = #{collectCount},
+            </if>
+            <if test="delStatus != null">
+                del_status = #{delStatus,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                `status` = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="gather != null">
+                `gather` = #{gather},
+            </if>
+            <if test="isPrice != null">
+                is_price = #{isPrice},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.DramaDetails">
+        update t_drama_details
+        set drama_id      = #{dramaId,jdbcType=INTEGER},
+            `name`        = #{name,jdbcType=VARCHAR},
+            video_url     = #{videoUrl,jdbcType=VARCHAR},
+            title_img     = #{titleImg,jdbcType=VARCHAR},
+            content       = #{content,jdbcType=VARCHAR},
+            like_count    = #{likeCount,jdbcType=INTEGER},
+            play_count    = #{playCount,jdbcType=INTEGER},
+            collect_count = #{collectCount},
+            del_status    = #{delStatus,jdbcType=INTEGER},
+            `status`      = #{status,jdbcType=INTEGER},
+            `gather`      = #{gather},
+            is_price      = #{isPrice},
+            create_time   = #{createTime,jdbcType=TIMESTAMP},
+            update_time   = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+
+    <select id="selectDramaDetailsListVO" resultType="com.ruoyi.platform.vo.DramaDetailsListVO">
+        select id               dramaDetailsId,
+               drama_id      as dramaId,
+               `name`,
+               video_url     as videoUrl,
+               title_img     as titleImg,
+               content,
+               like_count    as likeCount,
+               play_count    as playCount,
+               collect_count as collectCount,
+               del_status    as delStatus,
+               `status`,
+               `gather`,
+               is_price      as isPrice,
+               create_time   as createTime,
+               update_time   as updateTime,
+               video_width   as videoWidth,
+               video_height  as videoHeight
+        from t_drama_details
+        where drama_id = #{dramaId}
+          and del_status = 1
+          and status = 1
+        order by gather asc
+    </select>
+
+
+    <select id="selectDramaDetailsListVOCount" resultType="java.lang.Integer">
+        select count(1)
+        from t_drama_details
+        where drama_id = #{dramaId}
+          and del_status = 1
+          and status = 1
+    </select>
+
+
+    <update id="addDramaDetailsPlayCount">
+        update t_drama_details
+        set play_count=play_count + 1
+        where id = #{id}
+    </update>
+
+    <update id="addDramaDetailsLikeCount">
+        update t_drama_details
+        set like_count=like_count + 1
+        where id = #{id}
+    </update>
+
+
+    <update id="subDramaDetailsLikeCount">
+        update t_drama_details
+        set like_count=like_count - 1
+        where id = #{id}
+          and collect_count > 0
+    </update>
+
+
+    <update id="addDramaDetailsCollectCount">
+        update t_drama_details
+        set collect_count=collect_count + 1
+        where id = #{id}
+    </update>
+
+
+    <update id="subDramaDetailsCollectCount">
+        update t_drama_details
+        set collect_count=collect_count - 1
+        where id = #{id}
+          and collect_count > 0
+    </update>
+
+    <insert id="batchInsertSelective">
+        INSERT INTO `t_drama_details`(drama_id, `name`, video_url, title_img, content, like_count,
+        play_count,collect_count, del_status,
+        `status`,gather, is_price,create_time)
+        VALUES
+        <foreach collection="list" item="dto" separator=",">
+            (#{dto.dramaId}, #{dto.name}, #{dto.videoUrl}, #{dto.titleImg}
+            ,#{dto.content},#{dto.likeCount},#{dto.playCount}
+            ,#{dto.collectCount},#{dto.delStatus},#{dto.status}
+            ,#{dto.gather},#{dto.isPrice},#{dto.createTime}
+            )
+        </foreach>
+    </insert>
+
+
+    <select id="selectNeedUnlockDramaDetailsId" resultMap="BaseResultMap">
+        SELECT tdd.id, tdd.gather
+        from t_drama_details tdd
+        where tdd.drama_id = #{dramaId}
+          and tdd.status = 1
+          and tdd.del_status = 1
+          and tdd.is_price = 1
+          and tdd.gather > (select ifnull(free_num, 3) from t_drama_unlock limit 1)
+          and id not in (SELECT drama_details_id
+                         from t_drama_publicize
+                         where user_id = #{userId})
+        ORDER BY gather asc limit #{limit}
+    </select>
+
+
+    <select id="selectDramaDetailsAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_drama_details
+    </select>
+</mapper>

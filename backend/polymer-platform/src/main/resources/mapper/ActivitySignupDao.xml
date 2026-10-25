@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.ActivitySignupDao">
+    
+    <resultMap type="com.ruoyi.platform.domain.ActivitySignup" id="ActivitySignupResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="activityId"    column="activity_id"    />
+        <result property="status"    column="status"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <resultMap type="com.ruoyi.platform.vo.MySignupListVO" id="MySignupListVOResult">
+        <result property="signupId"    column="signup_id"    />
+        <result property="activityId"    column="activity_id"    />
+        <result property="activityTitle"    column="activity_title"    />
+        <result property="activityCoverImage"    column="activity_cover_image"    />
+        <result property="activityStartTime"    column="activity_start_time"    />
+        <result property="activityEndTime"    column="activity_end_time"    />
+        <result property="activityLocation"    column="activity_location"    />
+        <result property="signupStatus"    column="signup_status"    />
+        <result property="signupTime"    column="signup_time"    />
+    </resultMap>
+
+    <sql id="selectActivitySignupVo">
+        select id, user_id, activity_id, status, create_time, update_time 
+        from t_activity_signup
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="Long" resultMap="ActivitySignupResult">
+        <include refid="selectActivitySignupVo"/>
+        where id = #{id}
+    </select>
+
+    <select id="selectByUserIdAndActivityId" resultMap="ActivitySignupResult">
+        <include refid="selectActivitySignupVo"/>
+        where user_id = #{userId} and activity_id = #{activityId}
+    </select>
+
+    <select id="selectMySignupList" resultMap="MySignupListVOResult">
+        select asp.id as signup_id,
+               asp.activity_id,
+               ar.title as activity_title,
+               ar.cover_image as activity_cover_image,
+               ar.start_time as activity_start_time,
+               ar.end_time as activity_end_time,
+               ar.location as activity_location,
+               asp.status as signup_status,
+               asp.create_time as signup_time
+        from t_activity_signup asp
+        inner join t_activity_registration ar on asp.activity_id = ar.id
+        where asp.user_id = #{userId} and ar.del_status = 1
+        order by asp.create_time desc
+    </select>
+
+    <insert id="insert" parameterType="com.ruoyi.platform.domain.ActivitySignup" useGeneratedKeys="true" keyProperty="id">
+        insert into t_activity_signup
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="activityId != null">activity_id,</if>
+            <if test="status != null">status,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="activityId != null">#{activityId},</if>
+            <if test="status != null">#{status},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.ActivitySignup">
+        update t_activity_signup
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="activityId != null">activity_id = #{activityId},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="Long">
+        delete from t_activity_signup where id = #{id}
+    </delete>
+
+    <select id="countByActivityId" resultType="int">
+        select count(*) from t_activity_signup 
+        where activity_id = #{activityId} and status = 0
+    </select>
+</mapper>

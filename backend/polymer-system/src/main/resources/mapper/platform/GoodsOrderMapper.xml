@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.GoodsOrderMapper">
+    
+    <resultMap type="GoodsOrder" id="GoodsOrderResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="orderNo"    column="order_no"    />
+        <result property="goodsName"    column="goods_name"    />
+        <result property="goodsPrice"    column="goods_price"    />
+        <result property="goodsUrl"    column="goods_url"    />
+        <result property="payMoney"    column="pay_money"    />
+        <result property="payCount"    column="pay_count"    />
+        <result property="status"    column="status"    />
+        <result property="getName"    column="get_name"    />
+        <result property="getPhone"    column="get_phone"    />
+        <result property="getCity"    column="get_city"    />
+        <result property="getAddress"    column="get_address"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectGoodsOrderVo">
+        select id, user_id, order_no, goods_name, goods_price, goods_url, pay_money, pay_count, status, get_name, get_phone, get_city, get_address, create_time, update_time from t_goods_order
+    </sql>
+
+    <select id="selectGoodsOrderList" parameterType="GoodsOrder" resultType="com.ruoyi.platform.domain.GoodsOrder">
+        select go.id, go.user_id userId, go.order_no orderNo, go.goods_name goodsName, go.goods_price goodsPrice,
+        go.goods_url goodsUrl,
+        go.pay_money payMoney, go.pay_count payCount, go.status, go.get_name getName, go.get_phone getPhone, go.get_city
+        getCity,
+        go.get_address getAddress, go.create_time createTime, go.update_time updateTime ,
+        tu.avatar,tu.user_name userName,tu.nick_name nickName
+        from t_goods_order go
+        LEFT JOIN t_user tu on tu.id=go.user_id
+        where 1=1
+        <if test="nickName != null  and nickName != ''">and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="userName != null  and userName != ''">and tu.user_name like concat('%', #{userName}, '%')</if>
+        <if test="userId != null ">and go.user_id = #{userId}</if>
+        <if test="orderNo != null  and orderNo != ''">and go.order_no = #{orderNo}</if>
+        <if test="goodsName != null  and goodsName != ''">and go.goods_name like concat('%', #{goodsName}, '%')</if>
+        <if test="goodsPrice != null ">and go.goods_price = #{goodsPrice}</if>
+        <if test="goodsUrl != null  and goodsUrl != ''">and go.goods_url = #{goodsUrl}</if>
+        <if test="payMoney != null ">and go.pay_money = #{payMoney}</if>
+        <if test="payCount != null ">and go.pay_count = #{payCount}</if>
+        <if test="status != null ">and go.status = #{status}</if>
+        <if test="getName != null  and getName != ''">and go.get_name like concat('%', #{getName}, '%')</if>
+        <if test="getPhone != null  and getPhone != ''">and go.get_phone = #{getPhone}</if>
+        <if test="getCity != null  and getCity != ''">and go.get_city = #{getCity}</if>
+        <if test="getAddress != null  and getAddress != ''">and go.get_address = #{getAddress}</if>
+        order by go.create_time desc
+    </select>
+    
+    <select id="selectGoodsOrderById" parameterType="Long" resultMap="GoodsOrderResult">
+        <include refid="selectGoodsOrderVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertGoodsOrder" parameterType="GoodsOrder" useGeneratedKeys="true" keyProperty="id">
+        insert into t_goods_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="orderNo != null">order_no,</if>
+            <if test="goodsName != null">goods_name,</if>
+            <if test="goodsPrice != null">goods_price,</if>
+            <if test="goodsUrl != null">goods_url,</if>
+            <if test="payMoney != null">pay_money,</if>
+            <if test="payCount != null">pay_count,</if>
+            <if test="status != null">status,</if>
+            <if test="getName != null">get_name,</if>
+            <if test="getPhone != null">get_phone,</if>
+            <if test="getCity != null">get_city,</if>
+            <if test="getAddress != null">get_address,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="orderNo != null">#{orderNo},</if>
+            <if test="goodsName != null">#{goodsName},</if>
+            <if test="goodsPrice != null">#{goodsPrice},</if>
+            <if test="goodsUrl != null">#{goodsUrl},</if>
+            <if test="payMoney != null">#{payMoney},</if>
+            <if test="payCount != null">#{payCount},</if>
+            <if test="status != null">#{status},</if>
+            <if test="getName != null">#{getName},</if>
+            <if test="getPhone != null">#{getPhone},</if>
+            <if test="getCity != null">#{getCity},</if>
+            <if test="getAddress != null">#{getAddress},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateGoodsOrder" parameterType="GoodsOrder">
+        update t_goods_order
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="orderNo != null">order_no = #{orderNo},</if>
+            <if test="goodsName != null">goods_name = #{goodsName},</if>
+            <if test="goodsPrice != null">goods_price = #{goodsPrice},</if>
+            <if test="goodsUrl != null">goods_url = #{goodsUrl},</if>
+            <if test="payMoney != null">pay_money = #{payMoney},</if>
+            <if test="payCount != null">pay_count = #{payCount},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="getName != null">get_name = #{getName},</if>
+            <if test="getPhone != null">get_phone = #{getPhone},</if>
+            <if test="getCity != null">get_city = #{getCity},</if>
+            <if test="getAddress != null">get_address = #{getAddress},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteGoodsOrderById" parameterType="Long">
+        delete from t_goods_order where id = #{id}
+    </delete>
+
+    <delete id="deleteGoodsOrderByIds" parameterType="String">
+        delete from t_goods_order where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

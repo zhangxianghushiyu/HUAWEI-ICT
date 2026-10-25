@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VoteActivityMapper">
+    
+    <resultMap type="VoteActivity" id="VoteActivityResult">
+        <result property="id"    column="id"    />
+        <result property="title"    column="title"    />
+        <result property="description"    column="description"    />
+        <result property="coverImage"    column="cover_image"    />
+        <result property="startTime"    column="start_time"    />
+        <result property="endTime"    column="end_time"    />
+        <result property="status"    column="status"    />
+        <result property="isMultiple"    column="is_multiple"    />
+        <result property="maxOptions"    column="max_options"    />
+        <result property="totalVoters"    column="total_voters"    />
+        <result property="totalVotes"    column="total_votes"    />
+        <result property="delStatus"    column="del_status"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectVoteActivityVo">
+        select id, title, description, cover_image, start_time, end_time, status, is_multiple, max_options, total_voters, total_votes, del_status, create_time, update_time from t_vote_activity
+    </sql>
+
+    <select id="selectVoteActivityList" parameterType="VoteActivity" resultMap="VoteActivityResult">
+        <include refid="selectVoteActivityVo"/>
+        <where>  
+            <if test="title != null  and title != ''"> and title = #{title}</if>
+            <if test="description != null  and description != ''"> and description = #{description}</if>
+            <if test="coverImage != null  and coverImage != ''"> and cover_image = #{coverImage}</if>
+            <if test="startTime != null "> and start_time = #{startTime}</if>
+            <if test="endTime != null "> and end_time = #{endTime}</if>
+            <if test="status != null "> and status = #{status}</if>
+            <if test="isMultiple != null "> and is_multiple = #{isMultiple}</if>
+            <if test="maxOptions != null "> and max_options = #{maxOptions}</if>
+            <if test="totalVoters != null "> and total_voters = #{totalVoters}</if>
+            <if test="totalVotes != null "> and total_votes = #{totalVotes}</if>
+            <if test="delStatus != null "> and del_status = #{delStatus}</if>
+        </where>
+    </select>
+    
+    <select id="selectVoteActivityById" parameterType="Long" resultMap="VoteActivityResult">
+        <include refid="selectVoteActivityVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertVoteActivity" parameterType="VoteActivity" useGeneratedKeys="true" keyProperty="id">
+        insert into t_vote_activity
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null and title != ''">title,</if>
+            <if test="description != null and description != ''">description,</if>
+            <if test="coverImage != null and coverImage != ''">cover_image,</if>
+            <if test="startTime != null">start_time,</if>
+            <if test="endTime != null">end_time,</if>
+            <if test="status != null">status,</if>
+            <if test="isMultiple != null">is_multiple,</if>
+            <if test="maxOptions != null">max_options,</if>
+            <if test="totalVoters != null">total_voters,</if>
+            <if test="totalVotes != null">total_votes,</if>
+            <if test="delStatus != null">del_status,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null and title != ''">#{title},</if>
+            <if test="description != null and description != ''">#{description},</if>
+            <if test="coverImage != null and coverImage != ''">#{coverImage},</if>
+            <if test="startTime != null">#{startTime},</if>
+            <if test="endTime != null">#{endTime},</if>
+            <if test="status != null">#{status},</if>
+            <if test="isMultiple != null">#{isMultiple},</if>
+            <if test="maxOptions != null">#{maxOptions},</if>
+            <if test="totalVoters != null">#{totalVoters},</if>
+            <if test="totalVotes != null">#{totalVotes},</if>
+            <if test="delStatus != null">#{delStatus},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateVoteActivity" parameterType="VoteActivity">
+        update t_vote_activity
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="title != null and title != ''">title = #{title},</if>
+            <if test="description != null and description != ''">description = #{description},</if>
+            <if test="coverImage != null and coverImage != ''">cover_image = #{coverImage},</if>
+            <if test="startTime != null">start_time = #{startTime},</if>
+            <if test="endTime != null">end_time = #{endTime},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="isMultiple != null">is_multiple = #{isMultiple},</if>
+            <if test="maxOptions != null">max_options = #{maxOptions},</if>
+            <if test="totalVoters != null">total_voters = #{totalVoters},</if>
+            <if test="totalVotes != null">total_votes = #{totalVotes},</if>
+            <if test="delStatus != null">del_status = #{delStatus},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteVoteActivityById" parameterType="Long">
+        delete from t_vote_activity where id = #{id}
+    </delete>
+
+    <delete id="deleteVoteActivityByIds" parameterType="String">
+        delete from t_vote_activity where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

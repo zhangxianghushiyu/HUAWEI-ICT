@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.DramaDetailsMapper">
+
+    <resultMap type="DramaDetails" id="DramaDetailsResult">
+        <result property="id" column="id"/>
+        <result property="dramaId" column="drama_id"/>
+        <result property="name" column="name"/>
+        <result property="videoUrl" column="video_url"/>
+        <result property="titleImg" column="title_img"/>
+        <result property="content" column="content"/>
+        <result property="likeCount" column="like_count"/>
+        <result property="playCount" column="play_count"/>
+        <result property="collectCount" column="collect_count"/>
+        <result property="delStatus" column="del_status"/>
+        <result property="status" column="status"/>
+        <result property="gather" column="gather"/>
+        <result property="isPrice" column="is_price"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="videoWidth" column="video_width"/>
+        <result property="videoHeight" column="video_height"/>
+    </resultMap>
+
+    <sql id="selectDramaDetailsVo">
+        select id,
+               drama_id,
+               name,
+               video_url,
+               title_img,
+               content,
+               like_count,
+               play_count,
+               collect_count,
+               del_status,
+               status,
+               gather,
+               is_price,
+               create_time,
+               update_time,
+               video_width,
+               video_height
+        from t_drama_details
+    </sql>
+
+    <select id="selectDramaDetailsList" parameterType="DramaDetails" resultMap="DramaDetailsResult">
+        <include refid="selectDramaDetailsVo"/>
+        where del_status=1
+        <if test="dramaId != null ">and drama_id = #{dramaId}</if>
+        <if test="name != null  and name != ''">and name like concat('%', #{name}, '%')</if>
+        <if test="videoUrl != null  and videoUrl != ''">and video_url = #{videoUrl}</if>
+        <if test="titleImg != null  and titleImg != ''">and title_img = #{titleImg}</if>
+        <if test="content != null  and content != ''">and content = #{content}</if>
+        <if test="likeCount != null ">and like_count = #{likeCount}</if>
+        <if test="playCount != null ">and play_count = #{playCount}</if>
+        <if test="collectCount != null ">and collect_count = #{collectCount}</if>
+        <if test="delStatus != null ">and del_status = #{delStatus}</if>
+        <if test="status != null ">and status = #{status}</if>
+        <if test="gather != null ">and gather = #{gather}</if>
+        <if test="isPrice != null ">and is_price = #{isPrice}</if>
+        order by gather asc
+    </select>
+
+
+    <select id="selectDramaDetailsListVO" parameterType="com.ruoyi.platform.dto.DramaDetailsListDTO"
+            resultType="com.ruoyi.platform.vo.DramaDetailsListVO">
+        select id,
+        drama_id dramaId,
+        name,
+        video_url videoUrl,
+        title_img titleImg,
+        content,
+        like_count likeCount,
+        play_count playCount,
+        collect_count collectCount,
+        del_status delStatus,
+        status,
+        gather,
+        is_price isPrice,
+        create_time createTime,
+        update_time updateTime
+        from t_drama_details
+        where del_status=1
+        <if test="dramaId != null ">and drama_id = #{dramaId}</if>
+        <if test="name != null  and name != ''">and name like concat('%', #{name}, '%')</if>
+        <if test="videoUrl != null  and videoUrl != ''">and video_url = #{videoUrl}</if>
+        <if test="titleImg != null  and titleImg != ''">and title_img = #{titleImg}</if>
+        <if test="content != null  and content != ''">and content = #{content}</if>
+        <if test="likeCount != null ">and like_count = #{likeCount}</if>
+        <if test="playCount != null ">and play_count = #{playCount}</if>
+        <if test="collectCount != null ">and collect_count = #{collectCount}</if>
+        <if test="delStatus != null ">and del_status = #{delStatus}</if>
+        <if test="status != null ">and status = #{status}</if>
+        <if test="gather != null ">and gather = #{gather}</if>
+        <if test="isPrice != null ">and is_price = #{isPrice}</if>
+        order by gather asc
+    </select>
+
+    <select id="selectDramaDetailsById" parameterType="Long" resultMap="DramaDetailsResult">
+        <include refid="selectDramaDetailsVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertDramaDetails" parameterType="DramaDetails" useGeneratedKeys="true" keyProperty="id">
+        insert into t_drama_details
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="dramaId != null">drama_id,</if>
+            <if test="name != null">name,</if>
+            <if test="videoUrl != null">video_url,</if>
+            <if test="titleImg != null">title_img,</if>
+            <if test="content != null">content,</if>
+            <if test="likeCount != null">like_count,</if>
+            <if test="playCount != null">play_count,</if>
+            <if test="collectCount != null">collect_count,</if>
+            <if test="delStatus != null">del_status,</if>
+            <if test="status != null">status,</if>
+            <if test="gather != null">gather,</if>
+            <if test="isPrice != null">is_price,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="dramaId != null">#{dramaId},</if>
+            <if test="name != null">#{name},</if>
+            <if test="videoUrl != null">#{videoUrl},</if>
+            <if test="titleImg != null">#{titleImg},</if>
+            <if test="content != null">#{content},</if>
+            <if test="likeCount != null">#{likeCount},</if>
+            <if test="playCount != null">#{playCount},</if>
+            <if test="collectCount != null">#{collectCount},</if>
+            <if test="delStatus != null">#{delStatus},</if>
+            <if test="status != null">#{status},</if>
+            <if test="gather != null">#{gather},</if>
+            <if test="isPrice != null">#{isPrice},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateDramaDetails" parameterType="DramaDetails">
+        update t_drama_details
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="dramaId != null">drama_id = #{dramaId},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="videoUrl != null">video_url = #{videoUrl},</if>
+            <if test="titleImg != null">title_img = #{titleImg},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="likeCount != null">like_count = #{likeCount},</if>
+            <if test="playCount != null">play_count = #{playCount},</if>
+            <if test="collectCount != null">collect_count = #{collectCount},</if>
+            <if test="delStatus != null">del_status = #{delStatus},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="gather != null">gather = #{gather},</if>
+            <if test="isPrice != null">is_price = #{isPrice},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDramaDetailsById" parameterType="Long">
+        delete
+        from t_drama_details
+        where id = #{id}
+    </delete>
+
+    <update id="deleteDramaDetailsByIds" parameterType="String">
+        update t_drama_details set del_status=0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+
+    <select id="selectGather" resultMap="DramaDetailsResult">
+        <include refid="selectDramaDetailsVo"/>
+        where drama_id = #{dramaId} and gather=#{gather} and del_status=1
+        limit 1
+    </select>
+
+    <update id="undercarriage" parameterType="String">
+        update t_drama_details set `status` = 0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <update id="grounding" parameterType="String">
+        update t_drama_details set `status` = 1 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+
+    <insert id="batchInsert" parameterType="java.util.List">
+        insert into t_drama_details (drama_id,name,
+        video_url,title_img,content,like_count,collect_count,gather,is_price,create_time) values
+        <foreach collection="list" item="t" index="index" separator=",">
+            (#{t.dramaId}, #{t.name},#{t.videoUrl},
+            #{t.titleImg},#{t.content}, #{t.likeCount},#{t.collectCount},
+            #{t.gather},
+            #{t.isPrice},
+            #{createTime})
+        </foreach>
+    </insert>
+
+
+    <update id="updateIsPriceStatus">
+        update t_drama_details
+        set is_price=1
+        where drama_id = #{dramaId}
+          and gather &gt; #{freeNum}
+    </update>
+
+    <update id="updateNoPriceStatus">
+        update t_drama_details
+        set is_price=0
+        where drama_id = #{dramaId}
+    </update>
+
+    <update id="updateIsPriceStatusByFreeNum">
+        update t_drama_details
+        set is_price= #{isPrice}
+        where gather between #{startNum} and #{endNum}
+    </update>
+
+    <select id="selectVideoSizeNullByDramaId" resultMap="DramaDetailsResult">
+        select id, video_url
+        from t_drama_details
+        where video_width is null
+          and del_status = 1
+        <if test="dramaId != null">and drama_id = #{dramaId}</if>
+    </select>
+
+    <update id="updateVideoSize">
+        update t_drama_details
+        set video_width = #{videoWidth}, video_height = #{videoHeight}
+        where id = #{id}
+    </update>
+</mapper>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VideoCategoryDao">
+    <select id="selectVideoCategoryVO" resultType="com.ruoyi.platform.vo.VideoCategoryVO">
+        select id classifyId, `name`
+        from t_video_category
+        where del_status = 1
+        order by sort asc, create_time desc
+    </select>
+</mapper>

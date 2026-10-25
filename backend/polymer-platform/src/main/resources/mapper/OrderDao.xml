@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.OrderDao">
+    <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.Order">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="wx_open_id" jdbcType="INTEGER" property="wxOpenId" />
+        <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+        <result column="pay_type" jdbcType="INTEGER" property="payType" />
+        <result column="pay_money" jdbcType="DECIMAL" property="payMoney" />
+        <result column="pay_status" jdbcType="INTEGER" property="payStatus" />
+        <result column="order_type" jdbcType="INTEGER" property="orderType" />
+        <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
+        <result column="refund_time" jdbcType="TIMESTAMP" property="refundTime" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, user_id,wx_open_id, order_no, pay_type, pay_money, pay_status, order_type, pay_time, refund_time,
+    create_time, update_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from t_order
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from t_order
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.Order" useGeneratedKeys="true">
+        insert into t_order (user_id,wx_open_id, order_no, pay_type,
+                             pay_money, pay_status, order_type,
+                             pay_time, refund_time, create_time,
+                             update_time)
+        values (#{userId,jdbcType=INTEGER},#{wxOpenId}, #{orderNo,jdbcType=VARCHAR}, #{payType,jdbcType=INTEGER},
+                #{payMoney,jdbcType=DECIMAL}, #{payStatus,jdbcType=INTEGER}, #{orderType,jdbcType=INTEGER},
+                #{payTime,jdbcType=TIMESTAMP}, #{refundTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP},
+                #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.Order" useGeneratedKeys="true">
+        insert into t_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="wxOpenId != null">
+                wx_open_id,
+            </if>
+            <if test="orderNo != null">
+                order_no,
+            </if>
+            <if test="payType != null">
+                pay_type,
+            </if>
+            <if test="payMoney != null">
+                pay_money,
+            </if>
+            <if test="payStatus != null">
+                pay_status,
+            </if>
+            <if test="orderType != null">
+                order_type,
+            </if>
+            <if test="payTime != null">
+                pay_time,
+            </if>
+            <if test="refundTime != null">
+                refund_time,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="wxOpenId != null">
+                #{wxOpenId},
+            </if>
+            <if test="orderNo != null">
+                #{orderNo,jdbcType=VARCHAR},
+            </if>
+            <if test="payType != null">
+                #{payType,jdbcType=INTEGER},
+            </if>
+            <if test="payMoney != null">
+                #{payMoney,jdbcType=DECIMAL},
+            </if>
+            <if test="payStatus != null">
+                #{payStatus,jdbcType=INTEGER},
+            </if>
+            <if test="orderType != null">
+                #{orderType,jdbcType=INTEGER},
+            </if>
+            <if test="payTime != null">
+                #{payTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="refundTime != null">
+                #{refundTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.Order">
+        update t_order
+        <set>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="wxOpenId != null">
+                wx_open_id = #{wxOpenId},
+            </if>
+            <if test="orderNo != null">
+                order_no = #{orderNo,jdbcType=VARCHAR},
+            </if>
+            <if test="payType != null">
+                pay_type = #{payType,jdbcType=INTEGER},
+            </if>
+            <if test="payMoney != null">
+                pay_money = #{payMoney,jdbcType=DECIMAL},
+            </if>
+            <if test="payStatus != null">
+                pay_status = #{payStatus,jdbcType=INTEGER},
+            </if>
+            <if test="orderType != null">
+                order_type = #{orderType,jdbcType=INTEGER},
+            </if>
+            <if test="payTime != null">
+                pay_time = #{payTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="refundTime != null">
+                refund_time = #{refundTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.Order">
+        update t_order
+        set
+            user_id = #{userId,jdbcType=INTEGER},
+            wx_open_id = #{wxOpenId},
+            order_no = #{orderNo,jdbcType=VARCHAR},
+            pay_type = #{payType,jdbcType=INTEGER},
+            pay_money = #{payMoney,jdbcType=DECIMAL},
+            pay_status = #{payStatus,jdbcType=INTEGER},
+            order_type = #{orderType,jdbcType=INTEGER},
+            pay_time = #{payTime,jdbcType=TIMESTAMP},
+            refund_time = #{refundTime,jdbcType=TIMESTAMP},
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+
+    <select id="selectOrderByOrderNo"  resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_order
+        where order_no = #{orderNo} limit 1
+    </select>
+
+    <select id="selectBuyVipListVO" resultType="com.ruoyi.platform.vo.BuyVipListVO">
+        SELECT id, user_id userId, pay_status payStatus, pay_money money, create_time createTime
+        from t_order
+        where order_type = 1
+          and user_id = #{userId}
+        ORDER BY create_time DESC
+    </select>
+</mapper>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VoiceMapper">
+    
+    <resultMap type="Voice" id="VoiceResult">
+        <result property="id"    column="id"    />
+        <result property="type"    column="type"    />
+        <result property="url"    column="url"    />
+        <result property="remarks"    column="remarks"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectVoiceVo">
+        select id, type, url, remarks, create_time, update_time from t_voice
+    </sql>
+
+    <select id="selectVoiceList" parameterType="Voice" resultMap="VoiceResult">
+        <include refid="selectVoiceVo"/>
+        <where>  
+            <if test="type != null "> and type = #{type}</if>
+            <if test="url != null  and url != ''"> and url = #{url}</if>
+            <if test="remarks != null  and remarks != ''"> and remarks like concat('%', #{remarks}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectVoiceById" parameterType="Long" resultMap="VoiceResult">
+        <include refid="selectVoiceVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertVoice" parameterType="Voice" useGeneratedKeys="true" keyProperty="id">
+        insert into t_voice
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="type != null">type,</if>
+            <if test="url != null">url,</if>
+            <if test="remarks != null">remarks,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="type != null">#{type},</if>
+            <if test="url != null">#{url},</if>
+            <if test="remarks != null">#{remarks},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateVoice" parameterType="Voice">
+        update t_voice
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="type != null">type = #{type},</if>
+            <if test="url != null">url = #{url},</if>
+            <if test="remarks != null">remarks = #{remarks},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteVoiceById" parameterType="Long">
+        delete from t_voice where id = #{id}
+    </delete>
+
+    <delete id="deleteVoiceByIds" parameterType="String">
+        delete from t_voice where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

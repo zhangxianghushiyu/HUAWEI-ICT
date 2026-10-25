@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VoteOptionDao">
+  <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.VoteOption">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="activity_id" jdbcType="INTEGER" property="activityId" />
+    <result column="option_content" jdbcType="VARCHAR" property="optionContent" />
+    <result column="option_image" jdbcType="VARCHAR" property="optionImage" />
+    <result column="vote_count" jdbcType="INTEGER" property="voteCount" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="del_status" jdbcType="INTEGER" property="delStatus" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, activity_id, option_content, option_image, vote_count, sort, del_status, 
+    create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_vote_option
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_vote_option
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.VoteOption" useGeneratedKeys="true">
+    insert into t_vote_option (activity_id, option_content, option_image, 
+      vote_count, sort, del_status, 
+      create_time, update_time)
+    values (#{activityId,jdbcType=INTEGER}, #{optionContent,jdbcType=VARCHAR}, #{optionImage,jdbcType=VARCHAR}, 
+      #{voteCount,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER}, #{delStatus,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.VoteOption" useGeneratedKeys="true">
+    insert into t_vote_option
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="activityId != null">
+        activity_id,
+      </if>
+      <if test="optionContent != null">
+        option_content,
+      </if>
+      <if test="optionImage != null">
+        option_image,
+      </if>
+      <if test="voteCount != null">
+        vote_count,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="delStatus != null">
+        del_status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="activityId != null">
+        #{activityId,jdbcType=INTEGER},
+      </if>
+      <if test="optionContent != null">
+        #{optionContent,jdbcType=VARCHAR},
+      </if>
+      <if test="optionImage != null">
+        #{optionImage,jdbcType=VARCHAR},
+      </if>
+      <if test="voteCount != null">
+        #{voteCount,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="delStatus != null">
+        #{delStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.VoteOption">
+    update t_vote_option
+    <set>
+      <if test="activityId != null">
+        activity_id = #{activityId,jdbcType=INTEGER},
+      </if>
+      <if test="optionContent != null">
+        option_content = #{optionContent,jdbcType=VARCHAR},
+      </if>
+      <if test="optionImage != null">
+        option_image = #{optionImage,jdbcType=VARCHAR},
+      </if>
+      <if test="voteCount != null">
+        vote_count = #{voteCount,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="delStatus != null">
+        del_status = #{delStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.VoteOption">
+    update t_vote_option
+    set activity_id = #{activityId,jdbcType=INTEGER},
+        option_content = #{optionContent,jdbcType=VARCHAR},
+        option_image = #{optionImage,jdbcType=VARCHAR},
+        vote_count = #{voteCount,jdbcType=INTEGER},
+        sort = #{sort,jdbcType=INTEGER},
+        del_status = #{delStatus,jdbcType=INTEGER},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByActivityId" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_vote_option
+    where activity_id = #{activityId} and del_status = 1
+    order by sort asc, id asc
+  </select>
+
+  <update id="addVoteCount">
+    update t_vote_option
+    set vote_count = vote_count + 1
+    where id = #{id}
+  </update>
+
+  <update id="subVoteCount">
+    update t_vote_option
+    set vote_count = vote_count - 1
+    where id = #{id} and vote_count &gt; 0
+  </update>
+
+  <update id="batchAddVoteCount">
+    update t_vote_option
+    set vote_count = vote_count + 1
+    where id in
+    <foreach collection="optionIds" item="id" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </update>
+
+  <update id="batchSubVoteCount">
+    update t_vote_option
+    set vote_count = vote_count - 1
+    where id in
+    <foreach collection="optionIds" item="id" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+    and vote_count &gt; 0
+  </update>
+</mapper>

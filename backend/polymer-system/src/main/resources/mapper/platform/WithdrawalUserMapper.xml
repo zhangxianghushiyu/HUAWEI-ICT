@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.WithdrawalUserMapper">
+
+    <resultMap type="WithdrawalUser" id="WithdrawalUserResult">
+        <result property="id" column="id"/>
+        <result property="type" column="type"/>
+        <result property="userId" column="user_id"/>
+        <result property="openId" column="open_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="selectWithdrawalUserVo">
+        select id, type, user_id, open_id, create_time, update_time
+        from t_withdrawal_user
+    </sql>
+
+    <select id="selectWithdrawalUserList" parameterType="WithdrawalUser" resultMap="WithdrawalUserResult">
+        <include refid="selectWithdrawalUserVo"/>
+        <where>
+            <if test="type != null ">and type = #{type}</if>
+            <if test="userId != null ">and user_id = #{userId}</if>
+            <if test="openId != null  and openId != ''">and open_id = #{openId}</if>
+        </where>
+    </select>
+
+    <select id="selectWithdrawalUserById" parameterType="Long" resultMap="WithdrawalUserResult">
+        <include refid="selectWithdrawalUserVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertWithdrawalUser" parameterType="WithdrawalUser">
+        insert into t_withdrawal_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="type != null">type,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="openId != null">open_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="type != null">#{type},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="openId != null">#{openId},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateWithdrawalUser" parameterType="WithdrawalUser">
+        update t_withdrawal_user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="type != null">type = #{type},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="openId != null">open_id = #{openId},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteWithdrawalUserById" parameterType="Long">
+        delete
+        from t_withdrawal_user
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteWithdrawalUserByIds" parameterType="String">
+        delete from t_withdrawal_user where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+    <select id="selectWithdrawalUserMapperByUserIdAndType" resultMap="WithdrawalUserResult">
+        <include refid="selectWithdrawalUserVo"/>
+        where `type`=#{type} and user_id=#{userId}
+    </select>
+</mapper>

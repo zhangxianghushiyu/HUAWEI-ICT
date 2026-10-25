@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.WithdrawalUserDao">
+    <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.WithdrawalUser">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="type" jdbcType="INTEGER" property="type" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="open_id" jdbcType="VARCHAR" property="openId" />
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+        <result column="head_img_url" jdbcType="VARCHAR" property="headImgUrl" />
+        <result column="union_id" jdbcType="VARCHAR" property="unionId" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, `type`, user_id, open_id,nick_name,head_img_url,union_id, create_time, update_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from t_withdrawal_user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from t_withdrawal_user
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.WithdrawalUser" useGeneratedKeys="true">
+        insert into t_withdrawal_user (`type`, user_id, open_id, nick_name,head_img_url,union_id,
+                                       create_time, update_time)
+        values (#{type,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{openId,jdbcType=VARCHAR},
+                #{nickName},#{headImgUrl},#{unionId},
+                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.WithdrawalUser" useGeneratedKeys="true">
+        insert into t_withdrawal_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="type != null">
+                `type`,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="openId != null">
+                open_id,
+            </if>
+            <if test="nickName != null">
+                nick_name,
+            </if>
+            <if test="headImgUrl != null">
+                head_img_url,
+            </if>
+            <if test="unionId != null">
+                union_id,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="type != null">
+                #{type,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="openId != null">
+                #{openId,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null">
+                #{nickName},
+            </if>
+            <if test="headImgUrl != null">
+                #{headImgUrl},
+            </if>
+            <if test="unionId != null">
+                #{unionId},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.WithdrawalUser">
+        update t_withdrawal_user
+        <set>
+            <if test="type != null">
+                `type` = #{type,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="openId != null">
+                open_id = #{openId,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null">
+                nick_name = #{nickName},
+            </if>
+            <if test="headImgUrl != null">
+                head_img_url = #{headImgUrl},
+            </if>
+            <if test="unionId != null">
+                union_id = #{unionId},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.WithdrawalUser">
+        update t_withdrawal_user
+        set `type` = #{type,jdbcType=INTEGER},
+            user_id = #{userId,jdbcType=INTEGER},
+            open_id = #{openId,jdbcType=VARCHAR},
+            nick_name = #{nickName},
+            head_img_url = #{headImgUrl},
+            union_id = #{unionId},
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="selectWithdrawalUserByTypeAndUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_withdrawal_user
+        where `type` = #{type} and user_id=#{userId} limit 1
+    </select>
+</mapper>

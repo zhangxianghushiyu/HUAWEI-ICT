@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VideoDao">
+
+    <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.Video">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="play_count" jdbcType="INTEGER" property="playCount"/>
+        <result column="like_count" jdbcType="INTEGER" property="likeCount"/>
+        <result column="collect_count" jdbcType="INTEGER" property="collectCount"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="video_url" jdbcType="VARCHAR" property="videoUrl"/>
+        <result column="video_cover" jdbcType="VARCHAR" property="videoCover"/>
+        <result column="del_status" jdbcType="INTEGER" property="delStatus"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="drama_id" jdbcType="INTEGER" property="dramaId"/>
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, `name`, `play_count`,`like_count`,collect_count,`content`, `video_url`, `video_cover`,status,
+          `del_status`, `create_time`, `update_time`, drama_id
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+        select
+            <include refid="Base_Column_List" />
+            from t_video
+            where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <!--    获取视频列表-->
+    <select id="getVideoList" resultType="com.ruoyi.platform.vo.VideoListVO">
+       select id, `name`, `play_count` playCount,`like_count` likeCount,collect_count collectCount,`content`,
+              `video_url` videoUrl, `video_cover` videoCover,
+          `del_status` delStatus, `create_time` createTime, `update_time` updateTime, drama_id dramaId
+       from t_video where del_status = 1 and status = 1 ORDER BY RAND() LIMIT 5;
+    </select>
+    <!--    更新视频播放次数-->
+    <update id ="updateVideoPlayCount" parameterType="com.ruoyi.platform.domain.Video">
+            update t_video
+            set `play_count` = `play_count` + 1
+            where `id` = #{id}
+    </update>
+
+    <!--    更新视频点赞次数-->
+    <update id="addVideoLikeCount">
+        update t_video
+        set `like_count` = `like_count` + 1
+        where `id` = #{id}
+    </update>
+
+    <update id="subVideoLikeCount">
+        update t_video
+        set `like_count` = `like_count` - 1
+        where `id` = #{id}
+          and like_count > 0
+    </update>
+
+
+    <!--    更新视频收藏次数-->
+    <update id="addVideoCollectCount">
+        update t_video
+        set `collect_count` = `collect_count` + 1
+        where `id` = #{id}
+    </update>
+
+    <update id="subVideoCollectCount">
+        update t_video
+        set `collect_count` = `collect_count` - 1
+        where `id` = #{id}
+          and collect_count > 0
+    </update>
+
+    <!-- 视频系列列表（按系列名分组，可按分类筛选） -->
+    <select id="selectSeriesList" resultType="com.ruoyi.platform.vo.VideoSeriesVO">
+        select series_name  as seriesName,
+               max(video_cover) as cover,
+               count(1)      as episodeCount,
+               sum(play_count) as playCount
+        from t_video
+        where status = 1
+          and del_status = 1
+          and series_name is not null
+          and series_name != ''
+        <if test="categoryId != null">
+            and classify_id = #{categoryId}
+        </if>
+        group by series_name
+        order by max(create_time) desc
+    </select>
+
+    <!-- 按视频名称模糊搜索系列 -->
+    <select id="selectSeriesListByName" resultType="com.ruoyi.platform.vo.VideoSeriesVO">
+        select series_name  as seriesName,
+               max(video_cover) as cover,
+               count(1)      as episodeCount,
+               sum(play_count) as playCount
+        from t_video
+        where status = 1
+          and del_status = 1
+          and series_name is not null
+          and series_name != ''
+          and (`name` like concat('%', #{name}, '%') or series_name like concat('%', #{name}, '%'))
+        group by series_name
+        order by max(create_time) desc
+    </select>
+
+    <!-- 随机 Feed：每个系列随机取一集（仅取 isFree 区间内的集），系列本身也随机排序 -->
+    <select id="selectRandomFeed" resultType="com.ruoyi.platform.vo.VideoSeriesEpisodeVO">
+        select v.id,
+               v.`name`,
+               v.video_url   as videoUrl,
+               v.video_cover as videoCover,
+               v.content,
+               v.play_count  as playCount,
+               v.episode_num as episodeNum,
+               v.series_name as seriesName
+        from t_video v
+                 inner join (
+            select series_name, min(id) as min_id
+            from (
+                     select series_name, id,
+                            ROW_NUMBER() over (partition by series_name order by RAND()) as rn
+                     from t_video
+                     where status = 1
+                       and del_status = 1
+                       and series_name is not null
+                       and series_name != ''
+                       and video_url is not null
+                       and video_url != ''
+                 ) ranked
+            where rn = 1
+            group by series_name
+            order by RAND()
+        ) r on v.id = r.min_id
+        where v.status = 1
+          and v.del_status = 1
+    </select>
+
+    <!-- 视频系列选集列表（按集数排序） -->
+    <select id="selectEpisodeList" resultType="com.ruoyi.platform.vo.VideoSeriesEpisodeVO">
+        select id,
+               `name`,
+               video_url   as videoUrl,
+               video_cover as videoCover,
+               content,
+               play_count  as playCount,
+               episode_num as episodeNum
+        from t_video
+        where series_name = #{seriesName}
+          and status = 1
+          and del_status = 1
+        order by episode_num is null, episode_num asc, id asc
+    </select>
+
+    <!-- 看广告解锁视频系列：从指定视频所在集开始（含自身），向后取未解锁的前N集ID -->
+    <select id="selectNeedUnlockVideoIds" resultType="java.lang.Integer">
+        select v.id
+        from t_video v
+                 inner join t_video cur on cur.id = #{videoId}
+        where v.series_name = cur.series_name
+          and v.status = 1
+          and v.del_status = 1
+          and v.id not in (select vp.video_id
+                           from t_video_publicize vp
+                           where vp.user_id = #{userId})
+          and (coalesce(v.episode_num, 0) > coalesce(cur.episode_num, 0)
+            or (coalesce(v.episode_num, 0) = coalesce(cur.episode_num, 0) and v.id >= cur.id))
+        order by v.episode_num is null, v.episode_num asc, v.id asc
+        limit #{limit}
+    </select>
+
+</mapper>

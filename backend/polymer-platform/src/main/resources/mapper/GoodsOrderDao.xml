@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.GoodsOrderDao">
+  <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.GoodsOrder">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_price" jdbcType="DECIMAL" property="goodsPrice" />
+    <result column="goods_url" jdbcType="VARCHAR" property="goodsUrl" />
+    <result column="pay_money" jdbcType="DECIMAL" property="payMoney" />
+    <result column="pay_count" jdbcType="INTEGER" property="payCount" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="get_name" jdbcType="VARCHAR" property="getName" />
+    <result column="get_phone" jdbcType="VARCHAR" property="getPhone" />
+    <result column="get_city" jdbcType="VARCHAR" property="getCity" />
+    <result column="get_address" jdbcType="VARCHAR" property="getAddress" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, order_no, goods_name, goods_price, goods_url, pay_money, pay_count, 
+    `status`, get_name, get_phone, get_city, get_address, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_goods_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_goods_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.GoodsOrder" useGeneratedKeys="true">
+    insert into t_goods_order (user_id, order_no, goods_name, 
+      goods_price, goods_url, pay_money, 
+      pay_count, `status`, get_name, 
+      get_phone, get_city, get_address, 
+      create_time, update_time)
+    values (#{userId,jdbcType=INTEGER}, #{orderNo,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, 
+      #{goodsPrice,jdbcType=DECIMAL}, #{goodsUrl,jdbcType=VARCHAR}, #{payMoney,jdbcType=DECIMAL}, 
+      #{payCount,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{getName,jdbcType=VARCHAR}, 
+      #{getPhone,jdbcType=VARCHAR}, #{getCity,jdbcType=VARCHAR}, #{getAddress,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.GoodsOrder" useGeneratedKeys="true">
+    insert into t_goods_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="orderNo != null">
+        order_no,
+      </if>
+      <if test="goodsName != null">
+        goods_name,
+      </if>
+      <if test="goodsPrice != null">
+        goods_price,
+      </if>
+      <if test="goodsUrl != null">
+        goods_url,
+      </if>
+      <if test="payMoney != null">
+        pay_money,
+      </if>
+      <if test="payCount != null">
+        pay_count,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="getName != null">
+        get_name,
+      </if>
+      <if test="getPhone != null">
+        get_phone,
+      </if>
+      <if test="getCity != null">
+        get_city,
+      </if>
+      <if test="getAddress != null">
+        get_address,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsName != null">
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsPrice != null">
+        #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsUrl != null">
+        #{goodsUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="payMoney != null">
+        #{payMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="payCount != null">
+        #{payCount,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="getName != null">
+        #{getName,jdbcType=VARCHAR},
+      </if>
+      <if test="getPhone != null">
+        #{getPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="getCity != null">
+        #{getCity,jdbcType=VARCHAR},
+      </if>
+      <if test="getAddress != null">
+        #{getAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.GoodsOrder">
+    update t_goods_order
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNo != null">
+        order_no = #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsName != null">
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsPrice != null">
+        goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsUrl != null">
+        goods_url = #{goodsUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="payMoney != null">
+        pay_money = #{payMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="payCount != null">
+        pay_count = #{payCount,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="getName != null">
+        get_name = #{getName,jdbcType=VARCHAR},
+      </if>
+      <if test="getPhone != null">
+        get_phone = #{getPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="getCity != null">
+        get_city = #{getCity,jdbcType=VARCHAR},
+      </if>
+      <if test="getAddress != null">
+        get_address = #{getAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.GoodsOrder">
+    update t_goods_order
+    set user_id = #{userId,jdbcType=INTEGER},
+      order_no = #{orderNo,jdbcType=VARCHAR},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      goods_url = #{goodsUrl,jdbcType=VARCHAR},
+      pay_money = #{payMoney,jdbcType=DECIMAL},
+      pay_count = #{payCount,jdbcType=INTEGER},
+      `status` = #{status,jdbcType=INTEGER},
+      get_name = #{getName,jdbcType=VARCHAR},
+      get_phone = #{getPhone,jdbcType=VARCHAR},
+      get_city = #{getCity,jdbcType=VARCHAR},
+      get_address = #{getAddress,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+  <select id="selectGoodsOrderListVO" resultType="com.ruoyi.platform.vo.GoodsOrderListVO">
+      select id,
+             user_id,
+             order_no    orderNo,
+             goods_name  goodsName,
+             goods_price goodsPrice,
+             goods_url   goodsUrl,
+             pay_money   payMoney,
+             pay_count   payCount,
+             `status`
+      from t_goods_order
+      where user_id = #{userId}
+      order by create_time desc
+  </select>
+</mapper>

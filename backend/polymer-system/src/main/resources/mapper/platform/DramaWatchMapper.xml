@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.DramaWatchMapper">
+    
+    <resultMap type="DramaWatch" id="DramaWatchResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="dramaId"    column="drama_id"    />
+        <result property="dramaDetailsId"    column="drama_details_id"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectDramaWatchVo">
+        select id, user_id, drama_id, drama_details_id, create_time, update_time from t_drama_watch
+    </sql>
+
+    <select id="selectDramaWatchList" parameterType="DramaWatch" resultMap="DramaWatchResult">
+        <include refid="selectDramaWatchVo"/>
+        <where>  
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="dramaId != null "> and drama_id = #{dramaId}</if>
+            <if test="dramaDetailsId != null "> and drama_details_id = #{dramaDetailsId}</if>
+        </where>
+    </select>
+    
+    <select id="selectDramaWatchById" parameterType="Long" resultMap="DramaWatchResult">
+        <include refid="selectDramaWatchVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertDramaWatch" parameterType="DramaWatch" useGeneratedKeys="true" keyProperty="id">
+        insert into t_drama_watch
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="dramaId != null">drama_id,</if>
+            <if test="dramaDetailsId != null">drama_details_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="dramaId != null">#{dramaId},</if>
+            <if test="dramaDetailsId != null">#{dramaDetailsId},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDramaWatch" parameterType="DramaWatch">
+        update t_drama_watch
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="dramaId != null">drama_id = #{dramaId},</if>
+            <if test="dramaDetailsId != null">drama_details_id = #{dramaDetailsId},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDramaWatchById" parameterType="Long">
+        delete from t_drama_watch where id = #{id}
+    </delete>
+
+    <delete id="deleteDramaWatchByIds" parameterType="String">
+        delete from t_drama_watch where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+    <select id="selectDramaWatchListVO" resultType="com.ruoyi.platform.vo.DramaWatchListVO"
+            parameterType="com.ruoyi.platform.dto.DramaWatchListDTO">
+        select tdl.id,
+        tdl.user_id          userId,
+        tdl.drama_id         dramaId,
+        tdl.drama_details_id dramaDetailsId,
+        tdl.create_time      createTime,
+        tdl.update_time      updateTime,
+        tu.nick_name         nickName,
+        tu.avatar,
+        td.`title` as        dramaTitle,
+        td.title_img         dramaTitleImg,
+        tdd.`name` as        dramaDetailsName,
+        tdd.title_img        dramaDetailsTitleImg
+        from t_drama_watch tdl
+        inner  JOIN t_drama td on td.id = tdl.drama_id
+        inner JOIN t_drama_details tdd on tdd.id = tdl.drama_details_id
+        inner JOIN t_user tu on tu.id = tdl.user_id
+        <if test="nickName!=null">and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="dramaTitle!=null">and td.`title` like concat('%', #{dramaTitle}, '%')</if>
+        <if test="dramaDetailsName!=null">and tdd.`name` like concat('%', #{dramaDetailsName}, '%')</if>
+        order by tdl.create_time desc
+    </select>
+</mapper>

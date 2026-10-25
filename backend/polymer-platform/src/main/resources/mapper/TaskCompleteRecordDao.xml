@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.TaskCompleteRecordDao">
+    <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.TaskCompleteRecord">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="task_reward_id" jdbcType="INTEGER" property="taskRewardId"/>
+        <result column="task_title" jdbcType="VARCHAR" property="taskTitle"/>
+        <result column="task_describe" jdbcType="VARCHAR" property="taskDescribe"/>
+        <result column="task_type" jdbcType="INTEGER" property="taskType"/>
+        <result column="task_follow_type" jdbcType="INTEGER" property="taskFollowType"/>
+        <result column="task_reward_type" jdbcType="INTEGER" property="taskRewardType"/>
+        <result column="task_price" jdbcType="DECIMAL" property="taskPrice"/>
+        <result column="describe" jdbcType="VARCHAR" property="describe"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id
+        , user_id, task_reward_id, task_title, task_describe, task_type, task_follow_type,
+    task_reward_type, task_price, `describe`, create_time, update_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_task_complete_record
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from t_task_complete_record
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.TaskCompleteRecord"
+            useGeneratedKeys="true">
+        insert into t_task_complete_record (user_id, task_reward_id, task_title,
+                                            task_describe, task_type, task_follow_type,
+                                            task_reward_type, task_price, `describe`,
+                                            create_time, update_time)
+        values (#{userId,jdbcType=INTEGER}, #{taskRewardId,jdbcType=INTEGER}, #{taskTitle,jdbcType=VARCHAR},
+                #{taskDescribe,jdbcType=VARCHAR}, #{taskType,jdbcType=INTEGER}, #{taskFollowType,jdbcType=INTEGER},
+                #{taskRewardType,jdbcType=INTEGER}, #{taskPrice,jdbcType=DECIMAL}, #{describe,jdbcType=VARCHAR},
+                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="com.ruoyi.platform.domain.TaskCompleteRecord" useGeneratedKeys="true">
+        insert into t_task_complete_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="taskRewardId != null">
+                task_reward_id,
+            </if>
+            <if test="taskTitle != null">
+                task_title,
+            </if>
+            <if test="taskDescribe != null">
+                task_describe,
+            </if>
+            <if test="taskType != null">
+                task_type,
+            </if>
+            <if test="taskFollowType != null">
+                task_follow_type,
+            </if>
+            <if test="taskRewardType != null">
+                task_reward_type,
+            </if>
+            <if test="taskPrice != null">
+                task_price,
+            </if>
+            <if test="describe != null">
+                `describe`,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="taskRewardId != null">
+                #{taskRewardId,jdbcType=INTEGER},
+            </if>
+            <if test="taskTitle != null">
+                #{taskTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="taskDescribe != null">
+                #{taskDescribe,jdbcType=VARCHAR},
+            </if>
+            <if test="taskType != null">
+                #{taskType,jdbcType=INTEGER},
+            </if>
+            <if test="taskFollowType != null">
+                #{taskFollowType,jdbcType=INTEGER},
+            </if>
+            <if test="taskRewardType != null">
+                #{taskRewardType,jdbcType=INTEGER},
+            </if>
+            <if test="taskPrice != null">
+                #{taskPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="describe != null">
+                #{describe,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.TaskCompleteRecord">
+        update t_task_complete_record
+        <set>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="taskRewardId != null">
+                task_reward_id = #{taskRewardId,jdbcType=INTEGER},
+            </if>
+            <if test="taskTitle != null">
+                task_title = #{taskTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="taskDescribe != null">
+                task_describe = #{taskDescribe,jdbcType=VARCHAR},
+            </if>
+            <if test="taskType != null">
+                task_type = #{taskType,jdbcType=INTEGER},
+            </if>
+            <if test="taskFollowType != null">
+                task_follow_type = #{taskFollowType,jdbcType=INTEGER},
+            </if>
+            <if test="taskRewardType != null">
+                task_reward_type = #{taskRewardType,jdbcType=INTEGER},
+            </if>
+            <if test="taskPrice != null">
+                task_price = #{taskPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="describe != null">
+                `describe` = #{describe,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.TaskCompleteRecord">
+        update t_task_complete_record
+        set user_id          = #{userId,jdbcType=INTEGER},
+            task_reward_id   = #{taskRewardId,jdbcType=INTEGER},
+            task_title       = #{taskTitle,jdbcType=VARCHAR},
+            task_describe    = #{taskDescribe,jdbcType=VARCHAR},
+            task_type        = #{taskType,jdbcType=INTEGER},
+            task_follow_type = #{taskFollowType,jdbcType=INTEGER},
+            task_reward_type = #{taskRewardType,jdbcType=INTEGER},
+            task_price       = #{taskPrice,jdbcType=DECIMAL},
+            `describe`       = #{describe,jdbcType=VARCHAR},
+            create_time      = #{createTime,jdbcType=TIMESTAMP},
+            update_time      = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+
+    <select id="selectTaskCompleteRecordByTypeNewPeople" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_task_complete_record
+        where user_id=#{userId} and task_follow_type=#{taskFollowType} limit 1
+    </select>
+
+
+    <select id="selectTaskCompleteRecordByTypeNewPeopleSIgn" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_task_complete_record
+        where user_id=#{userId} and task_follow_type=#{taskFollowType}
+    </select>
+
+
+    <select id="selectTaskCompleteRecordByTypeDaily" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_task_complete_record
+        where user_id=#{userId} and task_follow_type=#{taskFollowType} and create_time >= CURDATE()AND create_time &lt;
+        CURDATE()+ INTERVAL 1 DAY ORDER BY create_time DESC limit 1
+    </select>
+
+</mapper>

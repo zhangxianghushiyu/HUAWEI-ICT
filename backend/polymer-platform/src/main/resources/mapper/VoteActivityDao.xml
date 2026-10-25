@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VoteActivityDao">
+  <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.VoteActivity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="cover_image" jdbcType="VARCHAR" property="coverImage" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="is_multiple" jdbcType="INTEGER" property="isMultiple" />
+    <result column="max_options" jdbcType="INTEGER" property="maxOptions" />
+    <result column="total_voters" jdbcType="INTEGER" property="totalVoters" />
+    <result column="total_votes" jdbcType="INTEGER" property="totalVotes" />
+    <result column="del_status" jdbcType="INTEGER" property="delStatus" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, title, description, cover_image, start_time, end_time, status, is_multiple,
+    max_options, total_voters, total_votes, del_status, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_vote_activity
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_vote_activity
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.VoteActivity" useGeneratedKeys="true">
+    insert into t_vote_activity (title, description, cover_image,
+      start_time, end_time, status,
+      is_multiple, max_options, total_voters,
+      total_votes, del_status, create_time,
+      update_time)
+    values (#{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{coverImage,jdbcType=VARCHAR},
+      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER},
+      #{isMultiple,jdbcType=INTEGER}, #{maxOptions,jdbcType=INTEGER}, #{totalVoters,jdbcType=INTEGER},
+      #{totalVotes,jdbcType=INTEGER}, #{delStatus,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ruoyi.platform.domain.VoteActivity" useGeneratedKeys="true">
+    insert into t_vote_activity
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        title,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="coverImage != null">
+        cover_image,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="isMultiple != null">
+        is_multiple,
+      </if>
+      <if test="maxOptions != null">
+        max_options,
+      </if>
+      <if test="totalVoters != null">
+        total_voters,
+      </if>
+      <if test="totalVotes != null">
+        total_votes,
+      </if>
+      <if test="delStatus != null">
+        del_status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="coverImage != null">
+        #{coverImage,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="isMultiple != null">
+        #{isMultiple,jdbcType=INTEGER},
+      </if>
+      <if test="maxOptions != null">
+        #{maxOptions,jdbcType=INTEGER},
+      </if>
+      <if test="totalVoters != null">
+        #{totalVoters,jdbcType=INTEGER},
+      </if>
+      <if test="totalVotes != null">
+        #{totalVotes,jdbcType=INTEGER},
+      </if>
+      <if test="delStatus != null">
+        #{delStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ruoyi.platform.domain.VoteActivity">
+    update t_vote_activity
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="coverImage != null">
+        cover_image = #{coverImage,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="isMultiple != null">
+        is_multiple = #{isMultiple,jdbcType=INTEGER},
+      </if>
+      <if test="maxOptions != null">
+        max_options = #{maxOptions,jdbcType=INTEGER},
+      </if>
+      <if test="totalVoters != null">
+        total_voters = #{totalVoters,jdbcType=INTEGER},
+      </if>
+      <if test="totalVotes != null">
+        total_votes = #{totalVotes,jdbcType=INTEGER},
+      </if>
+      <if test="delStatus != null">
+        del_status = #{delStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ruoyi.platform.domain.VoteActivity">
+    update t_vote_activity
+    set title = #{title,jdbcType=VARCHAR},
+        description = #{description,jdbcType=VARCHAR},
+        cover_image = #{coverImage,jdbcType=VARCHAR},
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+        status = #{status,jdbcType=INTEGER},
+        is_multiple = #{isMultiple,jdbcType=INTEGER},
+        max_options = #{maxOptions,jdbcType=INTEGER},
+        total_voters = #{totalVoters,jdbcType=INTEGER},
+        total_votes = #{totalVotes,jdbcType=INTEGER},
+        del_status = #{delStatus,jdbcType=INTEGER},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectActiveList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_vote_activity
+    where del_status = 1
+    order by create_time desc
+  </select>
+
+  <select id="selectDetailById" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_vote_activity
+    where id = #{id} and del_status = 1
+  </select>
+
+  <update id="addTotalVoters">
+    update t_vote_activity
+    set total_voters = total_voters + 1
+    where id = #{id}
+  </update>
+
+  <update id="addTotalVotes">
+    update t_vote_activity
+    set total_votes = total_votes + #{count}
+    where id = #{id}
+  </update>
+
+  <update id="subTotalVotes">
+    update t_vote_activity
+    set total_votes = total_votes - #{count}
+    where id = #{id} and total_votes &gt;= #{count}
+  </update>
+</mapper>

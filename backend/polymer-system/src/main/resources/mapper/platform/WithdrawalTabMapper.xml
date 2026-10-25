@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.WithdrawalTabMapper">
+    
+    <resultMap type="WithdrawalTab" id="WithdrawalTabResult">
+        <result property="id"    column="id"    />
+        <result property="type"    column="type"    />
+        <result property="autoAccount"    column="auto_account"    />
+        <result property="amount"    column="amount"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectWithdrawalTabVo">
+        select id, type, auto_account, amount, create_time, update_time from t_withdrawal_tab
+    </sql>
+
+    <select id="selectWithdrawalTabList" parameterType="WithdrawalTab" resultMap="WithdrawalTabResult">
+        <include refid="selectWithdrawalTabVo"/>
+        <where>  
+            <if test="type != null "> and type = #{type}</if>
+            <if test="autoAccount != null "> and auto_account = #{autoAccount}</if>
+            <if test="amount != null "> and amount = #{amount}</if>
+        </where>
+    </select>
+    
+    <select id="selectWithdrawalTabById" parameterType="Long" resultMap="WithdrawalTabResult">
+        <include refid="selectWithdrawalTabVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertWithdrawalTab" parameterType="WithdrawalTab" useGeneratedKeys="true" keyProperty="id">
+        insert into t_withdrawal_tab
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="type != null">type,</if>
+            <if test="autoAccount != null">auto_account,</if>
+            <if test="amount != null">amount,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="type != null">#{type},</if>
+            <if test="autoAccount != null">#{autoAccount},</if>
+            <if test="amount != null">#{amount},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateWithdrawalTab" parameterType="WithdrawalTab">
+        update t_withdrawal_tab
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="type != null">type = #{type},</if>
+            <if test="autoAccount != null">auto_account = #{autoAccount},</if>
+            <if test="amount != null">amount = #{amount},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteWithdrawalTabById" parameterType="Long">
+        delete from t_withdrawal_tab where id = #{id}
+    </delete>
+
+    <delete id="deleteWithdrawalTabByIds" parameterType="String">
+        delete from t_withdrawal_tab where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.AdCallbackMapper">
+    
+    <resultMap type="AdCallback" id="AdCallbackResult">
+        <result property="id"    column="id"    />
+        <result property="scene"    column="scene"    />
+        <result property="money"    column="money"    />
+        <result property="userId"    column="user_id"    />
+        <result property="ecpm"    column="ecpm"    />
+        <result property="sign"    column="sign"    />
+        <result property="transId"    column="trans_id"    />
+        <result property="rewardAmount"    column="reward_amount"    />
+        <result property="rewardName"    column="reward_name"    />
+        <result property="mediationRit"    column="mediation_rit"    />
+        <result property="primeRit"    column="prime_rit"    />
+        <result property="adnName"    column="adn_name"    />
+        <result property="extra"    column="extra"    />
+        <result property="remarks"    column="remarks"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectAdCallbackVo">
+        select id, scene, money, user_id, ecpm, sign, trans_id, reward_amount, reward_name, mediation_rit, prime_rit, adn_name, extra, remarks, create_time, update_time from t_ad_callback
+    </sql>
+
+    <select id="selectAdCallbackList" parameterType="AdCallback" resultMap="AdCallbackResult">
+        <include refid="selectAdCallbackVo"/>
+        <where>
+            <if test="scene != null ">and scene = #{scene}</if>
+            <if test="money != null ">and money = #{money}</if>
+            <if test="userId != null ">and user_id = #{userId}</if>
+            <if test="ecpm != null  and ecpm != ''">and ecpm = #{ecpm}</if>
+            <if test="sign != null  and sign != ''">and sign = #{sign}</if>
+            <if test="transId != null  and transId != ''">and trans_id = #{transId}</if>
+            <if test="rewardAmount != null ">and reward_amount = #{rewardAmount}</if>
+            <if test="rewardName != null  and rewardName != ''">and reward_name like concat('%', #{rewardName}, '%')
+            </if>
+            <if test="mediationRit != null  and mediationRit != ''">and mediation_rit = #{mediationRit}</if>
+            <if test="primeRit != null  and primeRit != ''">and prime_rit = #{primeRit}</if>
+            <if test="adnName != null  and adnName != ''">and adn_name like concat('%', #{adnName}, '%')</if>
+            <if test="extra != null  and extra != ''">and extra = #{extra}</if>
+            <if test="remarks != null  and remarks != ''">and remarks = #{remarks}</if>
+        </where>
+        order by create_time desc
+    </select>
+
+
+    <select id="selectAdCallbackListInfo" parameterType="com.ruoyi.platform.dto.AdCallbackDTO"
+    resultType="com.ruoyi.platform.vo.AdCallbackVO">
+        select ac.id,
+               ac.scene,
+               ac.money,
+               ac.user_id userId,
+               ac.ecpm,
+               ac.sign,
+               ac.trans_id transId,
+               ac.reward_amount rewardAmount,
+               ac.reward_name rewardName,
+               ac.mediation_rit mediationRit,
+               ac.prime_rit primeRit,
+               ac.adn_name adnName,
+               ac.extra,
+               ac.remarks,
+               ac.create_time createTime,
+               ac.update_time updateTime,
+               tu.nick_name nickName,
+               tu.user_name userName,
+               tu.avatar
+        from t_ad_callback ac
+                 INNER JOIN t_user tu on tu.id = ac.user_id
+        where 1=1
+        <if test="userName!=null">and tu.user_name like concat('%', #{userName}, '%')</if>
+        <if test="nickName!=null">and tu.nick_name like concat('%', #{nickName}, '%')</if>
+        <if test="type!=null and type !='' and type==1">and ac.scene in(1,2,3,4,5)</if>
+        <if test="type!=null and type !='' and type==2">and ac.scene in(6)</if>
+        ORDER BY ac.create_time DESC
+    </select>
+
+    <select id="selectAdCallbackById" parameterType="Long" resultMap="AdCallbackResult">
+        <include refid="selectAdCallbackVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertAdCallback" parameterType="AdCallback" useGeneratedKeys="true" keyProperty="id">
+        insert into t_ad_callback
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="scene != null">scene,</if>
+            <if test="money != null">money,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="ecpm != null">ecpm,</if>
+            <if test="sign != null">sign,</if>
+            <if test="transId != null">trans_id,</if>
+            <if test="rewardAmount != null">reward_amount,</if>
+            <if test="rewardName != null">reward_name,</if>
+            <if test="mediationRit != null">mediation_rit,</if>
+            <if test="primeRit != null">prime_rit,</if>
+            <if test="adnName != null">adn_name,</if>
+            <if test="extra != null">extra,</if>
+            <if test="remarks != null">remarks,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="scene != null">#{scene},</if>
+            <if test="money != null">#{money},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="ecpm != null">#{ecpm},</if>
+            <if test="sign != null">#{sign},</if>
+            <if test="transId != null">#{transId},</if>
+            <if test="rewardAmount != null">#{rewardAmount},</if>
+            <if test="rewardName != null">#{rewardName},</if>
+            <if test="mediationRit != null">#{mediationRit},</if>
+            <if test="primeRit != null">#{primeRit},</if>
+            <if test="adnName != null">#{adnName},</if>
+            <if test="extra != null">#{extra},</if>
+            <if test="remarks != null">#{remarks},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateAdCallback" parameterType="AdCallback">
+        update t_ad_callback
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="scene != null">scene = #{scene},</if>
+            <if test="money != null">money = #{money},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="ecpm != null">ecpm = #{ecpm},</if>
+            <if test="sign != null">sign = #{sign},</if>
+            <if test="transId != null">trans_id = #{transId},</if>
+            <if test="rewardAmount != null">reward_amount = #{rewardAmount},</if>
+            <if test="rewardName != null">reward_name = #{rewardName},</if>
+            <if test="mediationRit != null">mediation_rit = #{mediationRit},</if>
+            <if test="primeRit != null">prime_rit = #{primeRit},</if>
+            <if test="adnName != null">adn_name = #{adnName},</if>
+            <if test="extra != null">extra = #{extra},</if>
+            <if test="remarks != null">remarks = #{remarks},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteAdCallbackById" parameterType="Long">
+        delete from t_ad_callback where id = #{id}
+    </delete>
+
+    <delete id="deleteAdCallbackByIds" parameterType="String">
+        delete from t_ad_callback where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

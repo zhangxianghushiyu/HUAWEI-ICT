@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.VideoSeriesUnlockDao">
+  <resultMap id="BaseResultMap" type="com.ruoyi.platform.domain.VideoSeriesUnlock">
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="free_num" jdbcType="INTEGER" property="freeNum"/>
+    <result column="unlock_num" jdbcType="INTEGER" property="unlockNum"/>
+    <result column="money" jdbcType="DECIMAL" property="money"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, free_num, unlock_num, money, create_time, update_time
+  </sql>
+
+  <select id="selectVideoSeriesUnlock" resultMap="BaseResultMap">
+      select
+      <include refid="Base_Column_List"/>
+      from t_video_series_unlock limit 1
+  </select>
+</mapper>

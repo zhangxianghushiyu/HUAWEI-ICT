@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.AnswerRecordMapper">
+    
+    <resultMap type="AnswerRecord" id="AnswerRecordResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="barrier"    column="barrier"    />
+        <result property="name"    column="name"    />
+        <result property="answer"    column="answer"    />
+        <result property="wrong"    column="wrong"    />
+        <result property="url"    column="url"    />
+        <result property="write"    column="write"    />
+        <result property="answerResult"    column="answer_result"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectAnswerRecordVo">
+        select id, user_id, barrier, name, answer, wrong, url, `write`, answer_result, create_time, update_time from t_answer_record
+    </sql>
+
+    <select id="selectAnswerRecordList" parameterType="AnswerRecord"
+    resultType="com.ruoyi.platform.domain.AnswerRecord">
+        select ar.id, ar.user_id userId, ar.barrier, ar.name, ar.answer, ar.wrong, ar.url,
+               ar.`write`, ar.answer_result answerResult, ar.create_time createTime, ar.update_time updateTime,
+        tu.nick_name nickName,tu.avatar avatar
+        from t_answer_record ar
+        LEFT JOIN t_user tu on tu.id=ar.user_id
+        <where>  
+            <if test="userId != null "> and ar.user_id = #{userId}</if>
+            <if test="barrier != null "> and ar.barrier = #{barrier}</if>
+            <if test="name != null  and name != ''"> and ar.`name` like concat('%', #{name}, '%')</if>
+            <if test="answer != null  and answer != ''"> and ar.answer like concat('%', #{answer}, '%')</if>
+            <if test="wrong != null  and wrong != ''"> and ar.wrong like concat('%', #{wrong}, '%')</if>
+            <if test="url != null  and url != ''"> and ar.url = #{url}</if>
+            <if test="write != null  and write != ''"> and ar.`write` like concat('%', #{write}, '%')</if>
+            <if test="answerResult != null "> and ar.answer_result = #{answerResult}</if>
+            <if test="nickName != null  and nickName != ''">and tu.nick_name like concat('%', #{wxNickName}, '%')</if>
+        </where>
+        order by ar.create_time desc
+    </select>
+    
+    <select id="selectAnswerRecordById" parameterType="Long" resultMap="AnswerRecordResult">
+        <include refid="selectAnswerRecordVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertAnswerRecord" parameterType="AnswerRecord" useGeneratedKeys="true" keyProperty="id">
+        insert into t_answer_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="barrier != null">barrier,</if>
+            <if test="name != null">`name`,</if>
+            <if test="answer != null">answer,</if>
+            <if test="wrong != null">wrong,</if>
+            <if test="url != null">url,</if>
+            <if test="write != null">`write`,</if>
+            <if test="answerResult != null">answer_result,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="barrier != null">#{barrier},</if>
+            <if test="name != null">#{name},</if>
+            <if test="answer != null">#{answer},</if>
+            <if test="wrong != null">#{wrong},</if>
+            <if test="url != null">#{url},</if>
+            <if test="write != null">#{write},</if>
+            <if test="answerResult != null">#{answerResult},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateAnswerRecord" parameterType="AnswerRecord">
+        update t_answer_record
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="barrier != null">barrier = #{barrier},</if>
+            <if test="name != null">`name` = #{name},</if>
+            <if test="answer != null">answer = #{answer},</if>
+            <if test="wrong != null">wrong = #{wrong},</if>
+            <if test="url != null">url = #{url},</if>
+            <if test="write != null">`write` = #{write},</if>
+            <if test="answerResult != null">answer_result = #{answerResult},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteAnswerRecordById" parameterType="Long">
+        delete from t_answer_record where id = #{id}
+    </delete>
+
+    <delete id="deleteAnswerRecordByIds" parameterType="String">
+        delete from t_answer_record where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

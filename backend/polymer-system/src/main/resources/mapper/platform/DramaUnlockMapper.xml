@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.platform.mapper.DramaUnlockMapper">
+    
+    <resultMap type="DramaUnlock" id="DramaUnlockResult">
+        <result property="id"    column="id"    />
+        <result property="freeNum"    column="free_num"    />
+        <result property="unlockNum"    column="unlock_num"    />
+        <result property="money"    column="money"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectDramaUnlockVo">
+        select id, free_num, unlock_num,money, create_time, update_time from t_drama_unlock
+    </sql>
+
+    <select id="selectDramaUnlockList" parameterType="DramaUnlock" resultMap="DramaUnlockResult">
+        <include refid="selectDramaUnlockVo"/>
+        <where>  
+            <if test="freeNum != null "> and free_num = #{freeNum}</if>
+            <if test="unlockNum != null "> and unlock_num = #{unlockNum}</if>
+        </where>
+    </select>
+    
+    <select id="selectDramaUnlockById" parameterType="Long" resultMap="DramaUnlockResult">
+        <include refid="selectDramaUnlockVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertDramaUnlock" parameterType="DramaUnlock" useGeneratedKeys="true" keyProperty="id">
+        insert into t_drama_unlock
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="freeNum != null">free_num,</if>
+            <if test="unlockNum != null">unlock_num,</if>
+            <if test="money != null">money,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="freeNum != null">#{freeNum},</if>
+            <if test="unlockNum != null">#{unlockNum},</if>
+            <if test="money != null">#{money},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDramaUnlock" parameterType="DramaUnlock">
+        update t_drama_unlock
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="freeNum != null">free_num = #{freeNum},</if>
+            <if test="unlockNum != null">unlock_num = #{unlockNum},</if>
+            <if test="money != null">money = #{money},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDramaUnlockById" parameterType="Long">
+        delete from t_drama_unlock where id = #{id}
+    </delete>
+
+    <delete id="deleteDramaUnlockByIds" parameterType="String">
+        delete from t_drama_unlock where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+
+    <select id="selectDramaUnlockInfo"   resultMap="DramaUnlockResult">
+        <include refid="selectDramaUnlockVo"/>
+    </select>
+
+</mapper>
